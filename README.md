@@ -1,0 +1,1 @@
+Esto es un proyecto intermodular de 2ºDAM del IES Pere Maria de Benidorm. Tenemos que desarrollar una aplicación móvil y una aplicación para sobremesa de las mismas características que la conocida app "Wikiloc"
