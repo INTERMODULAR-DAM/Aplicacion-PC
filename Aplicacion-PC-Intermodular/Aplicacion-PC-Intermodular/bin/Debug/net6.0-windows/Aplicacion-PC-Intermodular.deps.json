@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Aplicacion-PC-Intermodular/1.0.0": {
+        "runtime": {
+          "Aplicacion-PC-Intermodular.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Aplicacion-PC-Intermodular/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
