@@ -9,14 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="recursos\background_forgotPassword.jpg" />
     <None Remove="recursos\background_login.jpg" />
+    <None Remove="recursos\email-icon.png" />
     <None Remove="recursos\key-icon.png" />
     <None Remove="recursos\logo_app.png" />
     <None Remove="recursos\user-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="recursos\background_forgotPassword.jpg" />
     <Resource Include="recursos\background_login.jpg" />
+    <Resource Include="recursos\email-icon.png" />
     <Resource Include="recursos\key-icon.png" />
     <Resource Include="recursos\logo_app.png" />
     <Resource Include="recursos\user-icon.png" />

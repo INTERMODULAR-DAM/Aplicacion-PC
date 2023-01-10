@@ -26,13 +26,21 @@ namespace Aplicacion_PC_Intermodular.ForgotPassword
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            string emailTo = tb.Text;
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void btn_sendEmail_Click(object sender, RoutedEventArgs e)
+        {
+            string emailTo = tb_user.Text;
             if (emailTo == "")
-                MessageBox.Show("El email no puede ser nulo");
+                MessageBox.Show("El email no puede ser nulo", "WikiTrail te dice...", MessageBoxButton.OK, MessageBoxImage.Warning);
             else if (!(new Regex(@"^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,}$")).IsMatch(emailTo))
-                MessageBox.Show("El correo es incorrecto");
+                MessageBox.Show("El correo es incorrecto", "WikiTrail te dice...", MessageBoxButton.OK, MessageBoxImage.Warning);
             else
             {
                 LogicEmail email = new LogicEmail();
@@ -40,5 +48,12 @@ namespace Aplicacion_PC_Intermodular.ForgotPassword
                 this.Close();
             }
         }
+
+        private void close_button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
+
+    
 }
