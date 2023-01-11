@@ -46,5 +46,10 @@ namespace Aplicacion_PC_Intermodular
            ForgotPasswordWindow forgotPasswordWindow = new ForgotPasswordWindow();
             forgotPasswordWindow.ShowDialog();
         }
+
+        private void btn_register_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

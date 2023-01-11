@@ -26,4 +26,8 @@
     <Resource Include="recursos\user-icon.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Register\" />
+  </ItemGroup>
+
 </Project>
