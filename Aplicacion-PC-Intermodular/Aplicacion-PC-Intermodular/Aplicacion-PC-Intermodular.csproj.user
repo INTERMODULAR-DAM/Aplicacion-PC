@@ -7,15 +7,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ForgotPassword\ForgotPasswordWindow.xaml.cs">
+    <Compile Update="ForgotPassword\Views\ForgotPasswordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ForgotPassword\ForgotPasswordWindow.xaml">
+    <Page Update="ForgotPassword\Views\ForgotPasswordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Login\Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

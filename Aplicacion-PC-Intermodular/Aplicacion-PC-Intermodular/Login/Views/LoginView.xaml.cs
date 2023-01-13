@@ -1,5 +1,4 @@
 ﻿using Aplicacion_PC_Intermodular.ForgotPassword;
-using Aplicacion_PC_Intermodular.ForgotPassword.logicMail;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
@@ -9,9 +8,9 @@ namespace Aplicacion_PC_Intermodular
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginView : Window
     {
-        public MainWindow()
+        public LoginView()
         {
             InitializeComponent();
         }

@@ -25,11 +25,9 @@ C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermo
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.dll
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.pdb
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.csproj.AssemblyReference.cache
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular_MarkupCompile.cache
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular_MarkupCompile.lref
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.g.resources
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.AssemblyInfoInputs.cache
@@ -42,3 +40,5 @@ C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermo
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ref\Aplicacion-PC-Intermodular.dll
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ForgotPassword\ForgotPasswordWindow.g.cs
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ForgotPassword\ForgotPasswordWindow.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Login\Views\LoginView.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Login\Views\LoginView.baml
