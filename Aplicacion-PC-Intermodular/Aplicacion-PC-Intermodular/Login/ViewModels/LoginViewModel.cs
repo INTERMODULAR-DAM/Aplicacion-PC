@@ -14,35 +14,47 @@ namespace Aplicacion_PC_Intermodular.Login.ViewModels
     public class LoginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
+        private User _user;
+
+        public LoginViewModel()
+        {
+            _user = new User();
+        }
+
+        public User user
+        {
+            get
+            {
+                if (_user == null)
+                {
+                    _user = new User();
+                }
+                return _user;
+            }
+
+            set { _user = value;}
+        }
+
+        public String email
+        {
+            get { return user.email; }
+            set { user.email = value;
+                OnPropertyChanged(nameof(user.email));
+                }
+        }
+
+        public String password
+        {
+            get { return user.password; }
+            set { user.password = value;
+                OnPropertyChanged(nameof(user.password));
+                }
+        }
+
 
         protected virtual void OnPropertyChanged([CallerMemberName] String propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public LoginViewModel() 
-        {
-            email= string.Empty;
-            password= string.Empty;
-        }
-
-        private String _email;
-
-        public String email { 
-            get 
-            {
-                return _email;
-            }
-            set
-            {
-                _email = value;
-            }
-        }
-
-        private String _password;
-
-        public String password { get; set; }
-
-
+        }        
     }
 }

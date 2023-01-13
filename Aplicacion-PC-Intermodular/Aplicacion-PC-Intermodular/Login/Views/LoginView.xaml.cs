@@ -1,5 +1,7 @@
 ﻿using Aplicacion_PC_Intermodular.ForgotPassword;
+using Aplicacion_PC_Intermodular.Login.ViewModels;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
@@ -12,6 +14,8 @@ namespace Aplicacion_PC_Intermodular
     {
         public LoginView()
         {
+            LoginViewModel lvm = new LoginViewModel();
+            DataContext = lvm;
             InitializeComponent();
         }
 
@@ -49,6 +53,12 @@ namespace Aplicacion_PC_Intermodular
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).password = ((PasswordBox)sender).Password; }
         }
     }
 }

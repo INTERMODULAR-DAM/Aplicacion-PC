@@ -124,6 +124,7 @@
                                FontFamily="Calibri"                             
                                Margin="0,25,0,0"/>
                     <TextBox x:Name="txtUser"
+                             Text="{Binding Path=email}"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
@@ -167,6 +168,7 @@
                                FontFamily="Calibri"                             
                                Margin="0,15,0,0"/>
                     <PasswordBox x:Name="txtPass"
+                             PasswordChanged="PasswordBox_PasswordChanged"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
@@ -275,6 +277,8 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+                    <Label Content="{Binding Path=email}"/>
+                    <Label Content="{Binding Path=password}"></Label>
                 </StackPanel>
                 
             </Grid>
