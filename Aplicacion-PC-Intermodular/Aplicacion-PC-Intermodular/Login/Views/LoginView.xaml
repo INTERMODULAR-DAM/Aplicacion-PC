@@ -28,7 +28,7 @@
             <Border.Background>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
                     <GradientStop Color="#191" Offset="0.2"/>
-                    <GradientStop Color="#151" Offset="1.1"/>
+                    <GradientStop Color="#115511" Offset="1.1"/>
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -111,7 +111,7 @@
                     </Button>
                 </Grid>
                 <StackPanel Width="300" Grid.Row="1" Orientation="Vertical" Margin="0,40,0,0">
-                    <Image Source="/recursos/logo_app.png" Width="100"></Image>
+                    <Image Source="/recursos/logo.png" Width="175"></Image>
                    <TextBlock Text="¡Inicia sesión!"
                                Foreground="White"
                                FontSize="25"
