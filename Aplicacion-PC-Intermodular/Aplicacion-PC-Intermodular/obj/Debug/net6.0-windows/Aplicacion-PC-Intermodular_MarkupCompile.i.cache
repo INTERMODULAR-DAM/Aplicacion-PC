@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\App.xaml
-21351088558
+3-1825536656
 
-10386844719
-194-1797456590
-ForgotPassword\Views\ForgotPasswordWindow.xaml;Login\Views\LoginView.xaml;
+131072063415
+195-970654879
+CRUD\Views\CRUDView.xaml;ForgotPassword\Views\ForgotPasswordWindow.xaml;Login\Views\LoginView.xaml;
 
 False
 

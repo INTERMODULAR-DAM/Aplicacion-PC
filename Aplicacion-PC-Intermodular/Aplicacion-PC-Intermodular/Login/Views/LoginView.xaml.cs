@@ -1,5 +1,7 @@
-﻿using Aplicacion_PC_Intermodular.ForgotPassword;
-using Aplicacion_PC_Intermodular.Login.ViewModels;
+﻿using Aplicacion_PC_Intermodular.API;
+using Aplicacion_PC_Intermodular.CRUD;
+using Aplicacion_PC_Intermodular.ForgotPassword;
+using Aplicacion_PC_Intermodular.Login.Models;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -12,10 +14,15 @@ namespace Aplicacion_PC_Intermodular
     /// </summary>
     public partial class LoginView : Window
     {
+        public static User user;
+        public static LoginResponse loginResponse;
+        public static UserController userController;
+
         public LoginView()
         {
-            LoginViewModel lvm = new LoginViewModel();
-            DataContext = lvm;
+            user = new User();
+            loginResponse = new LoginResponse();
+            userController= new UserController();
             InitializeComponent();
         }
 
@@ -40,7 +47,11 @@ namespace Aplicacion_PC_Intermodular
         private void btnLogin_Click(object sender, RoutedEventArgs e)
 
         {
-           
+           if(checkFields()){
+                assignParameters();
+                checkInDB();
+
+            }
 
         }
 
@@ -55,10 +66,39 @@ namespace Aplicacion_PC_Intermodular
 
         }
 
-        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+
+        public bool checkFields()
         {
-            if (this.DataContext != null)
-            { ((dynamic)this.DataContext).password = ((PasswordBox)sender).Password; }
+            if (string.IsNullOrEmpty(tbPass.Password.Trim()) || string.IsNullOrEmpty(tbUser.Text.Trim()))
+            {
+                MessageBox.Show("Los dos campos deben estar rellenos para iniciar sesión", "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        public void assignParameters()
+        {
+            user.id = tbUser.Text;
+            user.password = tbPass.Password;
+        }
+
+
+        public void checkInDB()
+        {
+            loginResponse = userController.signIn(user);
+            if(loginResponse.status >=400 && loginResponse.status < 500)
+            {
+                MessageBox.Show(loginResponse.data, "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else
+            {
+                Application.Current.Properties["TOKEN"] = loginResponse.data;
+                this.Hide();
+                MainPageCRUD crud = new MainPageCRUD();
+                crud.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

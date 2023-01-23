@@ -9,17 +9,17 @@ namespace Aplicacion_PC_Intermodular.Login.Models
 {
      public class User
     {
-        private String _email;
+        private String _id;
 
-        public String email
+        public String id
         {
             get
             {
-                return _email;
+                return _id;
             }
             set
             {
-                _email = value;
+                _id = value;
                
             }
         }

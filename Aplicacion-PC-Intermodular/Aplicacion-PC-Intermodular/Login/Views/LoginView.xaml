@@ -14,7 +14,7 @@
         AllowsTransparency="True">
     <Border CornerRadius="18">
         <Border.Background>
-            <ImageBrush ImageSource="/recursos/background_login.jpg"></ImageBrush>
+            <ImageBrush ImageSource="/Resources/background_login.jpg"></ImageBrush>
         </Border.Background>
         <Border CornerRadius="8"
                 BorderThickness="4"
@@ -60,26 +60,9 @@
                             Cursor="Hand"
                             Grid.Column="1"
                             Click="minimize_button_Click"
+                            Style="{StaticResource btnTopBar}"
+                            Template="{StaticResource btnMarron}"
                             >
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#4a2908"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#5c330a"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="20" Height="20"
-                                        CornerRadius="6"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
                     </Button>
                     <Button x:Name="close_button"
                             Foreground="White"
@@ -88,43 +71,25 @@
                             Cursor="Hand"
                             Grid.Column="2"
                             Click="close_button_Click"
+                            Style="{StaticResource btnTopBar}"
+                            Template="{StaticResource btnMarron}"
                             >
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#4a2908"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#5c330a"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="20" Height="20"
-                                        CornerRadius="8"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
                     </Button>
                 </Grid>
-                <StackPanel Width="300" Grid.Row="1" Orientation="Vertical" Margin="0,40,0,0">
-                    <Image Source="/recursos/logo.png" Width="175"></Image>
+                <StackPanel Width="300" Grid.Row="1" Orientation="Vertical" Margin="0,20,0,0">
+                    <Image Source="/Resources/logo_appName.png" Width="175"></Image>
                    <TextBlock Text="¡Inicia sesión!"
                                Foreground="White"
-                               FontSize="25"
+                               FontSize="22"
                                FontFamily="Calibri"
                                HorizontalAlignment="Center"/>
-                    <TextBlock Text="Usuario"
+                    <TextBlock Text="Correo electrónico"
                                Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Calibri"                             
                                Margin="0,25,0,0"/>
-                    <TextBox x:Name="txtUser"
-                             Text="{Binding Path=email}"
+                    <TextBox x:Name="tbUser"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
@@ -138,7 +103,7 @@
                              Padding="20,0,0,0"
                              >
                         <TextBox.Background>
-                            <ImageBrush ImageSource="/recursos/user-icon.png"
+                            <ImageBrush ImageSource="/Resources/Icons/mail-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
                         </TextBox.Background>
@@ -166,9 +131,8 @@
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Calibri"                             
-                               Margin="0,15,0,0"/>
-                    <PasswordBox x:Name="txtPass"
-                             PasswordChanged="PasswordBox_PasswordChanged"
+                               Margin="0,30,0,0"/>
+                    <PasswordBox x:Name="tbPass"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
@@ -181,7 +145,7 @@
                              Margin="0,5,0,0"
                              Padding="20,0,0,0">
                         <PasswordBox.Background>
-                            <ImageBrush ImageSource="/recursos/key-icon.png"
+                            <ImageBrush ImageSource="/Resources/Icons/password-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
                         </PasswordBox.Background>
@@ -204,7 +168,7 @@
                             </Style>
                         </PasswordBox.Style>
                     </PasswordBox>
-                    <Grid Margin="0,20,0,0">
+                    <Grid Margin="0,40,0,0">
                         <Grid.Resources>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Transparent" />
@@ -238,7 +202,7 @@
                         Width="140"
                         HorizontalAlignment="Right"
                         Click="forgetPassword_Click"/>
-
+                        
                         <Button
                         x:Name="btn_register"
                         Height="20"
@@ -255,17 +219,8 @@
                             FontSize="12"
                             FontFamily="Calibri"
                             Cursor="Hand"                           
-                            Margin="0,20,0,0" Click="btnLogin_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#5c330a"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#4a2908"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                            Margin="0,30,0,0" Click="btnLogin_Click"
+                            Style="{StaticResource btnTopBar}">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border Width="150" Height="40"
@@ -277,8 +232,6 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Label Content="{Binding Path=email}"/>
-                    <Label Content="{Binding Path=password}"></Label>
                 </StackPanel>
                 
             </Grid>

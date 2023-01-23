@@ -1,0 +1,169 @@
+﻿<Window x:Class="Aplicacion_PC_Intermodular.CRUD.MainPageCRUD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD"
+        Height="600" Width="1080"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Window.Resources>
+        <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>
+        <Style x:Key="CRUDCell" TargetType="{x:Type DataGridCell}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static DataGrid.FocusBorderBrushKey}}"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="true"/>
+                        <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+                </MultiTrigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="#eff2f7" CornerRadius="30" MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image HorizontalAlignment="Left" Source="/Resources/logo_appWritten.png" Height="90" Width="200"/>
+                <Border Grid.Row="2" Background="#115511" CornerRadius="0,60,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                            <Image Source="/Resources/Icons/admin-icon.png"/>
+                            <TextBlock Text="Admin menu" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="26"  HorizontalAlignment="Center" FontFamily="Calibri"></TextBlock>
+                        </StackPanel>
+                        <Button Margin="0,50,0,0" Style="{StaticResource leftMenuButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/usersCRUD-icon.png"/>
+                                <TextBlock Text="Users"/>
+                            </StackPanel>
+                        </Button>
+                        <Separator Margin="20" Background="White" Height="0.5"/>
+                        <Button Style="{StaticResource leftMenuButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/posts-icon.png"/>
+                                <TextBlock Text="Routes"/>
+                            </StackPanel>
+                        </Button>
+                        <Separator Margin="20" Background="White" Height="0.5"/>
+                        <Button Style="{StaticResource leftMenuButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/comments-icon.png"/>
+                                <TextBlock Text="Comments"/>
+                            </StackPanel>
+                        </Button>
+                        <Separator Margin="20" Background="White" Height="0.5"/>
+
+                        <Button Margin="0,60,0,0" Style="{StaticResource leftMenuButton}" Click="close_button_Click" x:Name="logOutButton">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/logOut-icon.png"/>
+                                <TextBlock Text="Log Out" Foreground="Red" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="30, 20,20,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Width="300" Height="100"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <Button x:Name="minimize_button"
+                            Foreground="White"
+                            Content="-"
+                            FontSize="10"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="minimize_button_Click"
+                            Style="{StaticResource btnTopBar}"
+                            Template="{StaticResource btnMarron}"
+                            >
+                    </Button>
+                    <Button x:Name="close_button"
+                            Foreground="White"
+                            Content="X"
+                            FontSize="11"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="close_button_Click"
+                            Style="{StaticResource btnTopBar}"
+                            Template="{StaticResource btnMarron}"
+                            >
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="Users" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
+                <DataGrid RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridUsers" Grid.Row="5">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" IsReadOnly="True" CanUserResize="False" Width="*"/>
+                        <DataGridTextColumn Header="Email" IsReadOnly="True" CanUserResize="False" Width="150"/>
+                        <DataGridTextColumn Header="Nick" IsReadOnly="True" CanUserResize="False" Width="*"/>
+                        <DataGridTextColumn Header="Phone" IsReadOnly="True" CanUserResize="False" Width="*"/>
+                        <DataGridTextColumn Header="Created at" IsReadOnly="True" CanUserResize="False" Width="*"/>
+                        <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Button Style="{StaticResource modifyUserButton}">
+                                            <Image Source="/Resources/Icons"/>
+                                        </Button>
+                                        <Button Style="{StaticResource deleteUserButton}">
+                                            <Image Source="/Resources/Icons"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Style="{StaticResource addUser}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="18" Source="/Resources/Icons/addUser-icon.png" Stretch="None"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
