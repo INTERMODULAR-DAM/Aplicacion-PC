@@ -32,6 +32,7 @@ namespace Aplicacion_PC_Intermodular.API
                 HttpResponseMessage response = client.SendAsync(requestMessage).Result;
                 string apiResponse = response.Content.ReadAsStringAsync().Result;
                 json =  JsonSerializer.Deserialize<LoginResponse>(apiResponse);
+                Application.Current.Properties["TOKEN"] = json.data;
             }
             catch(Exception ex)
             {
@@ -39,6 +40,7 @@ namespace Aplicacion_PC_Intermodular.API
                 json.status = 400;
                 json.data = "Error al iniciar sesión";
                 MessageBox.Show(ex.Message);
+                /*response.ReasonPhrase.toString()*/
             }
             return json;
         }

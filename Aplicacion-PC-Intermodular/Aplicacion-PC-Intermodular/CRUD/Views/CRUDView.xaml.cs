@@ -77,6 +77,5 @@ namespace Aplicacion_PC_Intermodular.CRUD
             img.Source = bi;
             return img;
         }
-
     }
 }

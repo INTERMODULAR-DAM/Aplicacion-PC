@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Register\**" />
+    <EmbeddedResource Remove="Register\**" />
+    <None Remove="Register\**" />
+    <Page Remove="Register\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\background_forgotPassword.jpg" />
     <None Remove="Resources\background_login.jpg" />
     <None Remove="Resources\email-icon.png" />
@@ -45,12 +52,6 @@
     <Resource Include="Resources\logo_app.png" />
     <Resource Include="Resources\logo_appName.png" />
     <Resource Include="Resources\logo_appWritten.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Register\Models\" />
-    <Folder Include="Register\ViewModel\" />
-    <Folder Include="Register\Views\" />
   </ItemGroup>
 
   <ItemGroup>

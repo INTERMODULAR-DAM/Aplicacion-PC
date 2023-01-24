@@ -137,11 +137,6 @@
                 <TextBlock Text="Users" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
                 <DataGrid RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridUsers" Grid.Row="5">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" IsReadOnly="True" CanUserResize="False" Width="*"/>
-                        <DataGridTextColumn Header="Email" IsReadOnly="True" CanUserResize="False" Width="150"/>
-                        <DataGridTextColumn Header="Nick" IsReadOnly="True" CanUserResize="False" Width="*"/>
-                        <DataGridTextColumn Header="Phone" IsReadOnly="True" CanUserResize="False" Width="*"/>
-                        <DataGridTextColumn Header="Created at" IsReadOnly="True" CanUserResize="False" Width="*"/>
                         <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

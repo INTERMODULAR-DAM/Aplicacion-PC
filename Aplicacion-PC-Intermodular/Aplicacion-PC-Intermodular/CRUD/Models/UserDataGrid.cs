@@ -20,11 +20,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Models
         private String _nick;
         private String _phone;
 
-        public UserDataGrid()
-        {
-        }
-
-        public UserDataGrid(int index,string email, string name, string lastname, string nick, string pfp, string phone)
+        public UserDataGrid(int index,string email, string name, string lastname, string nick, string phone)
         {
             _index = index;
             _email = email;
