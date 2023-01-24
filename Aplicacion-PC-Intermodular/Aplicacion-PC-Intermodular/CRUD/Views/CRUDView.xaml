@@ -9,52 +9,13 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent">
-    <Window.Resources>
-        <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>
-        <Style x:Key="CRUDCell" TargetType="{x:Type DataGridCell}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type DataGridCell}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
-                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                </Trigger>
-                <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static DataGrid.FocusBorderBrushKey}}"/>
-                </Trigger>
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="IsSelected" Value="true"/>
-                        <Condition Property="Selector.IsSelectionActive" Value="false"/>
-                    </MultiTrigger.Conditions>
-                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
-                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
-                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
-                </MultiTrigger>
-                <Trigger Property="IsEnabled" Value="false">
-                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
-
     <Border Background="#eff2f7" CornerRadius="30" MouseDown="Border_MouseDown">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="225"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <!-- LEFT HAND MENU -->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
@@ -92,7 +53,7 @@
                         <Button Margin="0,60,0,0" Style="{StaticResource leftMenuButton}" Click="close_button_Click" x:Name="logOutButton">
                             <StackPanel Orientation="Horizontal">
                                 <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/logOut-icon.png"/>
-                                <TextBlock Text="Log Out" Foreground="Red" FontWeight="Bold"/>
+                                <TextBlock Text="Log Out" Foreground="White" FontWeight="Bold"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -109,7 +70,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Grid Width="300" Height="100"/>
+                <Grid Height="100"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
                     <Button x:Name="minimize_button"
                             Foreground="White"
@@ -140,12 +101,12 @@
                         <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        <Button Style="{StaticResource modifyUserButton}">
-                                            <Image Source="/Resources/Icons"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click">
+                                            <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
                                         </Button>
-                                        <Button Style="{StaticResource deleteUserButton}">
-                                            <Image Source="/Resources/Icons"/>
+                                        <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" Click="remove_btn_Click">
+                                            <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
                                         </Button>
                                     </StackPanel>
                                 </DataTemplate>

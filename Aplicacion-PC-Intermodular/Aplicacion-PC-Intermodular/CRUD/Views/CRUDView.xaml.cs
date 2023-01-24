@@ -32,8 +32,9 @@ namespace Aplicacion_PC_Intermodular.CRUD
         {
             userController= new UserController();
             InitializeComponent();
+            Application.Current.Properties["TOKEN"] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ0aW5lem1vcmlsbG9hbGVqYW5kcm9AZ21haWwuY29tIiwicm9sIjp0cnVlLCJpYXQiOjE2NzQ1NTYzMDMsImV4cCI6MTY3NDU4NTEwM30.R1FFJixKXb6Sc8Rv9cz7VZBR9xY8hFd8orTvr7ZbyEI";
             asignToDataGridView();
-
+            
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -51,16 +52,13 @@ namespace Aplicacion_PC_Intermodular.CRUD
 
         private void close_button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void asignToDataGridView()
         {
-            ObservableCollection<UserResponse> users = new ObservableCollection<UserResponse>();
             allUsers = userController.getAllUsers();
-            users.Add(allUsers.allUsers[0]);
-            MessageBox.Show(allUsers.allUsers[0]._id);
-            dataGridUsers.ItemsSource= users;
+            putDataOnDataGrid(allUsers);
 
         }
 
@@ -76,6 +74,27 @@ namespace Aplicacion_PC_Intermodular.CRUD
             Image img = new Image();
             img.Source = bi;
             return img;
+        }
+
+        public void putDataOnDataGrid(AllUsers allUsers)
+        {
+            List<UserDataGrid> users = new List<UserDataGrid>();
+            for(int i = 0; i < allUsers.allUsers.Length; i++)
+            {
+                users.Add(new UserDataGrid(i, allUsers.allUsers[i]._id, allUsers.allUsers[i].name, allUsers.allUsers[i].lastname, allUsers.allUsers[i].nick, allUsers.allUsers[i].phone_number.ToString()));
+            }
+            dataGridUsers.ItemsSource = users;
+        }
+
+        private void modify_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(((UserDataGrid) dataGridUsers.SelectedItem).Email);
+        }
+
+        private void remove_btn_Click(object sender, RoutedEventArgs e)
+        {
+            int index = dataGridUsers.SelectedIndex;
+            userController.deleteUser(allUsers.allUsers[index]);
         }
     }
 }

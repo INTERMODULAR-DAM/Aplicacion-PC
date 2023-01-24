@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\
 Aplicacion_PC_Intermodular
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\App.xaml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\App.xaml
 3-1825536656
 
-131072063415
-195586368020
+13-805195720
+195-970654879
 CRUD\Views\CRUDView.xaml;ForgotPassword\Views\ForgotPasswordWindow.xaml;Login\Views\LoginView.xaml;
 
-True
+False
 

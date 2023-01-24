@@ -15,13 +15,13 @@ namespace Aplicacion_PC_Intermodular
     public partial class LoginView : Window
     {
         public static User user;
-        public static LoginResponse loginResponse;
+        public static DefaultResponse loginResponse;
         public static UserController userController;
 
         public LoginView()
         {
             user = new User();
-            loginResponse = new LoginResponse();
+            loginResponse = new DefaultResponse();
             userController= new UserController();
             InitializeComponent();
         }
@@ -50,7 +50,6 @@ namespace Aplicacion_PC_Intermodular
            if(checkFields()){
                 assignParameters();
                 checkInDB();
-
             }
 
         }
@@ -93,7 +92,6 @@ namespace Aplicacion_PC_Intermodular
             }
             else
             {
-                Application.Current.Properties["TOKEN"] = loginResponse.data;
                 this.Hide();
                 MainPageCRUD crud = new MainPageCRUD();
                 crud.ShowDialog();

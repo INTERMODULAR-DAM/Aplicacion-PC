@@ -23,11 +23,13 @@
     <None Remove="Resources\Icons\addUser-icon.png" />
     <None Remove="Resources\Icons\admin-icon.png" />
     <None Remove="Resources\Icons\comments-icon.png" />
+    <None Remove="Resources\Icons\edit-icon.png" />
     <None Remove="Resources\Icons\forgotPassword-icon.png" />
     <None Remove="Resources\Icons\logOut-icon.png" />
     <None Remove="Resources\Icons\mail-icon.png" />
     <None Remove="Resources\Icons\password-icon.png" />
     <None Remove="Resources\Icons\posts-icon.png" />
+    <None Remove="Resources\Icons\remove-icon.png" />
     <None Remove="Resources\Icons\usersCRUD-icon.png" />
     <None Remove="Resources\key-icon.png" />
     <None Remove="Resources\logo.png" />
@@ -43,11 +45,13 @@
     <Resource Include="Resources\Icons\addUser-icon.png" />
     <Resource Include="Resources\Icons\admin-icon.png" />
     <Resource Include="Resources\Icons\comments-icon.png" />
+    <Resource Include="Resources\Icons\edit-icon.png" />
     <Resource Include="Resources\Icons\forgotPassword-icon.png" />
     <Resource Include="Resources\Icons\logOut-icon.png" />
     <Resource Include="Resources\Icons\mail-icon.png" />
     <Resource Include="Resources\Icons\password-icon.png" />
     <Resource Include="Resources\Icons\posts-icon.png" />
+    <Resource Include="Resources\Icons\remove-icon.png" />
     <Resource Include="Resources\Icons\usersCRUD-icon.png" />
     <Resource Include="Resources\logo_app.png" />
     <Resource Include="Resources\logo_appName.png" />

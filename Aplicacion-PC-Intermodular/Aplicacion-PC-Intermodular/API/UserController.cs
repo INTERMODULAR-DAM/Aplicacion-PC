@@ -21,9 +21,9 @@ namespace Aplicacion_PC_Intermodular.API
     {
         private static HttpClient client = new HttpClient();
 
-        public LoginResponse signIn(User user)
+        public DefaultResponse signIn(User user)
         {
-            LoginResponse json;
+            DefaultResponse json;
 
             try
             { 
@@ -31,16 +31,15 @@ namespace Aplicacion_PC_Intermodular.API
                 requestMessage.Content = new StringContent(JsonSerializer.Serialize<User>(user), Encoding.UTF8, "application/json");
                 HttpResponseMessage response = client.SendAsync(requestMessage).Result;
                 string apiResponse = response.Content.ReadAsStringAsync().Result;
-                json =  JsonSerializer.Deserialize<LoginResponse>(apiResponse);
+                json =  JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
                 Application.Current.Properties["TOKEN"] = json.data;
             }
             catch(Exception ex)
             {
-                json = new LoginResponse();
+                json = new DefaultResponse();
                 json.status = 400;
                 json.data = "Error al iniciar sesión";
                 MessageBox.Show(ex.Message);
-                /*response.ReasonPhrase.toString()*/
             }
             return json;
         }
@@ -66,6 +65,10 @@ namespace Aplicacion_PC_Intermodular.API
 
         }
 
+        public DefaultResponse deleteUser(UserResponse user)
+        {
+
+        }
 
 
 
