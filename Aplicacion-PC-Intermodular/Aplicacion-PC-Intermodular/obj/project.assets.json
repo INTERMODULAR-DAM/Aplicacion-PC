@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "MaterialIcons/1.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/MaterialIcons.dll": {}
-        },
-        "runtime": {
-          "lib/MaterialIcons.dll": {}
-        }
-      },
       "System.Net.Http.Json/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -94,18 +85,6 @@
     }
   },
   "libraries": {
-    "MaterialIcons/1.0.3": {
-      "sha512": "qV5ffWTm3TKhIZBBNDxFjkAS19YR2xXnPQd7l45T5KNcXVrTPQr2MCumV+xMNnMFoGqi8hnJD6hmauOXSHgIVQ==",
-      "type": "package",
-      "path": "materialicons/1.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MaterialIcons.dll",
-        "materialicons.1.0.3.nupkg.sha512",
-        "materialicons.nuspec"
-      ]
-    },
     "System.Net.Http.Json/7.0.0": {
       "sha512": "K74te5euBJLzosprZji9juSop5mLWRzlpSNqBgZBE7/2AiPbFtM7B5eDB/tnB1jjil3bNNeJYBNfIxobs6uXhQ==",
       "type": "package",
@@ -263,7 +242,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "MaterialIcons >= 1.0.3",
       "System.Net.Http.Json >= 7.0.0"
     ]
   },
@@ -273,11 +251,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+      "projectUniqueName": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
       "projectName": "Aplicacion-PC-Intermodular",
-      "projectPath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+      "projectPath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
       "packagesPath": "C:\\Users\\Alejandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\obj\\",
+      "outputPath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alejandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -306,10 +284,6 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
-          "MaterialIcons": {
-            "target": "Package",
-            "version": "[1.0.3, )"
-          },
           "System.Net.Http.Json": {
             "target": "Package",
             "version": "[7.0.0, )"
@@ -334,20 +308,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'MaterialIcons 1.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "MaterialIcons",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

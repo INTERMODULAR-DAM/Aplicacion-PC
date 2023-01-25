@@ -7,6 +7,7 @@
         Height="600" Width="1080"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
+        ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent">
     <Border Background="#eff2f7" CornerRadius="30" MouseDown="Border_MouseDown">

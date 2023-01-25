@@ -8,19 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "Aplicacion-PC-Intermodular/1.0.0": {
         "dependencies": {
-          "MaterialIcons": "1.0.3",
           "System.Net.Http.Json": "7.0.0"
         },
         "runtime": {
           "Aplicacion-PC-Intermodular.dll": {}
-        }
-      },
-      "MaterialIcons/1.0.3": {
-        "runtime": {
-          "lib/MaterialIcons.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
         }
       },
       "System.Net.Http.Json/7.0.0": {
@@ -73,13 +64,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "MaterialIcons/1.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qV5ffWTm3TKhIZBBNDxFjkAS19YR2xXnPQd7l45T5KNcXVrTPQr2MCumV+xMNnMFoGqi8hnJD6hmauOXSHgIVQ==",
-      "path": "materialicons/1.0.3",
-      "hashPath": "materialicons.1.0.3.nupkg.sha512"
     },
     "System.Net.Http.Json/7.0.0": {
       "type": "package",

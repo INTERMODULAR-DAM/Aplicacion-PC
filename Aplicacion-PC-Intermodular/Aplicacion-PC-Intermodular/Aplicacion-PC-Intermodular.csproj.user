@@ -10,12 +10,18 @@
     <Compile Update="CRUD\Views\CRUDView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CRUD\Views\UpdateUserView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ForgotPassword\Views\ForgotPasswordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CRUD\Views\CRUDView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\UpdateUserView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ForgotPassword\Views\ForgotPasswordWindow.xaml">

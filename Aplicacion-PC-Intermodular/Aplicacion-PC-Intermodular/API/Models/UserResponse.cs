@@ -26,5 +26,7 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public bool admin { get; set; }
         public string pfp_path { get; set; }
         public int phone_number { get; set; }
+        public string pfp { get; set; }
+
     }
 }

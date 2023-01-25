@@ -12,5 +12,4 @@ namespace Aplicacion_PC_Intermodular.Login.Models
         public int status { get; set; }
         public string data { get; set; }
     }
-
 }

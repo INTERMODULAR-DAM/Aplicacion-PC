@@ -1,6 +1,7 @@
 ﻿using Aplicacion_PC_Intermodular.API;
 using Aplicacion_PC_Intermodular.API.Models;
 using Aplicacion_PC_Intermodular.CRUD.Models;
+using Aplicacion_PC_Intermodular.CRUD.Views;
 using Aplicacion_PC_Intermodular.Login.Models;
 using System;
 using System.Collections.Generic;
@@ -32,8 +33,8 @@ namespace Aplicacion_PC_Intermodular.CRUD
         {
             userController= new UserController();
             InitializeComponent();
-            Application.Current.Properties["TOKEN"] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ0aW5lem1vcmlsbG9hbGVqYW5kcm9AZ21haWwuY29tIiwicm9sIjp0cnVlLCJpYXQiOjE2NzQ1NTYzMDMsImV4cCI6MTY3NDU4NTEwM30.R1FFJixKXb6Sc8Rv9cz7VZBR9xY8hFd8orTvr7ZbyEI";
-            asignToDataGridView();
+            Application.Current.Properties["TOKEN"] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ0aW5lem1vcmlsbG9hbGVqYW5kcm9AZ21haWwuY29tIiwicm9sIjp0cnVlLCJpYXQiOjE2NzQ2Njc5MTIsImV4cCI6MTY3NDY5NjcxMn0.5bL8Rj6dEY5kvXG7QXC9DBLE9qoLVeDi0g4EeyQ352E";
+            assignToDataGridView();
             
         }
 
@@ -55,25 +56,11 @@ namespace Aplicacion_PC_Intermodular.CRUD
             Application.Current.Shutdown();
         }
 
-        private void asignToDataGridView()
+        private void assignToDataGridView()
         {
             allUsers = userController.getAllUsers();
             putDataOnDataGrid(allUsers);
 
-        }
-
-        public static Image convertToImage(String pfp)
-        {
-            byte[] binaryData = Convert.FromBase64String(pfp);
-
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.StreamSource = new MemoryStream(binaryData);
-            bi.EndInit();
-
-            Image img = new Image();
-            img.Source = bi;
-            return img;
         }
 
         public void putDataOnDataGrid(AllUsers allUsers)
@@ -88,13 +75,28 @@ namespace Aplicacion_PC_Intermodular.CRUD
 
         private void modify_btn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((UserDataGrid) dataGridUsers.SelectedItem).Email);
+            int index = ((UserDataGrid)dataGridUsers.SelectedItem).Index;
+            UserResponse user = allUsers.allUsers[index];
+            UpdateUserView updateView = new UpdateUserView(user);
+            this.Hide();
+            updateView.ShowDialog();
+            assignToDataGridView();
+            this.Show();
         }
 
         private void remove_btn_Click(object sender, RoutedEventArgs e)
         {
             int index = dataGridUsers.SelectedIndex;
-            userController.deleteUser(allUsers.allUsers[index]);
+            DefaultResponse response = userController.deleteUser(allUsers.allUsers[index]);
+
+            if(response.status >= 400){
+                MessageBox.Show(response.data, "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else
+            {
+                MessageBox.Show("Usuario eliminado correctamente", "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                assignToDataGridView();
+            }
         }
     }
 }

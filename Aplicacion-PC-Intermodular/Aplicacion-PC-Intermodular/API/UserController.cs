@@ -67,7 +67,26 @@ namespace Aplicacion_PC_Intermodular.API
 
         public DefaultResponse deleteUser(UserResponse user)
         {
+            DefaultResponse json;
+            try
+            {
+                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("DELETE"), "http://localhost:8080/api/v1/users/delete");
+                requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
+                requestMessage.Content = new StringContent(JsonSerializer.Serialize<UserResponse>(user), Encoding.UTF8, "application/json");
+                HttpResponseMessage response = client.SendAsync(requestMessage).Result;
+                String apiResponse = response.Content.ReadAsStringAsync().Result;
+                MessageBox.Show(apiResponse);
+                json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                json = new DefaultResponse();
+                json.status = 400;
+                json.data = "Ha ocurrido un error borrando al usuario, inténtelo de nuevo";
+            }
 
+            return json;
         }
 
 
