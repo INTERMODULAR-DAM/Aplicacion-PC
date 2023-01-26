@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Xps.Serialization;
+using Aplicacion_PC_Intermodular.Utils;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
@@ -22,25 +24,16 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
     /// </summary>
     public partial class UpdateUserView : Window
     {
-        private UserResponse user;
+        public UserResponse user;
         public UpdateUserView(UserResponse user)
         {
             InitializeComponent();
             this.user = user;
-            pfp.Source = convertToImage(user.pfp_path);
+            DataContext = this.user;
+            pfp.Source = ImageAndBase64.convertToImage(user.pfp_path);
         }
 
-        public static BitmapImage convertToImage(String pfp)
-        {
-            byte[] binaryData = Convert.FromBase64String(pfp);
-
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.StreamSource = new MemoryStream(binaryData);
-            bi.EndInit();
-
-            return bi;
-        }
+        
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -62,20 +55,28 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
 
         private void remove_btn_Click(object sender, RoutedEventArgs e)
         {
-            Image img = new Image();
-            user.pfp_path = img.FindResource("/Resources/defaultUser.jpg").ToString();
+            string path = "/Resources/defaultUser.jpg";
+            pfp.Source = new BitmapImage(new Uri(path));
+            user.pfp = ImageAndBase64.convertToBase64(path);
         }
 
         private void modify_btn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            dlg.Filter = "Image files (*.jpg)|*.jpg|All Files (*.*)|*.*";
+            openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                user.pfp_path =openFileDialog.FileName;
-                user.pfp = Convert.ToBase64String(openFileDialog.OpenFile());
+                user.pfp_path = openFileDialog.SafeFileName;
+                user.pfp = ImageAndBase64.convertToBase64(openFileDialog.FileName);
+                MessageBox.Show("Photo successfully updated!", "WikiTrail communicates...", MessageBoxButton.OK, MessageBoxImage.Information);
+                pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
                  
         }
     }
+
+
+
+
+
 }

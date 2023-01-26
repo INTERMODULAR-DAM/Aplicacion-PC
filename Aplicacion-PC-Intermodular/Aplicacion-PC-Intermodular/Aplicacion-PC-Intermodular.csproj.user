@@ -16,6 +16,9 @@
     <Compile Update="ForgotPassword\Views\ForgotPasswordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\TextBoxPlaceholder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CRUD\Views\CRUDView.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Login\Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\TextBoxPlaceholder.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

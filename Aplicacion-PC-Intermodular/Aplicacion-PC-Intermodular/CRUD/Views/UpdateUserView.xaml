@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD.Views"
+        xmlns:uc="clr-namespace:Aplicacion_PC_Intermodular.UserControls"
         mc:Ignorable="d"
         Title="UpdateUserView" Height="600" Width="1080"
         WindowStyle="None"
@@ -83,7 +84,17 @@
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Vertical" Grid.Column="1">
-                    
+                    <uc:TextBoxPlaceholder  Placeholder="me cago en mis muertos" Margin="20"/>
+                    <TextBlock Text="Name" />
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
                 </StackPanel>
             </Grid>
         </Grid>
