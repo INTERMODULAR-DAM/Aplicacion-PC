@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="CRUD\Views\AddUserPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CRUD\Views\CRUDView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,6 +24,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="CRUD\Views\AddUserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="CRUD\Views\CRUDView.xaml">
       <SubType>Designer</SubType>
     </Page>

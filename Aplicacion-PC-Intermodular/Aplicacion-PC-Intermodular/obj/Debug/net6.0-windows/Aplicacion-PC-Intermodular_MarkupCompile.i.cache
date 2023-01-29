@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\App.xaml
-5-1107160274
+61138965723
 
-16933370101
+18609352599
 194214314972
-CRUD\Views\CRUDView.xaml;CRUD\Views\UpdateUserView.xaml;ForgotPassword\Views\ForgotPasswordWindow.xaml;Login\Views\LoginView.xaml;UserControls\TextBoxPlaceholder.xaml;
+CRUD\Views\AddUserPage.xaml;CRUD\Views\CRUDView.xaml;CRUD\Views\UpdateUserView.xaml;ForgotPassword\Views\ForgotPasswordWindow.xaml;Login\Views\LoginView.xaml;UserControls\TextBoxPlaceholder.xaml;
 
 True
 

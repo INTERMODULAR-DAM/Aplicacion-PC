@@ -18,6 +18,7 @@
   <ItemGroup>
     <None Remove="Resources\background_forgotPassword.jpg" />
     <None Remove="Resources\background_login.jpg" />
+    <None Remove="Resources\default.jpeg" />
     <None Remove="Resources\email-icon.png" />
     <None Remove="Resources\Icons\add-icon.png" />
     <None Remove="Resources\Icons\addUser-icon.png" />
@@ -42,6 +43,7 @@
   <ItemGroup>
     <Resource Include="Resources\background_forgotPassword.jpg" />
     <Resource Include="Resources\background_login.jpg" />
+    <Resource Include="Resources\default.jpeg" />
     <Resource Include="Resources\Icons\addUser-icon.png" />
     <Resource Include="Resources\Icons\admin-icon.png" />
     <Resource Include="Resources\Icons\comments-icon.png" />

@@ -53,7 +53,6 @@ namespace Aplicacion_PC_Intermodular.API
                 requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
                 HttpResponseMessage response = client.SendAsync(requestMessage).Result;
                 String apiResponse = response.Content.ReadAsStringAsync().Result;
-
                 users = JsonSerializer.Deserialize<AllUsers>(apiResponse);
 
             }catch(Exception ex)
@@ -70,12 +69,11 @@ namespace Aplicacion_PC_Intermodular.API
             DefaultResponse json;
             try
             {
-                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("DELETE"), "http://localhost:8080/api/v1/users/delete");
+                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("DELETE"), "http://localhost:8080/api/v1/users/");
                 requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
                 requestMessage.Content = new StringContent(JsonSerializer.Serialize<UserResponse>(user), Encoding.UTF8, "application/json");
                 HttpResponseMessage response = client.SendAsync(requestMessage).Result;
                 String apiResponse = response.Content.ReadAsStringAsync().Result;
-                MessageBox.Show(apiResponse);
                 json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
             }
             catch (Exception ex)
@@ -89,7 +87,28 @@ namespace Aplicacion_PC_Intermodular.API
             return json;
         }
 
+        public DefaultResponse updateUser(UserResponse user)
+        {
+            DefaultResponse json;
+            try
+            {
+                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("PATCH"), "http://localhost:8080/api/v1/users/");
+                requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
+                requestMessage.Content = new StringContent(JsonSerializer.Serialize<UserResponse>(user), Encoding.UTF8, "application/json");
+                HttpResponseMessage response = client.SendAsync(requestMessage).Result;
+                String apiResponse = response.Content.ReadAsStringAsync().Result;
+                json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
 
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                json = new DefaultResponse();
+                json.status = 500;
+                json.data = "An internal error has ocurred updating the user, please try again";
+            }
+
+            return json;
+        }
 
 
         

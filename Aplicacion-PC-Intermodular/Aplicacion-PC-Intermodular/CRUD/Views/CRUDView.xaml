@@ -115,7 +115,7 @@
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Style="{StaticResource addUser}">
+                <Button Style="{StaticResource addUser}" Click="addUserbtn_Click" x:Name="addUserbtn">
                     <StackPanel Orientation="Horizontal">
                         <Image Margin="18" Source="/Resources/Icons/addUser-icon.png" Stretch="None"/>
                     </StackPanel>

@@ -33,7 +33,7 @@ namespace Aplicacion_PC_Intermodular.CRUD
         {
             userController= new UserController();
             InitializeComponent();
-            Application.Current.Properties["TOKEN"] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ0aW5lem1vcmlsbG9hbGVqYW5kcm9AZ21haWwuY29tIiwicm9sIjp0cnVlLCJpYXQiOjE2NzQ3MTYzNDgsImV4cCI6MTY3NDc0NTE0OH0.tpWc29Q9-KuXLlkGU1ZGux0IuUQiqlgHFDydKW1A5cw";
+            Application.Current.Properties["TOKEN"] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2M2QyZjkzZWI3ZjA5MWY2ZTliZTk4YTYiLCJyb2wiOnRydWUsImlhdCI6MTY3NTAwNDgwMSwiZXhwIjoxNjc1MDMzNjAxfQ.zB0CHDXYekXDDkIUksijVoWk0HhwlNjixZkzBHRMv6U";
             assignToDataGridView();
             
         }
@@ -68,7 +68,7 @@ namespace Aplicacion_PC_Intermodular.CRUD
             List<UserDataGrid> users = new List<UserDataGrid>();
             for(int i = 0; i < allUsers.allUsers.Length; i++)
             {
-                users.Add(new UserDataGrid(i, allUsers.allUsers[i]._id, allUsers.allUsers[i].name, allUsers.allUsers[i].lastname, allUsers.allUsers[i].nick, allUsers.allUsers[i].phone_number.ToString()));
+                users.Add(new UserDataGrid(i, allUsers.allUsers[i].email, allUsers.allUsers[i].name, allUsers.allUsers[i].lastname, allUsers.allUsers[i].nick, allUsers.allUsers[i].phone_number.ToString()));
             }
             dataGridUsers.ItemsSource = users;
         }
@@ -94,9 +94,17 @@ namespace Aplicacion_PC_Intermodular.CRUD
             }
             else
             {
-                MessageBox.Show("Usuario eliminado correctamente", "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Usuario eliminado correctamente", "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Information);
                 assignToDataGridView();
             }
+        }
+
+        private void addUserbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddUserPage addUser = new AddUserPage();
+            this.Hide();
+            addUser.ShowDialog();
+            this.Show();
         }
     }
 }

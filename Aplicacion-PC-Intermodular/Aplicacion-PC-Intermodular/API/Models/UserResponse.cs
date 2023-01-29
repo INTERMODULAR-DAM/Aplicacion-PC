@@ -19,13 +19,14 @@ namespace Aplicacion_PC_Intermodular.API.Models
     public class UserResponse
     {
         public string _id { get; set; }
+        public string email { get; set; }
         public string name { get; set; }
         public string lastname { get; set; }
         public DateTime date { get; set; }
         public string nick { get; set; }
-        public bool admin { get; set; }
         public string pfp_path { get; set; }
         public int phone_number { get; set; }
+        public string web { get; set; }
         public string pfp { get; set; }
 
     }

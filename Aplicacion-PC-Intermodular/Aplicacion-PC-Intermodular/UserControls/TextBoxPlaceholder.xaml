@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.UserControls"
              mc:Ignorable="d">
     <Grid>
-        <TextBox  Width="250"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="SearchTermTextBox" Margin="5"/>
+        <TextBox FontSize="18" FontFamily="Calibri"  Width="250"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="SearchTermTextBox" Margin="5"/>
         <TextBlock IsHitTestVisible="False" Text="{Binding Path=Placeholder}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">

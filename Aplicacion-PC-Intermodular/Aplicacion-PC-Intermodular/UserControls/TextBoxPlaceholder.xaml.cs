@@ -27,5 +27,8 @@ namespace Aplicacion_PC_Intermodular.UserControls
         }
 
         public String Placeholder { get; set; }
+
+        public static DependencyProperty ProtocolNumberProperty =
+       DependencyProperty.Register("Placeholder", typeof(string), typeof(TextBoxPlaceholder));
     }
 }
