@@ -60,7 +60,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             string path = "~/../../../../Resources/default.jpeg";
             Uri uri = new Uri(path, UriKind.Relative);
             pfp.Source = new BitmapImage(uri);
-            user.pfp = ImageAndBase64.convertToBase64(uri);
+            user.pfp = ImageUtils.convertToBase64(uri);
             user.pfp_path = "default.jpeg";
         }
 
@@ -72,7 +72,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 user.pfp_path = openFileDialog.SafeFileName;
                 Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
-                user.pfp = ImageAndBase64.convertToBase64(uri);
+                user.pfp = ImageUtils.convertToBase64(uri);
                 MessageBox.Show("Photo successfully updated!", "WikiTrail communicates you...", MessageBoxButton.OK, MessageBoxImage.Information);
                 pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }      

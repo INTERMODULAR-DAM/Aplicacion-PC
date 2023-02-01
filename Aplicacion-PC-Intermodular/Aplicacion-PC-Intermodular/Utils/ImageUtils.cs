@@ -9,8 +9,9 @@ using System.Windows.Media.Imaging;
 
 namespace Aplicacion_PC_Intermodular.Utils
 {
-    class ImageAndBase64
+    class ImageUtils
     {
+
         public static BitmapImage convertToImage(String pfp)
         {
             byte[] binaryData = Convert.FromBase64String(pfp);

@@ -28,6 +28,14 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             user = new UserResponse();
         }
 
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
         private void minimize_button_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -58,9 +66,6 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
 
         }
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+        
     }
 }

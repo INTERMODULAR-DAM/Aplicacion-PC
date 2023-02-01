@@ -33,7 +33,7 @@ namespace Aplicacion_PC_Intermodular.CRUD
         {
             userController= new UserController();
             InitializeComponent();
-            Application.Current.Properties["TOKEN"] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2M2QyZjkzZWI3ZjA5MWY2ZTliZTk4YTYiLCJyb2wiOnRydWUsImlhdCI6MTY3NTAwNDgwMSwiZXhwIjoxNjc1MDMzNjAxfQ.zB0CHDXYekXDDkIUksijVoWk0HhwlNjixZkzBHRMv6U";
+            Application.Current.Properties["TOKEN"] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2M2Q2Yjk2YjU0ODI0ZmI0ZWJlYzA1MjEiLCJyb2wiOnRydWUsImlhdCI6MTY3NTEwNjA2NywiZXhwIjoxNjc1MTM0ODY3fQ.iJt0wlHnJdxqxnQCT1nuT1L8Zgs2zkMqDDcEiE0Ijp4";
             assignToDataGridView();
             
         }
