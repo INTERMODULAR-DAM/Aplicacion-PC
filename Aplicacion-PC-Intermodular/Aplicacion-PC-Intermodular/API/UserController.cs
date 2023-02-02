@@ -110,7 +110,13 @@ namespace Aplicacion_PC_Intermodular.API
             return json;
         }
 
+        public DefaultResponse createUser(UserResponse user)
+        {
+            DefaultResponse json;
+            json = new DefaultResponse();
 
+            return json;
+        }
         
 
     }   

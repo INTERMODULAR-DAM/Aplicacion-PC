@@ -29,21 +29,21 @@
                             <Image Source="/Resources/Icons/admin-icon.png"/>
                             <TextBlock Text="Admin menu" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="26"  HorizontalAlignment="Center" FontFamily="Calibri"></TextBlock>
                         </StackPanel>
-                        <Button Margin="0,50,0,0" Style="{StaticResource leftMenuButton}">
+                        <Button Margin="0,50,0,0" Style="{StaticResource leftMenuButton}" x:Name="usersBtn" Click="usersBtn_Click">
                             <StackPanel Orientation="Horizontal">
                                 <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/usersCRUD-icon.png"/>
                                 <TextBlock Text="Users"/>
                             </StackPanel>
                         </Button>
                         <Separator Margin="20" Background="White" Height="0.5"/>
-                        <Button Style="{StaticResource leftMenuButton}">
+                        <Button Style="{StaticResource leftMenuButton}" x:Name="routesBtn" Click="routesBtn_Click">
                             <StackPanel Orientation="Horizontal">
                                 <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/posts-icon.png"/>
                                 <TextBlock Text="Routes"/>
                             </StackPanel>
                         </Button>
                         <Separator Margin="20" Background="White" Height="0.5"/>
-                        <Button Style="{StaticResource leftMenuButton}">
+                        <Button Style="{StaticResource leftMenuButton}" x:Name="commentsBtn" Click="commentsBtn_Click" >
                             <StackPanel Orientation="Horizontal">
                                 <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/comments-icon.png"/>
                                 <TextBlock Text="Comments"/>
@@ -51,7 +51,7 @@
                         </Button>
                         <Separator Margin="20" Background="White" Height="0.5"/>
 
-                        <Button Margin="0,60,0,0" Style="{StaticResource leftMenuButton}" Click="close_button_Click" x:Name="logOutButton">
+                        <Button Margin="0,60,0,0" Style="{StaticResource leftMenuButton}" Click="logOutButton_Click" x:Name="logOutButton">
                             <StackPanel Orientation="Horizontal">
                                 <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/logOut-icon.png"/>
                                 <TextBlock Text="Log Out" Foreground="White" FontWeight="Bold"/>
@@ -60,67 +60,29 @@
                     </StackPanel>
                 </Border>
             </Grid>
-
-            <Grid Grid.Column="1" Margin="30, 20,20,20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <Grid Height="100"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-                    <Button x:Name="minimize_button"
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Margin="20">
+                <Button x:Name="minimize_button"
                             Foreground="White"
                             Content="-"
                             FontSize="10"
                             Cursor="Hand"
-                            Grid.Column="1"
                             Click="minimize_button_Click"
                             Style="{StaticResource btnTopBar}"
                             Template="{StaticResource btnMarron}"
                             >
-                    </Button>
-                    <Button x:Name="close_button"
+                </Button>
+                <Button x:Name="close_button"
                             Foreground="White"
                             Content="X"
                             FontSize="11"
                             Cursor="Hand"
-                            Grid.Column="2"
                             Click="close_button_Click"
                             Style="{StaticResource btnTopBar}"
                             Template="{StaticResource btnMarron}"
                             >
-                    </Button>
-                </StackPanel>
-                <TextBlock Text="Users" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
-                <DataGrid RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridUsers" Grid.Row="5">
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click">
-                                            <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
-                                        </Button>
-                                        <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" Click="remove_btn_Click">
-                                            <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
-                                        </Button>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-                <Button Style="{StaticResource addUser}" Click="addUserbtn_Click" x:Name="addUserbtn">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Margin="18" Source="/Resources/Icons/addUser-icon.png" Stretch="None"/>
-                    </StackPanel>
                 </Button>
-            </Grid>
+            </StackPanel>
+            <Frame x:Name="mainContent"  Grid.Column="1" Source="/CRUD/Views/UsersDataGrid.xaml" NavigationUIVisibility="Hidden"/>
         </Grid>
     </Border>
 </Window>

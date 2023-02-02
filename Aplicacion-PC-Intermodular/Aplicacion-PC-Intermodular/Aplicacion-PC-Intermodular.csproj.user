@@ -13,7 +13,10 @@
     <Compile Update="CRUD\Views\CRUDView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRUD\Views\UpdateUserView.xaml.cs">
+    <Compile Update="CRUD\Views\UpdateUserPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRUD\Views\UsersDataGrid.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ForgotPassword\Views\ForgotPasswordWindow.xaml.cs">
@@ -30,7 +33,10 @@
     <Page Update="CRUD\Views\CRUDView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRUD\Views\UpdateUserView.xaml">
+    <Page Update="CRUD\Views\UpdateUserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\UsersDataGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ForgotPassword\Views\ForgotPasswordWindow.xaml">

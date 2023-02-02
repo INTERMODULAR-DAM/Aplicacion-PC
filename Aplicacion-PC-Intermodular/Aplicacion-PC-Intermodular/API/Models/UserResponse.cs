@@ -18,6 +18,12 @@ namespace Aplicacion_PC_Intermodular.API.Models
 
     public class UserResponse
     {
+        public UserResponse() 
+        {
+            web = string.Empty;
+            admin = false;
+        }
+
         public string _id { get; set; }
         public string email { get; set; }
         public string name { get; set; }
@@ -28,6 +34,7 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public int phone_number { get; set; }
         public string web { get; set; }
         public string pfp { get; set; }
+        public Boolean admin { get; set; }
 
     }
 }

@@ -5,7 +5,7 @@ using Aplicacion_PC_Intermodular.Login.Models;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Navigation;
+using Aplicacion_PC_Intermodular.Utils;
 
 namespace Aplicacion_PC_Intermodular
 {
@@ -60,13 +60,7 @@ namespace Aplicacion_PC_Intermodular
             forgotPasswordWindow.ShowDialog();
         }
 
-        private void btn_register_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        public bool checkFields()
+        private bool checkFields()
         {
             if (string.IsNullOrEmpty(tbPass.Password.Trim()) || string.IsNullOrEmpty(tbUser.Text.Trim()))
             {
@@ -76,10 +70,16 @@ namespace Aplicacion_PC_Intermodular
             return true;
         }
 
-        public void assignParameters()
+        private void assignParameters()
         {
             user.id = tbUser.Text;
             user.password = tbPass.Password;
+        }
+
+        private void cleanTextFields()
+        {
+            tbUser.Text = "";
+            tbPass.Password = "";
         }
 
 
@@ -93,9 +93,10 @@ namespace Aplicacion_PC_Intermodular
             else
             {
                 this.Hide();
-                MainPageCRUD crud = new MainPageCRUD();
-                crud.ShowDialog();
+                cleanTextFields();
+                new MainPageCRUD().ShowDialog();
                 this.Show();
+                
             }
         }
     }

@@ -210,8 +210,7 @@
                         Foreground="White"
                         Background="Transparent"
                         Width="140"
-                        HorizontalAlignment="Left"
-                        Click="btn_register_Click"/>
+                        HorizontalAlignment="Left"/>
                     </Grid>
                     <Button x:Name="btn_login"                          
                             Content="ENTRAR"

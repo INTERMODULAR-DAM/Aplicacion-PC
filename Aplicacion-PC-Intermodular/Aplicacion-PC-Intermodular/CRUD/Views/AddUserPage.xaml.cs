@@ -1,4 +1,6 @@
-﻿using Aplicacion_PC_Intermodular.API.Models;
+﻿using Aplicacion_PC_Intermodular.API;
+using Aplicacion_PC_Intermodular.API.Models;
+using Aplicacion_PC_Intermodular.Login.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,48 +13,82 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
     /// <summary>
-    /// Interaction logic for AddUserPage.xaml
+    /// Interaction logic for AddUser.xaml
     /// </summary>
-    public partial class AddUserPage : Window
-    {
-        UserResponse user;
+    public partial class AddUser : Page
 
-        public AddUserPage()
+    {
+        private UserController userController;
+        private UserResponse user;
+
+        public AddUser()
         {
             InitializeComponent();
             user = new UserResponse();
+            userController = new UserController();
         }
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        private void createUserbtn_Click(object sender, RoutedEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if (checkFields())
             {
-                DragMove();
+                assignFields();
+                userController.createUser(user);
+
+            }
+            else
+            {
+                MessageBox.Show("dsfsdfsdf");
             }
         }
 
-        private void minimize_button_Click(object sender, RoutedEventArgs e)
+        private Boolean checkFields()
         {
-            WindowState = WindowState.Minimized;
+            if (String.IsNullOrEmpty(tb_name.SearchTermTextBox.Text) ||
+                String.IsNullOrEmpty(tb_lastname.SearchTermTextBox.Text) ||
+                String.IsNullOrEmpty(tb_email.SearchTermTextBox.Text) ||
+                String.IsNullOrEmpty(tb_nick.SearchTermTextBox.Text) ||
+                String.IsNullOrEmpty(tb_phone.SearchTermTextBox.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
-        private void close_button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
 
-        private void logOutButton_Click(object sender, RoutedEventArgs e)
+        private void assignFields()
         {
 
-        }
-
-        private void updateUserbtn_Click(object sender, RoutedEventArgs e)
-        {
+            try
+            {
+                user.name = tb_name.SearchTermTextBox.Text;
+                user.lastname = tb_lastname.SearchTermTextBox.Text;
+                user.email = tb_email.SearchTermTextBox.Text;
+                user.phone_number = int.Parse(tb_phone.SearchTermTextBox.Text);
+                user.admin = (bool)isAdmin.IsChecked;
+                user.nick = tb_nick.SearchTermTextBox.Text;
+                if (string.IsNullOrEmpty(tb_web.SearchTermTextBox.Text))
+                {
+                    user.web = string.Empty;
+                }
+                else
+                {
+                    user.web = tb_web.SearchTermTextBox.Text;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error" + ex);
+            }
 
         }
 
@@ -65,7 +101,5 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         {
 
         }
-
-        
     }
 }
