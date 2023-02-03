@@ -40,7 +40,6 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 assignFields();
                 userController.createUser(user);
-
             }
             else
             {
@@ -94,7 +93,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
 
         private void modify_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void remove_btn_Click(object sender, RoutedEventArgs e)

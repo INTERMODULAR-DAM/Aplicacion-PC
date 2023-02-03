@@ -1,8 +1,10 @@
 ﻿using Aplicacion_PC_Intermodular.API.Models;
+using Aplicacion_PC_Intermodular.API;
+using Aplicacion_PC_Intermodular.Login.Models;
+using Aplicacion_PC_Intermodular.Utils;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,46 +15,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Xps.Serialization;
-using Aplicacion_PC_Intermodular.Utils;
-using Aplicacion_PC_Intermodular.API;
-using Aplicacion_PC_Intermodular.Login.Models;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
     /// <summary>
-    /// Lógica de interacción para UpdateUserView.xaml
+    /// Lógica de interacción para UpdateUserPage.xaml
     /// </summary>
-    public partial class UpdateUserView : Window
+    public partial class UpdateUserPage : Page
     {
         public UserResponse user;
         private UserController userController;
 
-        public UpdateUserView(UserResponse user)
+        public UpdateUserPage()
         {
             userController = new UserController();
             InitializeComponent();
-            this.user = user;
-            pfp.Source = ImageUtils.convertToImage(user.pfp_path);
-        }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
-        }
-
-        private void logOutButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void usersMenubtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            this.user = NavigationService.Source.
+            
         }
 
         private void remove_btn_Click(object sender, RoutedEventArgs e)
@@ -66,7 +47,9 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
 
         private void modify_btn_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            pfp.Source = ImageUtils.convertToImage(user.pfp_path);
+
+            /*OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
@@ -75,18 +58,18 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                 user.pfp = ImageUtils.convertToBase64(uri);
                 MessageBox.Show("Photo successfully updated!", "WikiTrail communicates you...", MessageBoxButton.OK, MessageBoxImage.Information);
                 pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-            }      
+            }*/
         }
 
         private void updateUserbtn_Click(object sender, RoutedEventArgs e)
         {
             assingData();
             DefaultResponse response = userController.updateUser(user);
-            if(response.status < 300)
+            if (response.status < 300)
             {
                 MessageBox.Show("User updated correctly!", "WikiTrail communicates you...", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if(response.status < 500)
+            else if (response.status < 500)
             {
                 MessageBox.Show("Maybe some fields are in use, check out the email, nick or phone field.", "WikiTrail communicates you...", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -124,21 +107,20 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                 try
                 {
                     user.phone_number = int.Parse(tb_phone.SearchTermTextBox.Text.ToString());
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("The number format isn't good, so we keep the old one.");
                 }
             }
         }
 
-        private void close_button_Click(object sender, RoutedEventArgs e)
+        void NavigationService_LoadCompleted(object sender, NavigationEventArgs e)
         {
-            this.Close();
-        }
-
-        private void minimize_button_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
+            UserResponse user = (UserResponse)e.ExtraData;
+            MessageBox.Show(user.name);
+            this.user = user;
+            
         }
     }
 }

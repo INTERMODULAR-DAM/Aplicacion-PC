@@ -94,9 +94,15 @@ namespace Aplicacion_PC_Intermodular
             {
                 this.Hide();
                 cleanTextFields();
-                new MainPageCRUD().ShowDialog();
-                this.Show();
-                
+                CRUDView crud = new CRUDView();
+                bool response = (bool) crud.ShowDialogRespuesta();
+                if(response) {
+                    Application.Current.Shutdown();
+                }
+                else
+                {
+                    this.Show();
+                }
             }
         }
     }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,11 +27,11 @@ namespace Aplicacion_PC_Intermodular.CRUD
     /// <summary>
     /// Interaction logic for MainPageCRUD.xaml
     /// </summary>
-    public partial class MainPageCRUD : Window
+    public partial class CRUDView : Window
     {
-        
+        bool response;
 
-        public MainPageCRUD()
+        public CRUDView()
         {
             InitializeComponent();            
         }
@@ -48,14 +49,22 @@ namespace Aplicacion_PC_Intermodular.CRUD
             WindowState = WindowState.Minimized;
         }
 
+        public bool ShowDialogRespuesta()
+        {
+            this.ShowDialog();
+            return response;
+        }
+
         private void close_button_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            response = true;
+            Close();
         }
 
         private void logOutButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            response = false;
+            Close();
         }
 
         private void routesBtn_Click(object sender, RoutedEventArgs e)

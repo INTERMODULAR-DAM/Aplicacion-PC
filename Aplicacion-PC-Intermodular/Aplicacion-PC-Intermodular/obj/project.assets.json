@@ -392,11 +392,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+      "projectUniqueName": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
       "projectName": "Aplicacion-PC-Intermodular",
-      "projectPath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+      "projectPath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
       "packagesPath": "C:\\Users\\Alejandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\obj\\",
+      "outputPath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alejandro\\AppData\\Roaming\\NuGet\\NuGet.Config",

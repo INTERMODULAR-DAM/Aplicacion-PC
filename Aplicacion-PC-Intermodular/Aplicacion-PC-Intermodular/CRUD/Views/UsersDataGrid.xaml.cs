@@ -53,9 +53,8 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         private void modify_btn_Click(object sender, RoutedEventArgs e)
         {
             int index = ((UserDataGrid)dataGridUsers.SelectedItem).Index;
-            UserResponse user = allUsers.allUsers[index];
-            UpdateUserView updateView = new UpdateUserView(user);
-            assignToDataGridView();
+
+            NavigationService.Navigate(new Uri("/CRUD/Views/UpdateUserPage.xaml", UriKind.Relative), allUsers.allUsers[index]);
         }
 
         private void remove_btn_Click(object sender, RoutedEventArgs e)
