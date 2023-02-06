@@ -1,11 +1,13 @@
-﻿using Aplicacion_PC_Intermodular.API;
-using Aplicacion_PC_Intermodular.CRUD;
+﻿using Aplicacion_PC_Intermodular.CRUD;
 using Aplicacion_PC_Intermodular.ForgotPassword;
 using Aplicacion_PC_Intermodular.Login.Models;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Aplicacion_PC_Intermodular.Utils;
+using Aplicacion_PC_Intermodular.ErrorManager;
+using System;
+using Aplicacion_PC_Intermodular.API.Controllers;
 
 namespace Aplicacion_PC_Intermodular
 {
@@ -16,13 +18,11 @@ namespace Aplicacion_PC_Intermodular
     {
         public static User user;
         public static DefaultResponse loginResponse;
-        public static UserController userController;
 
         public LoginView()
         {
             user = new User();
             loginResponse = new DefaultResponse();
-            userController= new UserController();
             InitializeComponent();
         }
 
@@ -41,7 +41,11 @@ namespace Aplicacion_PC_Intermodular
 
         private void close_button_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+           bool? result =  new CustomErrorManager("Are you sure to exit?", MessageType.Confirmation, MessageButtons.YesNo).ShowDialog();
+
+            if (result.Value) {
+                Application.Current.Shutdown();
+            }
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -64,7 +68,7 @@ namespace Aplicacion_PC_Intermodular
         {
             if (string.IsNullOrEmpty(tbPass.Password.Trim()) || string.IsNullOrEmpty(tbUser.Text.Trim()))
             {
-                MessageBox.Show("Los dos campos deben estar rellenos para iniciar sesión", "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new CustomErrorManager("The user and password field must be filled.", MessageType.Warning, MessageButtons.Ok).ShowDialog();
                 return false;
             }
             return true;
@@ -83,26 +87,29 @@ namespace Aplicacion_PC_Intermodular
         }
 
 
-        public void checkInDB()
+        public async void checkInDB()
         {
-            loginResponse = userController.signIn(user);
+            loginResponse = await UserController.signIn(user);
             if(loginResponse.status >=400 && loginResponse.status < 500)
             {
-                MessageBox.Show(loginResponse.data, "WikiTrail le comunica...", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+               new CustomErrorManager("Wrong user or password, try it again", MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
             else
             {
+                CRUDView crud = new CRUDView();
                 this.Hide();
                 cleanTextFields();
-                CRUDView crud = new CRUDView();
-                bool response = (bool) crud.ShowDialogRespuesta();
-                if(response) {
+                bool response = (bool)crud.ShowDialogRespuesta();
+                if (response)
+                {
                     Application.Current.Shutdown();
                 }
                 else
                 {
+                    crud.Close();
                     this.Show();
-                }
+                    }
+    
             }
         }
     }

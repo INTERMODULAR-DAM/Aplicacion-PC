@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hPTcZ860eYSnDWbPTgGB+0+ipF097zxD06Ht/zBTmrbVfCKwBfXoK8Va7ucbIjTm7HtC6fPNMRbz8pUGNL6uQg==",
+  "dgSpecHash": "HHcnsVYuP0y+/UFSPXHWZ2nIhwd2ff4oetIdr4QAZKzqJpEHuGRUNNJQG5Cg1MbH7NCQF+9uLdpGdC1dQnM9aQ==",
   "success": true,
-  "projectFilePath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+  "projectFilePath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesignextensions\\3.3.0\\materialdesignextensions.3.3.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\system.net.http.json\\7.0.0\\system.net.http.json.7.0.0.nupkg.sha512",

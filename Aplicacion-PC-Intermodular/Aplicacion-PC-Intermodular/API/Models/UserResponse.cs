@@ -24,6 +24,21 @@ namespace Aplicacion_PC_Intermodular.API.Models
             admin = false;
         }
 
+        public UserResponse(UserResponse user)
+        {
+            _id = user._id;
+            email = user.email;
+            name = user.name;
+            lastname = user.lastname;
+            date= user.date;
+            nick = user.nick;
+            pfp_path = user.pfp_path;
+            phone_number = user.phone_number;
+            web = user.web;
+            pfp = user.pfp;
+            admin = user.admin;
+        }
+
         public string _id { get; set; }
         public string email { get; set; }
         public string name { get; set; }
@@ -36,5 +51,13 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public string pfp { get; set; }
         public Boolean admin { get; set; }
 
+        public bool EqualsObjectValues(UserResponse obj)
+        {
+            if (obj.name == name && obj.lastname == lastname && obj.nick == nick && obj.pfp_path == pfp_path && obj.phone_number == phone_number && web == obj.web && obj.email == email)
+                return true;
+            else
+                return false;
+        }
     }
+
 }

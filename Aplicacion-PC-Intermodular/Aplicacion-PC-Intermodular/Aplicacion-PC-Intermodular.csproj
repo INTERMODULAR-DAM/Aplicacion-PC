@@ -21,6 +21,7 @@
     <None Remove="Resources\default.jpeg" />
     <None Remove="Resources\email-icon.png" />
     <None Remove="Resources\Icons\add-icon.png" />
+    <None Remove="Resources\Icons\addRoute-icon.png" />
     <None Remove="Resources\Icons\addUser-icon.png" />
     <None Remove="Resources\Icons\admin-icon.png" />
     <None Remove="Resources\Icons\comments-icon.png" />
@@ -38,12 +39,14 @@
     <None Remove="Resources\logo_appName.png" />
     <None Remove="Resources\logo_appWritten.png" />
     <None Remove="Resources\user-icon.png" />
+    <None Remove="Resources\white_logo.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\background_forgotPassword.jpg" />
     <Resource Include="Resources\background_login.jpg" />
     <Resource Include="Resources\default.jpeg" />
+    <Resource Include="Resources\Icons\addRoute-icon.png" />
     <Resource Include="Resources\Icons\addUser-icon.png" />
     <Resource Include="Resources\Icons\admin-icon.png" />
     <Resource Include="Resources\Icons\comments-icon.png" />
@@ -58,10 +61,11 @@
     <Resource Include="Resources\logo_app.png" />
     <Resource Include="Resources\logo_appName.png" />
     <Resource Include="Resources\logo_appWritten.png" />
+    <Resource Include="Resources\white_logo.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MaterialDesignColors" Version="2.1.1" />
+    <PackageReference Include="MaterialDesignExtensions" Version="3.3.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
     <PackageReference Include="System.Net.Http.Json" Version="7.0.0" />
   </ItemGroup>

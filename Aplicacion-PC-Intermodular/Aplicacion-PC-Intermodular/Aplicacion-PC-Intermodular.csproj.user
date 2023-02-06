@@ -7,16 +7,25 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CRUD\Views\AddUserPage.xaml.cs">
+    <Compile Update="CRUD\Views\Routes\RoutesDataGrid.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRUD\Views\Routes\UpdateRoutePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRUD\Views\Users\AddUserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="CRUD\Views\CRUDView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRUD\Views\UpdateUserPage.xaml.cs">
+    <Compile Update="CRUD\Views\Users\UpdateUserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRUD\Views\UsersDataGrid.xaml.cs">
+    <Compile Update="CRUD\Views\Users\UsersDataGrid.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Utils\ErrorManager\ErrorManager.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ForgotPassword\Views\ForgotPasswordWindow.xaml.cs">
@@ -27,16 +36,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CRUD\Views\AddUserPage.xaml">
+    <Page Update="CRUD\Views\Routes\RoutesDataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\Routes\UpdateRoutePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\Users\AddUserPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRUD\Views\CRUDView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRUD\Views\UpdateUserPage.xaml">
+    <Page Update="CRUD\Views\Users\UpdateUserPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRUD\Views\UsersDataGrid.xaml">
+    <Page Update="CRUD\Views\Users\UsersDataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Utils\ErrorManager\ErrorManager.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ForgotPassword\Views\ForgotPasswordWindow.xaml">

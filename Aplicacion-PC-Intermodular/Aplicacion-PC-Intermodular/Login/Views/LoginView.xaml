@@ -77,13 +77,18 @@
                     </Button>
                 </Grid>
                 <StackPanel Width="300" Grid.Row="1" Orientation="Vertical" Margin="0,20,0,0">
-                    <Image Source="/Resources/logo_appName.png" Width="175"></Image>
-                   <TextBlock Text="¡Inicia sesión!"
+                    <Image Source="/Resources/white_logo.png" Width="175"></Image>
+                   <TextBlock Text=" Welcome to WikiTrail!"
                                Foreground="White"
                                FontSize="22"
                                FontFamily="Calibri"
                                HorizontalAlignment="Center"/>
-                    <TextBlock Text="Correo electrónico"
+                    <TextBlock Text=" Sign in to continue!"
+                               Foreground="White"
+                               FontSize="18"
+                               FontFamily="Calibri"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="User"
                                Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
@@ -126,7 +131,7 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Contraseña"
+                    <TextBlock Text="Password"
                                Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
@@ -196,24 +201,16 @@
                         <Button
                         x:Name="forgetPassword"
                         Height="20"
-                        Content="¿Olvidaste la contraseña?"
+                        Content="Forgot your password? "
                         Foreground="White"
                         Background="Transparent"
                         Width="140"
                         HorizontalAlignment="Right"
                         Click="forgetPassword_Click"/>
-                        
-                        <Button
-                        x:Name="btn_register"
-                        Height="20"
-                        Content="¡Crea una cuenta!"
-                        Foreground="White"
-                        Background="Transparent"
-                        Width="140"
-                        HorizontalAlignment="Left"/>
                     </Grid>
-                    <Button x:Name="btn_login"                          
-                            Content="ENTRAR"
+                    <Button x:Name="btn_login"
+                            IsDefault="True"
+                            Content="SIGN IN"
                             Foreground="White"
                             FontSize="12"
                             FontFamily="Calibri"

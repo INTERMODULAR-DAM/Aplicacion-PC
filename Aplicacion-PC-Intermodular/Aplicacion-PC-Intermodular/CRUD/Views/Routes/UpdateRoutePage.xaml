@@ -1,0 +1,95 @@
+﻿<Page x:Class="Aplicacion_PC_Intermodular.CRUD.Views.Routes.UpdateRoutePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD.Views.Routes"
+      mc:Ignorable="d" 
+      Title="UpdateRoutePage" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Loaded="Page_Loaded"
+      >
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid VerticalAlignment="Center" DataContext="user">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="313*"/>
+        </Grid.ColumnDefinitions>
+        <Grid VerticalAlignment="Center">
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" Text="Route Info" FontSize="30" FontFamily="Calibri"/>
+                <Image Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding Source=userPFP}" x:Name="pfp"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Margin="0,20,70,0" Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click" Height="50" Width="50">
+                        <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
+                    </Button>
+                    <Button Margin="0,20,0,0" Style="{StaticResource deleteButton}" x:Name="remove_btn" Click="remove_btn_Click" Height="50" Width="50">
+                        <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
+                    </Button>
+                </StackPanel>
+                <CheckBox x:Name="cbPrivacity" Content="Privacity" FontFamily="Calibri" FontSize="22" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Column="1" Margin="20,80,0,0" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Width="250" Margin="0,0,30,0">
+                    <TextBlock Text="Name" FontSize="22" FontFamily="Calibri"/>
+                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBlock Margin="0,10,0,0" Text="Category" FontSize="22" FontFamily="Calibri"/>
+                    <ComboBox x:Name="cbCategory" FontSize="18" Style="{StaticResource MaterialDesignComboBox}" Height="44">
+                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="Hiking"/>
+                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="Roller Skating"/>
+                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="Kayaking"/>
+                    </ComboBox>
+                    <TextBlock Margin="0,10,0,0" Text="Duration" FontSize="22" FontFamily="Calibri"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="cbTime" Width="50" FontSize="16"/>
+                        <ComboBox x:Name="cbTimeMeasure" FontSize="16">
+                            <ComboBoxItem x:Name="cbiMinutes" Content="minutes" Selected="cbiMinutes_Selected" Style="{StaticResource MaterialDesignComboBoxItemStyle}"/>
+                            <ComboBoxItem Content="hours" Style="{StaticResource MaterialDesignComboBoxItemStyle}" x:Name="cbiHours" Selected="ComboBoxItem_Selected"/>
+                        </ComboBox>
+
+                        <ComboBox FontSize="16" x:Name="cbTimeMinutes" Visibility="Hidden" Width="50"/>
+                        <ComboBox FontSize="16" Visibility="Hidden" x:Name="cbMinutes">
+                            <ComboBoxItem Content="minutes" Style="{StaticResource MaterialDesignComboBoxItemStyle}"/>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="250">
+                    <TextBlock Text="Description" FontSize="22" FontFamily="Calibri"/>
+                    <TextBox FontSize="16" FontFamily="Calibri" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="tb_description"/>
+                    <TextBlock Margin="0,10,0,0" Text="Difficulty" FontSize="22" FontFamily="Calibri"/>
+                    <ComboBox x:Name="cbDifficulty" FontSize="18" Style="{StaticResource MaterialDesignComboBox}" Height="44">
+                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="Easy"/>
+                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="Medium"/>
+                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="Hard"/>
+                        <ComboBoxItem Style="{StaticResource MaterialDesignComboBoxItemStyle}" Content="Expert"/>
+                    </ComboBox>
+
+                    <TextBlock Margin="0,10,0,0" Text="Distance" FontSize="22" FontFamily="Calibri"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="cbDistance" Width="50" FontSize="16"/>
+                        <ComboBox x:Name="cbDistanceMeasure" FontSize="16">
+                            <ComboBoxItem x:Name="cbiMeters" Content="m" Selected="cbiMeters_Selected" Style="{StaticResource MaterialDesignComboBoxItemStyle}"/>
+                            <ComboBoxItem Content="km" Style="{StaticResource MaterialDesignComboBoxItemStyle}" x:Name="cbieKm" Selected="cbieKm_Selected"/>
+                        </ComboBox>
+                        <ComboBox FontSize="16" x:Name="cbDistanceMeters" Visibility="Hidden" Width="50"/>
+                        <ComboBox FontSize="16" Visibility="Hidden" x:Name="cbMeters">
+                            <ComboBoxItem Content="m" Style="{StaticResource MaterialDesignComboBoxItemStyle}"/>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <Button Style="{StaticResource modifyButton}" HorizontalAlignment="Center" Width="200" Content="Update route" FontSize="22" Foreground="White" Height="55" Background="#115511" Margin="20" Click="updateRoutebtn_Click" x:Name="updateRoutebtn"/>
+        </StackPanel>
+    </Grid>
+</Page>

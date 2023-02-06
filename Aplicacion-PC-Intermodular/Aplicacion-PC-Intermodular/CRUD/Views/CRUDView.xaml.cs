@@ -2,6 +2,7 @@
 using Aplicacion_PC_Intermodular.API.Models;
 using Aplicacion_PC_Intermodular.CRUD.Models;
 using Aplicacion_PC_Intermodular.CRUD.Views;
+using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.Login.Models;
 using Aplicacion_PC_Intermodular.Utils;
 using System;
@@ -57,8 +58,14 @@ namespace Aplicacion_PC_Intermodular.CRUD
 
         private void close_button_Click(object sender, RoutedEventArgs e)
         {
-            response = true;
-            Close();
+            
+            bool? result = new CustomErrorManager("Are you sure to exit?", MessageType.Confirmation, MessageButtons.YesNo).ShowDialog();
+
+            if (result.Value)
+            {
+                response = true;
+                Close();
+            }
         }
 
         private void logOutButton_Click(object sender, RoutedEventArgs e)
@@ -69,17 +76,17 @@ namespace Aplicacion_PC_Intermodular.CRUD
 
         private void routesBtn_Click(object sender, RoutedEventArgs e)
         {
-            mainContent.Source = new Uri("/CRUD/Views/RoutesDataGrid.xaml", UriKind.Relative);
+            mainContent.Source = new Uri("/CRUD/Views/Routes/RoutesDataGrid.xaml", UriKind.Relative);
         }
 
         private void commentsBtn_Click(object sender, RoutedEventArgs e)
         {
-            mainContent.Source = new Uri("/CRUD/Views/CommentsDataGrid.xaml", UriKind.Relative);
+            mainContent.Source = new Uri("/CRUD/Views/Comments/CommentsDataGrid.xaml", UriKind.Relative);
         }
 
         private void usersBtn_Click(object sender, RoutedEventArgs e)
         {
-            mainContent.Source = new Uri("/CRUD/Views/UsersDataGrid.xaml", UriKind.Relative);
+            mainContent.Source = new Uri("/CRUD/Views/Users/UsersDataGrid.xaml", UriKind.Relative);
         }
     }
 }

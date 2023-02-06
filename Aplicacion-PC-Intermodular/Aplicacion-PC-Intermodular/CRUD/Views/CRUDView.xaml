@@ -78,11 +78,10 @@
                             Cursor="Hand"
                             Click="close_button_Click"
                             Style="{StaticResource btnTopBar}"
-                            Template="{StaticResource btnMarron}"
-                            >
+                            Template="{StaticResource btnMarron}">
                 </Button>
             </StackPanel>
-            <Frame x:Name="mainContent"  Grid.Column="1" Source="/CRUD/Views/UsersDataGrid.xaml" NavigationUIVisibility="Hidden"/>
+            <Frame x:Name="mainContent"  Grid.Column="1" Source="/CRUD/Views/Users/UsersDataGrid.xaml" NavigationUIVisibility="Hidden"/>
         </Grid>
     </Border>
 </Window>
