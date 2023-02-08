@@ -58,6 +58,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 users = new AllUsers();
             }
             return users;

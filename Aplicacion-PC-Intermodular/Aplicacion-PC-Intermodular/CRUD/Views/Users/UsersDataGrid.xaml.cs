@@ -36,7 +36,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         private async void assignToDataGridView()
         {
             allUsers = await UserController.getAllUsers();
-            if(allUsers.allUsers != null)
+            if(allUsers.data != null)
             {
                 putDataOnDataGrid(allUsers);
             }
@@ -50,9 +50,9 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         public void putDataOnDataGrid(AllUsers allUsers)
         {
             List<UserDataGrid> users = new List<UserDataGrid>();
-            for (int i = 0; i < allUsers.allUsers.Length; i++)
+            for (int i = 0; i < allUsers.data.Length; i++)
             {
-                users.Add(new UserDataGrid(i, allUsers.allUsers[i].email, allUsers.allUsers[i].name, allUsers.allUsers[i].lastname, allUsers.allUsers[i].nick, allUsers.allUsers[i].phone_number.ToString()));
+                users.Add(new UserDataGrid(i, allUsers.data[i].email, allUsers.data[i].name, allUsers.data[i].lastname, allUsers.data[i].nick, allUsers.data[i].phone_number.ToString()));
             }
             dataGridUsers.ItemsSource = users;
             
@@ -61,7 +61,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         {
             int index = ((UserDataGrid)dataGridUsers.SelectedItem).Index;
             UpdateUserPage updateUser = new UpdateUserPage();
-            UserResponse userUpdate = allUsers.allUsers[index];
+            UserResponse userUpdate = allUsers.data[index];
             Application.Current.Properties["USER"] = userUpdate;
             NavigationService.Navigate(updateUser);
         }
@@ -69,7 +69,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         private async void remove_btn_Click(object sender, RoutedEventArgs e)
         {
             int index = dataGridUsers.SelectedIndex;
-            DefaultResponse response = await UserController.deleteUser(allUsers.allUsers[index]);
+            DefaultResponse response = await UserController.deleteUser(allUsers.data[index]);
 
             if (response.status >= 400)
             {

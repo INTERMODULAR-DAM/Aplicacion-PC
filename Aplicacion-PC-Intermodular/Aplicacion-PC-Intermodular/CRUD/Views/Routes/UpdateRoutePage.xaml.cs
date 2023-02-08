@@ -68,7 +68,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             assignData();
             if (!updatedRoute.equalRoute(dbRoute))
             {
-                updateServerResponse(await RoutesController.updateRoute(updatedRoute));
+                //updateServerResponse(await RoutesController.updateRoute(updatedRoute));
             }
             else
             {
@@ -126,7 +126,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             {
                 if (cbDistanceMeters.Visibility != Visibility.Hidden && !cbDistanceMeters.Text.Equals(""))
                 {
-¡                    updatedRoute.distance = cbDistance.Text + "km and " + cbDistanceMeters.Text + "m";
+                    updatedRoute.distance = cbDistance.Text + "km and " + cbDistanceMeters.Text + "m";
                 }
                 else
                 {

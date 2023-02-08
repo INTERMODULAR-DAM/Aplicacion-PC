@@ -28,7 +28,7 @@
         <Grid VerticalAlignment="Center">
             <StackPanel>
                 <TextBlock HorizontalAlignment="Center" Text="User Info" FontSize="30" FontFamily="Calibri"/>
-                <Image Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding Source=userPFP}" x:Name="pfp"/>
+                <Image Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="pfp"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Margin="0,20,70,0" Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click" Height="50" Width="50">
                         <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>

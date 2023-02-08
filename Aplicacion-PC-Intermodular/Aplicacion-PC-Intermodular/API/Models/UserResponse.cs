@@ -13,7 +13,7 @@ namespace Aplicacion_PC_Intermodular.API.Models
 {
     public class AllUsers
     {
-        public UserResponse[] allUsers { get; set; }
+        public UserResponse[] data { get; set; }
     }
 
     public class UserResponse
@@ -35,7 +35,6 @@ namespace Aplicacion_PC_Intermodular.API.Models
             pfp_path = user.pfp_path;
             phone_number = user.phone_number;
             web = user.web;
-            pfp = user.pfp;
             admin = user.admin;
         }
 
@@ -48,7 +47,6 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public string pfp_path { get; set; }
         public int phone_number { get; set; }
         public string web { get; set; }
-        public string pfp { get; set; }
         public Boolean admin { get; set; }
 
         public bool EqualsObjectValues(UserResponse obj)

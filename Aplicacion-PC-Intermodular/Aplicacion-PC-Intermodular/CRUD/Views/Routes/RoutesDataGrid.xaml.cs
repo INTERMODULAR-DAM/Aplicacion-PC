@@ -37,7 +37,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
         private async void remove_btn_Click(object sender, RoutedEventArgs e)
         {
             int index = dataGridRoutes.SelectedIndex;
-            DefaultResponse response = await RoutesController.deletePost(allPosts[index]);
+            DefaultResponse response = await RoutesController.deleteRoute(allPosts[index]);
 
             if (response.status >= 400)
             {
@@ -66,7 +66,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
 
         private async void assignToDataGridView()
         {
-            allPosts = (await RoutesController.getAllPosts()).allPosts;
+            allPosts = (await RoutesController.getAllRoutes()).allPosts;
 
             if(allPosts != null)
             {

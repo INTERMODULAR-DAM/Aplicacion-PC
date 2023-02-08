@@ -34,7 +34,6 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         public UpdateUserPage()
         {
             updatedUser = new UserResponse();
-            updatedUser.name = "PRUEBA";
             DataContext = this;
             InitializeComponent();
         }
@@ -43,8 +42,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         {
             string path = "~/../../../../Resources/default.jpeg";
             Uri uri = new Uri(path, UriKind.Relative);
-            pfp.Source = new BitmapImage(uri);
-            updatedUser.pfp = ImageUtils.convertToBase64(uri);
+            /*pfp.Source = new BitmapImage(uri);*/
             updatedUser.pfp_path = "default.jpeg";
         }
 
@@ -56,7 +54,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 updatedUser.pfp_path = openFileDialog.SafeFileName;
                 Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
-                updatedUser.pfp = ImageUtils.convertToBase64(uri);
+                updatedUser.pfp_path = ImageUtils.convertToBase64(uri);
                 new CustomErrorManager("Photo successfully updated!", MessageType.Info, MessageButtons.Ok).ShowDialog();
                 pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
@@ -160,8 +158,12 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         {
             updatedUser = (UserResponse)Application.Current.Properties["USER"];
             dbUser = new UserResponse(updatedUser);
-            pfp.Source = ImageUtils.convertToImage(updatedUser.pfp_path);
-
+            string path =  @"http://127.0.0.1:8080/api/v1/imgs/users/" + dbUser.pfp_path;
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(path, UriKind.Absolute);
+            image.EndInit();
+            pfp.Source = image;
         }
     }
 }
