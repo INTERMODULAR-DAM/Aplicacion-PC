@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ZQjQA3NhLJdpiEd62Z/iAMEhNzzsrL5oRvKJAboAQOyjxZ6+fH81Yx2Gg/MCTSrIVQyrbiBBPaB9PtU3gwtabg==",
+  "dgSpecHash": "I5Zg83DUYGBkhuggAUjUJo5sKkkZi6i5Jx7DVQ9wHT4hMaQmgX5cBITSN9Dp6g7gVcQj46B8kT7IwmiNewZLgQ==",
   "success": true,
-  "projectFilePath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+  "projectFilePath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesignextensions\\3.3.0\\materialdesignextensions.3.3.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\Alejandro\\.nuget\\packages\\mimetypes\\2.4.0\\mimetypes.2.4.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\system.net.http.json\\7.0.0\\system.net.http.json.7.0.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",

@@ -20,6 +20,8 @@ using System.Diagnostics;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using System.Text.RegularExpressions;
 using Aplicacion_PC_Intermodular.API.Controllers;
+using System.Net.Http;
+using System.IO;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
@@ -30,10 +32,12 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
     {
         public UserResponse updatedUser;
         public UserResponse dbUser;
+        public Image userPFP;
 
         public UpdateUserPage()
         {
             updatedUser = new UserResponse();
+            userPFP = new Image();
             DataContext = this;
             InitializeComponent();
         }
@@ -42,8 +46,11 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         {
             string path = "~/../../../../Resources/default.jpeg";
             Uri uri = new Uri(path, UriKind.Relative);
-            /*pfp.Source = new BitmapImage(uri);*/
+            pfp.Source = new BitmapImage(uri);
+            userPFP.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(path), UriKind.Absolute));
             updatedUser.pfp_path = "default.jpeg";
+            UserController.updateUserPFP(userPFP, updatedUser._id, updatedUser.pfp_path);
+            new CustomErrorManager("Photo successfully updated!", MessageType.Info, MessageButtons.Ok).ShowDialog();
         }
 
         private void modify_btn_Click(object sender, RoutedEventArgs e)
@@ -54,9 +61,11 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 updatedUser.pfp_path = openFileDialog.SafeFileName;
                 Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
-                updatedUser.pfp_path = ImageUtils.convertToBase64(uri);
-                new CustomErrorManager("Photo successfully updated!", MessageType.Info, MessageButtons.Ok).ShowDialog();
+                userPFP.Source = new BitmapImage(new Uri(openFileDialog.FileName));
                 pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+                UserController.updateUserPFP(userPFP, updatedUser._id, updatedUser.pfp_path);
+                new CustomErrorManager("Photo successfully updated!", MessageType.Info, MessageButtons.Ok).ShowDialog();
+
             }
         }
 
@@ -66,7 +75,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 if (!dbUser.EqualsObjectValues(updatedUser))
                 {
-                    updateServerResponse(await UserController.updateUser(updatedUser));
+                    updateServerResponse(await UserController.updateUser(updatedUser, userPFP));
                 }
                 else
                 {
@@ -88,7 +97,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             }
             else if (defaultResponse.status < 500)
             {
-                new CustomErrorManager("Maybe some fields are in use, check out the email, nick or phone field.", MessageType.Warning, MessageButtons.Ok).ShowDialog();
+                new CustomErrorManager(defaultResponse.data, MessageType.Warning, MessageButtons.Ok).ShowDialog();
             }
             else
             {
@@ -113,7 +122,12 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                     tb_email.BorderThickness = new Thickness(1, 1, 1, 1);
                     isValid = false;
                 }
+            }else
+            {
+                tb_email.BorderBrush = new SolidColorBrush(Colors.Black);
+                tb_email.BorderThickness = new Thickness(0, 0, 0, 1);
             }
+
             if (!String.IsNullOrEmpty(tb_name.Text))
             {
                 updatedUser.name = tb_name.Text;
@@ -144,6 +158,11 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                     tb_phone.BorderBrush = new SolidColorBrush(Colors.Red);
                     tb_phone.BorderThickness = new Thickness(1, 1, 1, 1);
                 }
+            }
+            else
+            {
+                tb_phone.BorderBrush = new SolidColorBrush(Colors.Black);
+                tb_phone.BorderThickness = new Thickness(0, 0, 0, 1);
             }
 
             if (updatedUser.pfp_path.Length > 200)

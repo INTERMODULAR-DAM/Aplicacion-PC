@@ -60,9 +60,9 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
         }
 
 
-        /*public static async Task<DefaultResponse> updateRoute(Route route)
+        public static async Task<DefaultResponse> updateRoute(Route route)
         {
 
-        }*/
+        }
     }
 }

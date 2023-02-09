@@ -15,6 +15,9 @@ using System.Windows.Markup;
 using System.Net.Http;
 using System.Net.Http.Json;
 using Aplicacion_PC_Intermodular.CRUD.Models;
+using System.Reflection.PortableExecutable;
+using Aplicacion_PC_Intermodular.ErrorManager;
+using System.Net.Http.Headers;
 
 namespace Aplicacion_PC_Intermodular.API.Controllers
 {
@@ -87,7 +90,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
             return json;
         }
 
-        public async static Task<DefaultResponse> updateUser(UserResponse user)
+        public async static Task<DefaultResponse> updateUser(UserResponse user, Image userPFP)
         {
             DefaultResponse json;
             try
@@ -108,6 +111,31 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
             }
 
             return json;
+        }
+
+        public async static void updateUserPFP(Image userPFP, string id, string fileName)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Clear();
+                var fileStreamContent = new StreamContent(File.OpenRead(new Uri(userPFP.Source.ToString()).AbsolutePath));
+                string extension = MimeTypes.GetMimeType(fileName);
+
+                MultipartFormDataContent file = new MultipartFormDataContent("NKdKd9Yk");
+                file.Headers.ContentType.MediaType = "multipart/form-data";
+                fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue(extension);
+                file.Add(fileStreamContent, "file", fileName);
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Application.Current.Properties["TOKEN"].ToString());
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("multipart/form-data"));
+                client.DefaultRequestHeaders.Add("id", id);
+                await client.PostAsync("http://localhost:8080/api/v1/imgs/userProfile", file);
+                client.CancelPendingRequests();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
         }
 
         public async static Task<DefaultResponse> createUser(SignUpUser newUser)

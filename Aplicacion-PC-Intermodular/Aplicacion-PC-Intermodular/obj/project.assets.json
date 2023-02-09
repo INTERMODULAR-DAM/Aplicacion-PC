@@ -103,6 +103,17 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "MimeTypes/2.4.0": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.cs"
+          }
+        }
+      },
       "System.Net.Http.Json/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -316,6 +327,22 @@
         "tools/Install.ps1"
       ]
     },
+    "MimeTypes/2.4.0": {
+      "sha512": "jbdJlfoz5YtmuvyM12G5KY22kkXZUG0HgU8ahnZPM0JtXPRvL5m3jURqXL47or/FCbc1qb4GDhg6ip3yOgeFaw==",
+      "type": "package",
+      "path": "mimetypes/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "contentFiles/cs/net472/MimeTypes.NullableAttributes.cs.pp",
+        "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp",
+        "contentFiles/cs/netstandard2.0/MimeTypes.NullableAttributes.cs.pp",
+        "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp",
+        "images/nuget-icon.png",
+        "mimetypes.2.4.0.nupkg.sha512",
+        "mimetypes.nuspec"
+      ]
+    },
     "System.Net.Http.Json/7.0.0": {
       "sha512": "K74te5euBJLzosprZji9juSop5mLWRzlpSNqBgZBE7/2AiPbFtM7B5eDB/tnB1jjil3bNNeJYBNfIxobs6uXhQ==",
       "type": "package",
@@ -475,6 +502,7 @@
     "net6.0-windows7.0": [
       "MaterialDesignExtensions >= 3.3.0",
       "MaterialDesignThemes >= 4.7.1",
+      "MimeTypes >= 2.4.0",
       "System.Net.Http.Json >= 7.0.0"
     ]
   },
@@ -484,11 +512,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+      "projectUniqueName": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
       "projectName": "Aplicacion-PC-Intermodular",
-      "projectPath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+      "projectPath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
       "packagesPath": "C:\\Users\\Alejandro\\.nuget\\packages\\",
-      "outputPath": "D:\\Escritorio\\2 DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\obj\\",
+      "outputPath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alejandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -524,6 +552,12 @@
           "MaterialDesignThemes": {
             "target": "Package",
             "version": "[4.7.1, )"
+          },
+          "MimeTypes": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.4.0, )"
           },
           "System.Net.Http.Json": {
             "target": "Package",

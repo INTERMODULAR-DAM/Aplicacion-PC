@@ -81,6 +81,7 @@
           }
         }
       },
+      "MimeTypes/2.4.0": {},
       "System.Net.Http.Json/7.0.0": {
         "dependencies": {
           "System.Text.Json": "7.0.0"
@@ -161,6 +162,13 @@
       "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
       "path": "microsoft.xaml.behaviors.wpf/1.1.39",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    },
+    "MimeTypes/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jbdJlfoz5YtmuvyM12G5KY22kkXZUG0HgU8ahnZPM0JtXPRvL5m3jURqXL47or/FCbc1qb4GDhg6ip3yOgeFaw==",
+      "path": "mimetypes/2.4.0",
+      "hashPath": "mimetypes.2.4.0.nupkg.sha512"
     },
     "System.Net.Http.Json/7.0.0": {
       "type": "package",

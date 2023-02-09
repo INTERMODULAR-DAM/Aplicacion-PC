@@ -69,69 +69,10 @@ C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermo
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\AddUserPage.baml
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\UserControls\TextBoxPlaceholder.g.cs
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\UserControls\TextBoxPlaceholder.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.csproj.AssemblyReference.cache
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\CRUDView.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ForgotPassword\Views\ForgotPasswordWindow.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Login\Views\LoginView.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\UserControls\TextBoxPlaceholder.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\App.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular_MarkupCompile.cache
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular_MarkupCompile.lref
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\refint\Aplicacion-PC-Intermodular.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.pdb
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.exe
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.deps.json
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.runtimeconfig.json
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.pdb
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignColors.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\System.Net.Http.Json.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\System.Text.Json.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\App.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\CRUDView.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ForgotPassword\Views\ForgotPasswordWindow.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Login\Views\LoginView.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\UserControls\TextBoxPlaceholder.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.g.resources
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.AssemblyInfoInputs.cache
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.AssemblyInfo.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.csproj.CoreCompileInputs.cache
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.csproj.CopyComplete
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.genruntimeconfig.cache
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ref\Aplicacion-PC-Intermodular.dll
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignColors.dll
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Utils\ErrorManager\ErrorManager.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Utils\ErrorManager\ErrorManager.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignExtensions.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\ru\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\ar-DZ\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\cs-CZ\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\cs\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\de\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\fr-FR\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\fr\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\pt-BR\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\pt\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\ru-RU\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\uz-Latn-UZ\MaterialDesignExtensions.resources.dll
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\RoutesDataGrid.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\RoutesDataGrid.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\AddUserPage.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UpdateUserPage.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UsersDataGrid.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\AddUserPage.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UpdateUserPage.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UsersDataGrid.baml
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\UpdateRoutePage.g.cs
-C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\UpdateRoutePage.baml
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Utils\ErrorManager\ErrorManager.baml
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\RoutesDataGrid.g.cs
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\UpdateRoutePage.g.cs
@@ -156,3 +97,63 @@ D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplica
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\AddUserPage.baml
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UpdateUserPage.baml
 D:\Escritorio\2 DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UsersDataGrid.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.exe
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.deps.json
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.runtimeconfig.json
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignExtensions.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\System.Net.Http.Json.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\ru\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\ar-DZ\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\cs-CZ\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\cs\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\de\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\fr-FR\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\fr\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\pt-BR\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\pt\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\ru-RU\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\uz-Latn-UZ\MaterialDesignExtensions.resources.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.csproj.AssemblyReference.cache
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Utils\ErrorManager\ErrorManager.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\CRUDView.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\RoutesDataGrid.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\UpdateRoutePage.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\AddUserPage.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UpdateUserPage.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UsersDataGrid.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ForgotPassword\Views\ForgotPasswordWindow.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Login\Views\LoginView.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\UserControls\TextBoxPlaceholder.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Utils\ErrorManager\ErrorManager.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular_MarkupCompile.cache
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular_MarkupCompile.lref
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\App.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\CRUDView.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\RoutesDataGrid.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\UpdateRoutePage.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\AddUserPage.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UpdateUserPage.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\UsersDataGrid.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ForgotPassword\Views\ForgotPasswordWindow.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Login\Views\LoginView.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\UserControls\TextBoxPlaceholder.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.g.resources
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.AssemblyInfoInputs.cache
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.AssemblyInfo.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.csproj.CoreCompileInputs.cache
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.csproj.CopyComplete
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\refint\Aplicacion-PC-Intermodular.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.pdb
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular.genruntimeconfig.cache
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Aplicacion-PC-Intermodular.pdb
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\ref\Aplicacion-PC-Intermodular.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\NuGet\F086451EE20F796816D99251C114FD557A7E4342\MimeTypes\2.4.0\MimeTypes.cs

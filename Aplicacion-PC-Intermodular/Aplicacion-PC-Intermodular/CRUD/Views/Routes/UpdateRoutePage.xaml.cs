@@ -68,7 +68,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             assignData();
             if (!updatedRoute.equalRoute(dbRoute))
             {
-                //updateServerResponse(await RoutesController.updateRoute(updatedRoute));
+                updateServerResponse(await RoutesController.updateRoute(updatedRoute));
             }
             else
             {
