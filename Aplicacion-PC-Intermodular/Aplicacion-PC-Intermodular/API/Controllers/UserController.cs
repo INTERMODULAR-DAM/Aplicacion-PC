@@ -90,8 +90,9 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
             return json;
         }
 
-        public async static void updateUserPFP(Image userPFP, string id, string fileName)
+        public async static Task<DefaultResponse> updateUserPFP(Image userPFP, string id, string fileName)
         {
+            DefaultResponse json;
             try
             {
                 client.DefaultRequestHeaders.Clear();
@@ -106,13 +107,26 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Application.Current.Properties["TOKEN"].ToString());
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("multipart/form-data"));
                 client.DefaultRequestHeaders.Add("id", id);
-                await client.PostAsync("http://localhost:8080/api/v1/imgs/userProfile", file);
-
-           }catch(Exception ex)
+                HttpResponseMessage response = await client.PostAsync("http://localhost:8080/api/v1/imgs/userProfile", file);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
+            }
+            catch (FileNotFoundException)
             {
-                MessageBox.Show(ex.ToString());
+                json = new DefaultResponse();
+                json.status = 400;
+                json.data = "The name of the photo is invalid, change it or take another photo.";
             }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                json = new DefaultResponse();
+                json.status = 400;
+                json.data = "An error has ocurred, please contact with your administrator";
+            }
+
+            return json;
         }
 
         public async static Task<DefaultResponse> createUser(SignUpUser newUser)

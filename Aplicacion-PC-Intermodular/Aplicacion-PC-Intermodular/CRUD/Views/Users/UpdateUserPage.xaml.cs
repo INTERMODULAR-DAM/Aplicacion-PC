@@ -28,30 +28,46 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             InitializeComponent();
         }
 
-        private void remove_btn_Click(object sender, RoutedEventArgs e)
+        private async void remove_btn_Click(object sender, RoutedEventArgs e)
         {
             string path = "~/../../../../Resources/default.jpeg";
             Uri uri = new Uri(path, UriKind.Relative);
-            pfp.Source = new BitmapImage(uri);
             userPFP.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(path), UriKind.Absolute));
             updatedUser.pfp_path = "default.jpeg";
-            UserController.updateUserPFP(userPFP, updatedUser._id, updatedUser.pfp_path);
-            new CustomErrorManager("Photo successfully updated!", MessageType.Info, MessageButtons.Ok).ShowDialog();
+            DefaultResponse response = await UserController.updateUserPFP(userPFP, updatedUser._id, updatedUser.pfp_path);
+            if(response.status < 300)
+            {
+                new CustomErrorManager(response.data, MessageType.Info, MessageButtons.Ok).ShowDialog();
+                pfp.Source = new BitmapImage(uri);
+                
+            }
+            else
+            {
+                new CustomErrorManager(response.data, MessageType.Error, MessageButtons.Ok).ShowDialog();
+            }
+            
         }
 
-        private void modify_btn_Click(object sender, RoutedEventArgs e)
+        private async void modify_btn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                updatedUser.pfp_path = openFileDialog.SafeFileName;
                 Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
                 userPFP.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-                pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-                UserController.updateUserPFP(userPFP, updatedUser._id, updatedUser.pfp_path);
-                new CustomErrorManager("Photo successfully updated!", MessageType.Info, MessageButtons.Ok).ShowDialog();
-
+                updatedUser.pfp_path = openFileDialog.SafeFileName;
+                DefaultResponse response = await UserController.updateUserPFP(userPFP, updatedUser._id, updatedUser.pfp_path);
+                
+                if (response.status < 300)
+                {
+                    new CustomErrorManager(response.data, MessageType.Info, MessageButtons.Ok).ShowDialog();
+                    pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+                }
+                else
+                {
+                    new CustomErrorManager(response.data, MessageType.Error, MessageButtons.Ok).ShowDialog();
+                }
             }
         }
 

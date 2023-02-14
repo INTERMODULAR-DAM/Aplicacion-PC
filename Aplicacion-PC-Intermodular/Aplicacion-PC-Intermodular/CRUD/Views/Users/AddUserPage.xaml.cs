@@ -42,8 +42,16 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                     UserResponse user = await UserController.getUserById(oneUseToken);
                     MessageBox.Show(user.email);
                     new CustomErrorManager("User created correctly!", MessageType.Success, MessageButtons.Ok).ShowDialog();
-                    
-                    UserController.updateUserPFP(userPFP, user._id, newUser.pfp_path);
+                    response = await UserController.updateUserPFP(userPFP, user._id, newUser.pfp_path);
+
+                    if(response.status < 300)
+                    {
+                        new CustomErrorManager(response.data, MessageType.Info, MessageButtons.Ok).ShowDialog();
+                    }
+                    else
+                    {
+                        new CustomErrorManager(response.data, MessageType.Error, MessageButtons.Ok).ShowDialog();
+                    }
 
                     //cleanAllFields();
                 }
