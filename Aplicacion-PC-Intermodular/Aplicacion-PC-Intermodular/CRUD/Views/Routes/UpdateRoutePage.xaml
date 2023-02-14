@@ -36,7 +36,7 @@
                         <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
                     </Button>
                 </StackPanel>
-                <CheckBox x:Name="cbPrivacity" Content="Privacity" FontFamily="Calibri" FontSize="22" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+                <CheckBox x:Name="cbPrivacity" Content="Public" FontFamily="Calibri" FontSize="22" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Column="1" Margin="20,80,0,0" Grid.ColumnSpan="2">

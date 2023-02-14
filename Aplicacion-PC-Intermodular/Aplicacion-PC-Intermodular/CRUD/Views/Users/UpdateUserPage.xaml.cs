@@ -22,6 +22,7 @@ using System.Text.RegularExpressions;
 using Aplicacion_PC_Intermodular.API.Controllers;
 using System.Net.Http;
 using System.IO;
+using MaterialDesignColors;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
@@ -31,14 +32,13 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
     public partial class UpdateUserPage : Page
     {
         public UserResponse updatedUser;
-        public UserResponse dbUser;
+        public UserResponse dbUser { get; set; }
         public Image userPFP;
 
         public UpdateUserPage()
         {
             updatedUser = new UserResponse();
             userPFP = new Image();
-            DataContext = this;
             InitializeComponent();
         }
 
@@ -183,6 +183,18 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             image.UriSource = new Uri(path, UriKind.Absolute);
             image.EndInit();
             pfp.Source = image;
+            assignPlaceholder();
+        }
+
+
+        private void assignPlaceholder()
+        {
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_name, "Actual name: " + dbUser.name);
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_lastname, "Actual lastname: " + dbUser.lastname);
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_email, "Actual email: " + dbUser.email);
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_web, "Actual web: " + dbUser.web);
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_nick, "Actual nick: " + dbUser.nick);
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_phone, "Actual phone: " + dbUser.phone_number);
         }
     }
 }

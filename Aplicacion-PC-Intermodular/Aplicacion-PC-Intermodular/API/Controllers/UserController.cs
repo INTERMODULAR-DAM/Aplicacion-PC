@@ -130,8 +130,8 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("multipart/form-data"));
                 client.DefaultRequestHeaders.Add("id", id);
                 await client.PostAsync("http://localhost:8080/api/v1/imgs/userProfile", file);
-                client.CancelPendingRequests();
-            }catch(Exception ex)
+
+           }catch(Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }

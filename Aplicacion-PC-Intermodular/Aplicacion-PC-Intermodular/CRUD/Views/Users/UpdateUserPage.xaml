@@ -20,7 +20,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid VerticalAlignment="Center" DataContext="user">
+    <Grid VerticalAlignment="Center" DataContext="dbUser">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="313*"/>

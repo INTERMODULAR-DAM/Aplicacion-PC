@@ -74,8 +74,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             }
             else
             {
-                MessageBox.Show(allPosts.Length + "");
-                new CustomErrorManager("An internal error has ocurred, please contact with your system administrator", MessageType.Error, MessageButtons.Ok).ShowDialog();
+               new CustomErrorManager("An internal error has ocurred, please contact with your system administrator", MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
         }
 
