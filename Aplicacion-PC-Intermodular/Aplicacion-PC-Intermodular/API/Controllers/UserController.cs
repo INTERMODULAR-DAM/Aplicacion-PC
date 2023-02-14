@@ -25,29 +25,6 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
     {
         private static HttpClient client = new HttpClient();
 
-        public async static Task<DefaultResponse> signIn(User user)
-        {
-            DefaultResponse json;
-
-            try
-            {
-                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("POST"), "http://localhost:8080/api/v1/users/signIn/");
-                requestMessage.Content = new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
-                HttpResponseMessage response = await client.SendAsync(requestMessage);
-                string apiResponse = await response.Content.ReadAsStringAsync();
-                json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
-                Application.Current.Properties["TOKEN"] = json.data;
-            }
-            catch (Exception ex)
-            {
-                json = new DefaultResponse();
-                json.status = 400;
-                json.data = "Error al iniciar sesión";
-                MessageBox.Show(ex.Message);
-            }
-            return json;
-        }
-
         public async static Task<AllUsers> getAllUsers()
         {
             AllUsers users;
@@ -120,7 +97,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 client.DefaultRequestHeaders.Clear();
                 var fileStreamContent = new StreamContent(File.OpenRead(new Uri(userPFP.Source.ToString()).AbsolutePath));
                 string extension = MimeTypes.GetMimeType(fileName);
-
+                
                 MultipartFormDataContent file = new MultipartFormDataContent("NKdKd9Yk");
                 file.Headers.ContentType.MediaType = "multipart/form-data";
                 fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue(extension);
@@ -133,7 +110,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
 
            }catch(Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
 
         }
@@ -159,6 +136,28 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 json.data = "An internal error has ocurred updating the user, please try again";
             }
             return json;
+        }
+
+
+        public async static Task<UserResponse> getUserById(string token)
+        {
+            UserResponse user;
+            try
+            {
+                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("GET"), "http://localhost:8080/api/v1/users/");
+                requestMessage.Headers.Add("Authorization", "Bearer " + token);
+                HttpResponseMessage response = await client.SendAsync(requestMessage);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+
+                user = JsonSerializer.Deserialize<UserById>(apiResponse).data;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+                user = new UserResponse();
+            }
+            return user;
         }
 
 

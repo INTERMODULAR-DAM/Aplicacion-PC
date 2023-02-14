@@ -16,6 +16,12 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public UserResponse[] data { get; set; }
     }
 
+    public class UserById
+    {
+        public UserResponse data { get; set; }
+
+    }
+
     public class UserResponse
     {
         public UserResponse() 

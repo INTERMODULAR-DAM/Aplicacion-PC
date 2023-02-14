@@ -3,23 +3,13 @@ using Aplicacion_PC_Intermodular.API.Models;
 using Aplicacion_PC_Intermodular.CRUD.Models;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.Login.Models;
-using Aplicacion_PC_Intermodular.Utils;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
@@ -30,11 +20,13 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
 
     {
         private SignUpUser newUser;
+        private Image userPFP;
 
         public AddUser()
         {
             InitializeComponent();
             newUser = new SignUpUser();
+            userPFP = new Image();
         }
 
         private async void createUserbtn_Click(object sender, RoutedEventArgs e)
@@ -43,10 +35,17 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 assignFields();
                 DefaultResponse response = await UserController.createUser(newUser);
+                string oneUseToken = response.data;
+                
                 if(response.status < 300)
                 {
+                    UserResponse user = await UserController.getUserById(oneUseToken);
+                    MessageBox.Show(user.email);
                     new CustomErrorManager("User created correctly!", MessageType.Success, MessageButtons.Ok).ShowDialog();
-                    cleanAllFields();
+                    
+                    UserController.updateUserPFP(userPFP, user._id, newUser.pfp_path);
+
+                    //cleanAllFields();
                 }
                 else if(response.status < 500)
                 {
@@ -231,8 +230,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 newUser.pfp_path = openFileDialog.SafeFileName;
                 Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
-                newUser.pfp = ImageUtils.convertToBase64(uri);
-                new CustomErrorManager("Photo successfully updated!", MessageType.Info, MessageButtons.Ok).ShowDialog();
+                userPFP.Source = new BitmapImage(new Uri(openFileDialog.FileName));
                 pfp.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
         }
@@ -242,7 +240,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             string path = "~/../../../../Resources/default.jpeg";
             Uri uri = new Uri(path, UriKind.Relative);
             pfp.Source = new BitmapImage(uri);
-            newUser.pfp = ImageUtils.convertToBase64(uri);
+            userPFP.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(path), UriKind.Absolute));
             newUser.pfp_path = "default.jpeg";
         }
     }

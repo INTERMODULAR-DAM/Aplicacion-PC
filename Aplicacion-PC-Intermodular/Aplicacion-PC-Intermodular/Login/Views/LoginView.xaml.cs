@@ -2,11 +2,8 @@
 using Aplicacion_PC_Intermodular.ForgotPassword;
 using Aplicacion_PC_Intermodular.Login.Models;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using Aplicacion_PC_Intermodular.Utils;
 using Aplicacion_PC_Intermodular.ErrorManager;
-using System;
 using Aplicacion_PC_Intermodular.API.Controllers;
 
 namespace Aplicacion_PC_Intermodular
@@ -89,7 +86,7 @@ namespace Aplicacion_PC_Intermodular
 
         public async void checkInDB()
         {
-            loginResponse = await UserController.signIn(user);
+            loginResponse = await LoginController.signIn(user);
             if(loginResponse.status >=400 && loginResponse.status < 500)
             {
                new CustomErrorManager("Wrong user or password, try it again", MessageType.Error, MessageButtons.Ok).ShowDialog();

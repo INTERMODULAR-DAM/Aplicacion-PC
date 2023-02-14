@@ -1,28 +1,14 @@
 ﻿using Aplicacion_PC_Intermodular.API.Models;
 using Aplicacion_PC_Intermodular.Login.Models;
-using Aplicacion_PC_Intermodular.Utils;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using System.Text.RegularExpressions;
 using Aplicacion_PC_Intermodular.API.Controllers;
-using System.Net.Http;
-using System.IO;
-using MaterialDesignColors;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {

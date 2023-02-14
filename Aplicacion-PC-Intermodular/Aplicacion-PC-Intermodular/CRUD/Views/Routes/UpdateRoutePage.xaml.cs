@@ -38,7 +38,16 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             loadDistance();
             updatedRoute = (Route)Application.Current.Properties["ROUTE"];
             dbRoute = new Route(updatedRoute);
+            assingPlaceholder();
+            
 
+        }
+
+        private void assingPlaceholder()
+        {
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_name, "Actual name: " + dbRoute.name);
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(cbCategory, "Actual category: " + dbRoute.category);
+            MaterialDesignThemes.Wpf.HintAssist.SetHint(cbDifficulty, "Actual difficulty: " + dbRoute.difficulty);
         }
 
         private void loadTime()

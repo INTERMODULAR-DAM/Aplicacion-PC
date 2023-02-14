@@ -42,7 +42,7 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public Track[] track { get; set; }
         public string duration { get; set; }
         public string description { get; set; }
-        public string[] photos { get; set; }
+        public int photos { get; set; }
         public bool privacity { get; set; }
         public string company { get; set; }
         public string user { get; set; }

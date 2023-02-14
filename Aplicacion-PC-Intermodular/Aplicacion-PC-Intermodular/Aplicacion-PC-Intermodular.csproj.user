@@ -28,10 +28,7 @@
     <Compile Update="Utils\ErrorManager\ErrorManager.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ForgotPassword\Views\ForgotPasswordWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TextBoxPlaceholder.xaml.cs">
+    <Compile Update="Login\Views\ForgotPasswordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -57,13 +54,10 @@
     <Page Update="Utils\ErrorManager\ErrorManager.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ForgotPassword\Views\ForgotPasswordWindow.xaml">
+    <Page Update="Login\Views\ForgotPasswordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Login\Views\LoginView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControls\TextBoxPlaceholder.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

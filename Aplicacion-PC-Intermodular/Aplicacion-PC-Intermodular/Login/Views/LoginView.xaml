@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicacion_PC_Intermodular"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Height="595" Width="550"
         ResizeMode="NoResize"
@@ -12,6 +13,16 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Border CornerRadius="18">
         <Border.Background>
             <ImageBrush ImageSource="/Resources/background_login.jpg"></ImageBrush>
@@ -88,90 +99,53 @@
                                FontSize="18"
                                FontFamily="Calibri"
                                HorizontalAlignment="Center"/>
-                    <TextBlock Text="User"
-                               Foreground="White"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Calibri"                             
-                               Margin="0,25,0,0"/>
                     <TextBox x:Name="tbUser"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
-                             Foreground="White"
+                             Foreground="{StaticResource MaterialDesignBackground}"   
                              BorderBrush="White"
                              CaretBrush="LightGray"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
+                             Height="38"
                              VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
+                             Margin="0,20,0,0"
                              Padding="20,0,0,0"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             materialDesign:HintAssist.Hint="User"
+                             materialDesign:HintAssist.Foreground="White"
+                             materialDesign:TextFieldAssist.UnderlineBrush="White"
                              >
                         <TextBox.Background>
                             <ImageBrush ImageSource="/Resources/Icons/mail-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
                         </TextBox.Background>
-                        <TextBox.Style>
-                            <Style TargetType="TextBox">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type TextBoxBase}">
-                                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                                            </Border>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="BorderBrush" TargetName="border" Value="#5c330a"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TextBox.Style>
                     </TextBox>
-                    <TextBlock Text="Password"
-                               Foreground="White"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Calibri"                             
-                               Margin="0,30,0,0"/>
                     <PasswordBox x:Name="tbPass"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
-                             Foreground="White"
+                             Foreground="{StaticResource MaterialDesignBackground}"   
                              CaretBrush="LightGray"
                              BorderBrush="White"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
+                             Height="38"
                              VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
-                             Padding="20,0,0,0">
+                             Margin="0,35,0,0"
+                             Padding="20,0,0,0"
+                             Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"
+                             materialDesign:HintAssist.Foreground="White"
+                             materialDesign:HintAssist.Hint="Password"   
+                             materialDesign:PasswordBoxAssist.PasswordMaskedIcon="Eye"
+                             materialDesign:PasswordBoxAssist.PasswordRevealedIcon="EyeOff"
+                             materialDesign:TextFieldAssist.UnderlineBrush="White">
                         <PasswordBox.Background>
                             <ImageBrush ImageSource="/Resources/Icons/password-icon.png"
                                         Stretch="None"
-                                        AlignmentX="Left"/>
+                                        AlignmentX="Left"
+                                        AlignmentY="Center"
+                                        />
                         </PasswordBox.Background>
-                        <PasswordBox.Style>
-                            <Style TargetType="PasswordBox">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type PasswordBox}">
-                                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                                            </Border>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="BorderBrush" TargetName="border" Value="#5c330a"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </PasswordBox.Style>
+                        
                     </PasswordBox>
                     <Grid Margin="0,40,0,0">
                         <Grid.Resources>
