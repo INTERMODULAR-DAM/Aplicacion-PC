@@ -39,7 +39,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                 
                 if(response.status < 300)
                 {
-                    UserResponse user = await UserController.getUserById(oneUseToken);
+                    UserResponse user = await UserController.getUserByIdWithToken(oneUseToken);
                     MessageBox.Show(user.email);
                     new CustomErrorManager("User created correctly!", MessageType.Success, MessageButtons.Ok).ShowDialog();
                     response = await UserController.updateUserPFP(userPFP, user._id, newUser.pfp_path);
@@ -225,7 +225,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error" + ex);
+                new CustomErrorManager("An internal error has ocurred, please contact with you administrator.", MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
 
         }
@@ -247,7 +247,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         {
             string path = "~/../../../../Resources/default.jpeg";
             Uri uri = new Uri(path, UriKind.Relative);
-            pfp.Source = new BitmapImage(uri);
+            pfp.Source = new BitmapImage(uri); 
             userPFP.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(path), UriKind.Absolute));
             newUser.pfp_path = "default.jpeg";
         }

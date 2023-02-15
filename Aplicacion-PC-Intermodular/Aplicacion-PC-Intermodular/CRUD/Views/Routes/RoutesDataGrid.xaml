@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Title="RoutesDataGrid">
 
-    <Grid Grid.Column="1" Margin="30,20,20,20">
+    <Grid Margin="30,20,20,20">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -25,10 +25,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click">
+                                <Button Style="{StaticResource addCommentButton}" x:Name="addComment_button" ToolTip="Add comment" Click="addComment_button_Click">
+                                    <Image Source="/Resources/Icons/addRoute-icon.png" Stretch="Uniform" />
+                                </Button>
+                                <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" ToolTip="Modify route" Click="modify_btn_Click">
                                     <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
                                 </Button>
-                                <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" Click="remove_btn_Click">
+                                <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove route" Click="remove_btn_Click">
                                     <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
                                 </Button>
                             </StackPanel>

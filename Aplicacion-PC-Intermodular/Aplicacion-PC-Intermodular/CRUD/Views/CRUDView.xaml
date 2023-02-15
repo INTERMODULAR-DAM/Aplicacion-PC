@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent">
-    <Border Background="#eff2f7" CornerRadius="30" MouseDown="Border_MouseDown">
+    <Border Background="#c6efd0" CornerRadius="30" MouseDown="Border_MouseDown">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="225"/>

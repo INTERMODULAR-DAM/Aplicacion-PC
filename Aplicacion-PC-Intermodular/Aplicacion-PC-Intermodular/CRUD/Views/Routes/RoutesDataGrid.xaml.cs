@@ -1,6 +1,7 @@
 ﻿using Aplicacion_PC_Intermodular.API.Controllers;
 using Aplicacion_PC_Intermodular.API.Models;
 using Aplicacion_PC_Intermodular.CRUD.Models;
+using Aplicacion_PC_Intermodular.CRUD.Views.Comments;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.Login.Models;
 using System;
@@ -87,6 +88,14 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
                 routes.Add(new RouteDataGrid(i, allPosts[i].name, allPosts[i].category, allPosts[i].distance, allPosts[i].difficulty, allPosts[i].duration));
             }
             dataGridRoutes.ItemsSource = routes;
+        }
+
+        private void addComment_button_Click(object sender, RoutedEventArgs e)
+        {
+            int index = ((RouteDataGrid)dataGridRoutes.SelectedItem).Index;
+            Route addCommentRoute = allPosts[index];
+            Application.Current.Properties["ROUTE"] = addCommentRoute;
+            NavigationService.Navigate(new AddCommentPage());
         }
     }
 }

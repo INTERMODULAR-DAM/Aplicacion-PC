@@ -77,7 +77,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             }
             else
             {
-                new CustomErrorManager("User successfully deleted", MessageType.Success, MessageButtons.Ok);
+                new CustomErrorManager("User successfully deleted", MessageType.Success, MessageButtons.Ok).ShowDialog();
                 assignToDataGridView();
             }
         }

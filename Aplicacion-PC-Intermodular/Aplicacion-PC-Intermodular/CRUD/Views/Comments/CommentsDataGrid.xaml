@@ -1,0 +1,28 @@
+﻿<Page x:Class="Aplicacion_PC_Intermodular.CRUD.Views.Comments.CommentsDataGrid"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD.Views.Comments"
+      mc:Ignorable="d" 
+      Title="CommentsDataGrid"
+      Loaded="Page_Loaded">
+
+    <StackPanel Margin="30,20,20,20">
+        <Grid Height="100"/>
+        <TextBlock Text="Comments" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
+        <DataGrid RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridComments" Grid.Row="5">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove comment" Click="remove_btn_Click">
+                             <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Page>

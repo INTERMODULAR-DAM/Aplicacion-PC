@@ -12,6 +12,11 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public Route[] allPosts { get; set; }
     }
 
+    public class RouteById
+    {
+        public Route data { get; set; }
+    }
+
     public class Route
     {
         public Route() { }

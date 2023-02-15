@@ -75,7 +75,7 @@
             </Style.Triggers>
         </Style>
         <Style x:Key="modifyButton" TargetType="Button">
-            <Setter Property="Background" Value="#2e2ed2"/>
+            <Setter Property="Background" Value="#353d7e"/>
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -94,20 +94,27 @@
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Blue"/>
-                    <!--Cambiar los colores a unos bonitos-->
+                    <Setter Property="Background" Value="#424c9e"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="deleteButton" TargetType="Button" BasedOn="{StaticResource modifyButton}">
-            <Setter Property="Background" Value="#d32f2f"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="#a82424"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#f44336"/>
-                    <!--Cambiar los colores a unos bonitos-->
                 </Trigger>
             </Style.Triggers>
+        </Style>
+
+        <Style x:Key="addCommentButton" TargetType="Button" BasedOn="{StaticResource modifyButton}">
+            <Setter Property="Background" Value="#3b6533"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#4a7e40"/>
+                </Trigger>
+            </Style.Triggers>
+
         </Style>
         
         <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
@@ -146,8 +153,10 @@
             </Setter>
         </Style>
         <Style x:Key="CRUDRowStyle" TargetType="{x:Type DataGridRow}">
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Margin" Value="0,4,0,0"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
             <Setter Property="ValidationErrorTemplate">
@@ -180,10 +189,12 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#119911"/>
+                    <Setter Property="Background" Value="#115511"/>
+                    <Setter Property="Foreground" Value="White"/>
                 </Trigger>
                 <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="#119911"/>
+                    <Setter Property="Background" Value="#115511"/>
+                    <Setter Property="Foreground" Value="White"/>
                 </Trigger>
             </Style.Triggers>
         </Style>

@@ -1,0 +1,43 @@
+﻿<Page x:Class="Aplicacion_PC_Intermodular.CRUD.Views.Comments.AddCommentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD.Views.Comments"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddCommentPage"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <StackPanel>
+        <Grid Height="100"/>
+        <TextBlock HorizontalAlignment="Center" Text="Add comment" FontFamily="Calibri" FontSize="32" FontWeight="Bold" Foreground="#4a2908" Margin="0,58,0,50"/>
+        <TextBox BorderBrush="Black" 
+                 BorderThickness="1" 
+                 x:Name="tb_comment" 
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                 materialDesign:HintAssist.Hint="Write a comment..."
+                 TextWrapping="Wrap" 
+                 FontSize="16" 
+                 FontFamily="Calibri" 
+                 HorizontalAlignment="Center" 
+                 VerticalAlignment="Center" 
+                 Height="80" 
+                 Width="400"  
+                 materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                 MaxLength="200"/>
+        <TextBlock Text="Remember you will post this comment with official WikiTrail account." FontFamily="Calibri" FontSize="10" HorizontalAlignment="Center" Margin="0,0,120,0" Foreground="#4a2908" />
+        <Button Style="{StaticResource modifyButton}" Width="200" Content="Add comment" FontSize="22" Foreground="White" Height="55" Background="#115511" Margin="0,50,0,0" x:Name="addCommentBtn" Click="addCommentBtn_Click"/>
+    </StackPanel>
+</Page>

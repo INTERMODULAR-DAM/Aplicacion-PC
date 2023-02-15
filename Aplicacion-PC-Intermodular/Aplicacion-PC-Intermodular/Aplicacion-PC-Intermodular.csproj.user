@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="CRUD\Views\Comments\AddCommentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRUD\Views\Comments\CommentsDataGrid.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CRUD\Views\Routes\RoutesDataGrid.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +39,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="CRUD\Views\Comments\AddCommentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\Comments\CommentsDataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="CRUD\Views\Routes\RoutesDataGrid.xaml">
       <SubType>Designer</SubType>
     </Page>

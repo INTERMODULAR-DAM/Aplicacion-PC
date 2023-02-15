@@ -153,7 +153,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
         }
 
 
-        public async static Task<UserResponse> getUserById(string token)
+        public async static Task<UserResponse> getUserByIdWithToken(string token)
         {
             UserResponse user;
             try
@@ -169,6 +169,28 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);    
+                user = new UserResponse();
+            }
+            return user;
+        }
+
+
+        public async static Task<UserResponse> getUserById(string id)
+        {
+            UserResponse user;
+            try
+            {
+                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("GET"), "http://localhost:8080/api/v1/users/");
+                requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
+                requestMessage.Content = new StringContent("{\"_id\":\"" + id + "\"}", Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.SendAsync(requestMessage);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+
+                user = JsonSerializer.Deserialize<UserById>(apiResponse).data;
+
+            }
+            catch (Exception ex)
+            {
                 user = new UserResponse();
             }
             return user;
