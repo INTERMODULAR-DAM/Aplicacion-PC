@@ -49,7 +49,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 string responseApi = await responseMessage.Content.ReadAsStringAsync();
                 response = JsonSerializer.Deserialize<DefaultResponse>(responseApi);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 response = new DefaultResponse();
                 response.data = "An internal error has ocurred";

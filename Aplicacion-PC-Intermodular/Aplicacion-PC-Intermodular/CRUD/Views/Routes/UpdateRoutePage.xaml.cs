@@ -39,8 +39,12 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             updatedRoute = (Route)Application.Current.Properties["ROUTE"];
             dbRoute = new Route(updatedRoute);
             assingPlaceholder();
-            
-
+            string path = @"http://localhost:8080/api/v1/imgs/posts/noPhotos.png";
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(path, UriKind.Absolute);
+            image.EndInit();
+            pfp.Source = image;
         }
 
         private void assingPlaceholder()
@@ -142,25 +146,13 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
                     updatedRoute.duration = cbDistance.Text + " " + cbDistanceMeasure.Text;
                 }
             }
-
             updatedRoute.privacity = (bool)cbPrivacity.IsChecked;
-
-        }
-
-        private void remove_btn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void modify_btn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
         {
-                cbTimeMinutes.Visibility= Visibility.Visible;
-                cbMinutes.Visibility= Visibility.Visible;
+            cbTimeMinutes.Visibility= Visibility.Visible;
+            cbMinutes.Visibility= Visibility.Visible;
         }
 
         private void cbiMinutes_Selected(object sender, RoutedEventArgs e)

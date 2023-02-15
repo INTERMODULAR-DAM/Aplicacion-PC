@@ -10,8 +10,8 @@
 
     <StackPanel Margin="30,20,20,20">
         <Grid Height="100"/>
-        <TextBlock Text="Comments" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
-        <DataGrid RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridComments" Grid.Row="5">
+        <TextBlock Text="Comments" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
+        <DataGrid AutoGeneratingColumn="dataGridComments_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridComments">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>

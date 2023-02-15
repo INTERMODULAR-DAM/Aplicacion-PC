@@ -217,3 +217,7 @@ C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicaci
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\CommentsDataGrid.g.cs
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\AddCommentPage.baml
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\CommentsDataGrid.baml
+D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\AddCommentPage.g.cs
+D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\CommentsDataGrid.g.cs
+D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\AddCommentPage.baml
+D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\CommentsDataGrid.baml

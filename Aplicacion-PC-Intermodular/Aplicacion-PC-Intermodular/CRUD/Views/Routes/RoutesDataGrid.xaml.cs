@@ -97,5 +97,16 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             Application.Current.Properties["ROUTE"] = addCommentRoute;
             NavigationService.Navigate(new AddCommentPage());
         }
+
+        private void dataGridRoutes_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headername = e.Column.Header.ToString();
+
+            if (headername.Equals("Index"))
+            {
+                e.Column.Width = 80;
+            }
+
+        }
     }
 }

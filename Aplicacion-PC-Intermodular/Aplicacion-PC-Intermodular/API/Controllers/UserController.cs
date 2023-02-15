@@ -80,7 +80,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 json = new DefaultResponse();
                 json.status = 500;

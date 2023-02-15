@@ -86,5 +86,15 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         {
             NavigationService.Navigate(new Uri("/CRUD/Views/Users/AddUserPage.xaml", UriKind.Relative));
         }
+
+        private void dataGridUsers_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headername = e.Column.Header.ToString();
+
+            if (headername.Equals("Index"))
+            {
+                e.Column.Width = 80;
+            }
+        }
     }
 }

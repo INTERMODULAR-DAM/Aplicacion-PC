@@ -27,7 +27,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
                 Application.Current.Properties["TOKEN"] = json.data;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 json = new DefaultResponse();
                 json.status = 400;

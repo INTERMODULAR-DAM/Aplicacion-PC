@@ -27,15 +27,7 @@
         <Grid VerticalAlignment="Center">
             <StackPanel>
                 <TextBlock HorizontalAlignment="Center" Text="Route Info" FontSize="30" FontFamily="Calibri"/>
-                <Image Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding Source=userPFP}" x:Name="pfp"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Margin="0,20,70,0" Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click" Height="50" Width="50">
-                        <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
-                    </Button>
-                    <Button Margin="0,20,0,0" Style="{StaticResource deleteButton}" x:Name="remove_btn" Click="remove_btn_Click" Height="50" Width="50">
-                        <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
-                    </Button>
-                </StackPanel>
+                <Image Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="pfp"/>
                 <CheckBox x:Name="cbPrivacity" Content="Public" FontFamily="Calibri" FontSize="22" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
             </StackPanel>
         </Grid>

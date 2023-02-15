@@ -43,7 +43,6 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
                     UserResponse user = await UserController.getUserById(comments[i].user);
                     Route route = await RoutesController.getRouteById(comments[i].post);
                     commentsdg.Add(new CommentsDG(i, user.nick, route.name, comments[i].message));
-                    MessageBox.Show(commentsdg[i].UserName + " " + commentsdg[i].PostName);
                 }
                 dataGridComments.ItemsSource = commentsdg;
             }
@@ -55,12 +54,23 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
 
         private void remove_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            int index = dataGridComments.SelectedIndex;
+            
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void dataGridComments_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headername = e.Column.Header.ToString();
+
+            if (headername.Equals("Index"))
+            {
+                e.Column.Width = 80;
+            }
         }
     }
 }

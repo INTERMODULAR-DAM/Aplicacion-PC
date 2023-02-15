@@ -8,17 +8,17 @@ namespace Aplicacion_PC_Intermodular.CRUD.Models
 {
     public class CommentsDG
     {
-        public int Index;
-        public string UserName;
-        public string PostName;
-        public string Message;
+        public int Index { get; set; }
+        public String User { get; set; }
+        public String Post { get; set; }
+        public String Message { get; set; }
 
 
         public CommentsDG(int index, string user, string post, string message)
         {
             Index = index;
-            UserName = user;
-            PostName = post;
+            User = user;
+            Post = post;
             Message = message;
         }
 
