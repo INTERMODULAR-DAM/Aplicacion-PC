@@ -10,19 +10,22 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent" Width="700" Height="500">
-    <Border Background="#c6efd0" CornerRadius="30" MouseDown="">
+    <Border Background="#c6efd0" CornerRadius="30" MouseDown="Border_MouseDown">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="450"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
             <StackPanel Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock FontSize="32" FontFamily="Calibri" TextAlignment="Center" x:Name="tb_title"/>
-                <Image Width="350" Height="300"/>
+                <Image Width="350" Height="220" x:Name="imgPost"/>
                 <Button Style="{StaticResource addUser}" Content="View next photo" HorizontalAlignment="Center" x:Name="nextPhotobtn" Click="nextPhotobtn_Click"/>
             </StackPanel>
-            <StackPanel Grid.Column="1">
+            <StackPanel Grid.Column="1" Margin="0,0,10,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Margin="20">
                     <Button x:Name="close_button"
                             Foreground="White"
@@ -34,8 +37,36 @@
                             Template="{StaticResource btnMarron}">
                     </Button>
                 </StackPanel>
-                
-                
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Margin="10,0,0,0">
+                        <TextBlock x:Name="tb_distance" Text="Distance" Style="{StaticResource textBlockFileTitle}"/>
+                        <TextBlock Style="{StaticResource textBlockFileTitle}" FontSize="12"/>
+                    </StackPanel>
+                    <StackPanel Margin="60,0,0,0">
+                        <TextBlock Text="Duration" Style="{StaticResource textBlockFileTitle}"/>
+                        <TextBlock x:Name="tb_duration" Style="{StaticResource textBlockFileTitle}" FontSize="12"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <StackPanel Margin="10,0,0,0" >
+                        <TextBlock Text="Difficulty" Style="{StaticResource textBlockFileTitle}"/>
+                        <TextBlock x:Name="tb_difficulty" Style="{StaticResource textBlockFileTitle}" FontSize="12"/>
+                    </StackPanel>
+                    <StackPanel Margin="60,0,0,0">
+                        <TextBlock Text="Category" Style="{StaticResource textBlockFileTitle}"/>
+                        <TextBlock x:Name="tb_Category" Style="{StaticResource textBlockFileTitle}" FontSize="12"/>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Text="Description" Style="{StaticResource textBlockFileTitle}" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                <TextBlock x:Name="tb_description" Height="150" Margin="0,10,0,0"><Run Language="es-es" Text="º"/></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10,0,0,10">
+                <Image Width="100" Height="100" HorizontalAlignment="Left"/>
+                <StackPanel>
+                    <TextBlock x:Name="tb_userName" Style="{StaticResource textBlockFileTitle}"/>
+                    <TextBlock x:Name="tb_createdAt" Foreground="LightGray"/>
+                    <TextBlock x:Name="tb_followers" Foreground="LightGray"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Border>

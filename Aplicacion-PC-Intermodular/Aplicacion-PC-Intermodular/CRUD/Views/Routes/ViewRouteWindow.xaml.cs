@@ -41,5 +41,10 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
                 DragMove();
             }
         }
+
+        private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
