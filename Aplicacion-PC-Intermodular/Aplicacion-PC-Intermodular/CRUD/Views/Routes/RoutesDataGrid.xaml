@@ -25,6 +25,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource viewRouteButton}" x:Name="viewRoute_btn" ToolTip="View route" Click="viewRoute_btn_Click">
+                                    <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
+                                </Button>
                                 <Button Style="{StaticResource addCommentButton}" x:Name="addComment_button" ToolTip="Add comment" Click="addComment_button_Click">
                                     <Image Source="/Resources/Icons/addRoute-icon.png" Stretch="Uniform" />
                                 </Button>

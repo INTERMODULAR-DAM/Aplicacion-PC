@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ldQ1W53BSsYbb5UNR4Dx/AH9fe1HvP07ODFGfJU8nH6A5GGnH+651d0RZoS+r/pJ6q5nTEk5A4M163rCOE57PA==",
+  "dgSpecHash": "I5Zg83DUYGBkhuggAUjUJo5sKkkZi6i5Jx7DVQ9wHT4hMaQmgX5cBITSN9Dp6g7gVcQj46B8kT7IwmiNewZLgQ==",
   "success": true,
-  "projectFilePath": "D:\\Escritorio\\2DAM\\Intermodular\\Aplicacion-PC\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
+  "projectFilePath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\materialdesignextensions\\3.3.0\\materialdesignextensions.3.3.0.nupkg.sha512",

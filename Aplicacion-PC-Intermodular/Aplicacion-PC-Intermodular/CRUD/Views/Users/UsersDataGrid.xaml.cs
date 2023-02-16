@@ -96,5 +96,14 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                 e.Column.Width = 80;
             }
         }
+
+        private void viewUser_btn_Click(object sender, RoutedEventArgs e)
+        {
+            int index = ((UserDataGrid)dataGridUsers.SelectedItem).Index;
+            UpdateUserPage updateUser = new UpdateUserPage();
+            UserResponse userUpdate = allUsers.data[index];
+            Application.Current.Properties["USER"] = userUpdate;
+             
+        }
     }
 }

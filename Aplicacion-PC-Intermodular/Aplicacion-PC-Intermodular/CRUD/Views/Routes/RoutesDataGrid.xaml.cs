@@ -108,5 +108,13 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             }
 
         }
+
+        private void viewRoute_btn_Click(object sender, RoutedEventArgs e)
+        {
+            int index = ((RouteDataGrid)dataGridRoutes.SelectedItem).Index;
+            Route viewRoute = allPosts[index];
+            Application.Current.Properties["ROUTE"] = viewRoute;
+            new ViewRouteWindow().ShowDialog();
+        }
     }
 }

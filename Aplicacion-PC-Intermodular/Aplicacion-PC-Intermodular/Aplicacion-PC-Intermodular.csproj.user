@@ -19,6 +19,9 @@
     <Compile Update="CRUD\Views\Routes\UpdateRoutePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CRUD\Views\Routes\ViewRouteWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CRUD\Views\Users\AddUserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRUD\Views\Routes\UpdateRoutePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\Routes\ViewRouteWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRUD\Views\Users\AddUserPage.xaml">

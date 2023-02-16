@@ -72,5 +72,10 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
                 e.Column.Width = 80;
             }
         }
+
+        private void viewComment_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -26,6 +26,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource viewRouteButton}" x:Name="viewUser_btn" ToolTip="View user" Click="viewUser_btn_Click">
+                                    <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
+                                </Button>
                                 <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click">
                                     <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
                                 </Button>

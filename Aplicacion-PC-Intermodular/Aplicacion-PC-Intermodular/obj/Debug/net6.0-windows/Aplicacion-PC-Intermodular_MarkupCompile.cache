@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\
 Aplicacion_PC_Intermodular
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\App.xaml
-11-1423470062
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\App.xaml
+12-1733479623
 
-271176607959
+28-1087337733
 1981699193039
-CRUD\Views\Comments\AddCommentPage.xaml;CRUD\Views\Comments\CommentsDataGrid.xaml;CRUD\Views\CRUDView.xaml;CRUD\Views\Routes\RoutesDataGrid.xaml;CRUD\Views\Routes\UpdateRoutePage.xaml;CRUD\Views\Users\AddUserPage.xaml;CRUD\Views\Users\UpdateUserPage.xaml;CRUD\Views\Users\UsersDataGrid.xaml;Login\Views\ForgotPasswordWindow.xaml;Login\Views\LoginView.xaml;Utils\ErrorManager\ErrorManager.xaml;
+CRUD\Views\Comments\AddCommentPage.xaml;CRUD\Views\Comments\CommentsDataGrid.xaml;CRUD\Views\CRUDView.xaml;CRUD\Views\Routes\RoutesDataGrid.xaml;CRUD\Views\Routes\UpdateRoutePage.xaml;CRUD\Views\Routes\ViewRouteWindow.xaml;CRUD\Views\Users\AddUserPage.xaml;CRUD\Views\Users\UpdateUserPage.xaml;CRUD\Views\Users\UsersDataGrid.xaml;Login\Views\ForgotPasswordWindow.xaml;Login\Views\LoginView.xaml;Utils\ErrorManager\ErrorManager.xaml;
 
 False
 

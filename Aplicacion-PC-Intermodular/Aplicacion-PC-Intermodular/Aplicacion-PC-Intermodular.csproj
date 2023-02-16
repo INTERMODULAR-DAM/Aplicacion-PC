@@ -33,6 +33,7 @@
     <None Remove="Resources\Icons\posts-icon.png" />
     <None Remove="Resources\Icons\remove-icon.png" />
     <None Remove="Resources\Icons\usersCRUD-icon.png" />
+    <None Remove="Resources\Icons\view-icon.png" />
     <None Remove="Resources\key-icon.png" />
     <None Remove="Resources\logo.png" />
     <None Remove="Resources\logo_app.png" />
@@ -58,6 +59,7 @@
     <Resource Include="Resources\Icons\posts-icon.png" />
     <Resource Include="Resources\Icons\remove-icon.png" />
     <Resource Include="Resources\Icons\usersCRUD-icon.png" />
+    <Resource Include="Resources\Icons\view-icon.png" />
     <Resource Include="Resources\logo_app.png" />
     <Resource Include="Resources\logo_appName.png" />
     <Resource Include="Resources\logo_appWritten.png" />

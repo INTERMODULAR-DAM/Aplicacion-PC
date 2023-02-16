@@ -16,9 +16,14 @@
                 <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove comment" Click="remove_btn_Click">
-                             <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
-                            </Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource viewRouteButton}" x:Name="viewComment_btn" ToolTip="View comment" Click="viewComment_btn_Click">
+                                    <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
+                                </Button>
+                                <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove comment" Click="remove_btn_Click">
+                                    <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
+                                </Button>
+                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

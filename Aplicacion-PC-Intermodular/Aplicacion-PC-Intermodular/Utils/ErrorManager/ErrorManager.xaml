@@ -95,6 +95,7 @@
                                HorizontalAlignment="Center"
                                TextWrapping="WrapWithOverflow"
                                Margin="5"
+                               TextAlignment="Center"
                                materialDesign:HintAssist.Hint=""
                                FontSize="15"
                                FontWeight="Medium"
