@@ -15,6 +15,7 @@ namespace Aplicacion_PC_Intermodular.API.Models
 
     public class CommentResponse
     {
+        public string _id { get; set; }
         public string message { get; set; }
         public string user { get; set; }
         public string post { get; set; }

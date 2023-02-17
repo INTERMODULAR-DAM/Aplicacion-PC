@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -92,31 +93,31 @@ namespace Aplicacion_PC_Intermodular.ErrorManager
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-            this.Close();
+            Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
-            this.Close();
+            Close();
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-            this.Close();
+            Close();
         }
 
         private void btnNo_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
-            this.Close();
+            Close();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
-            this.Close();
+            Close();
         }
     }
     public enum MessageType

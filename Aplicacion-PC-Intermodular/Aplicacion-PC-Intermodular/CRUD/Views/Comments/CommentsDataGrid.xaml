@@ -8,26 +8,38 @@
       Title="CommentsDataGrid"
       Loaded="Page_Loaded">
 
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:0.2" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
     <StackPanel Margin="30,20,20,20">
         <Grid Height="100"/>
         <TextBlock Text="Comments" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
-        <DataGrid AutoGeneratingColumn="dataGridComments_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridComments">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource viewRouteButton}" x:Name="viewComment_btn" ToolTip="View comment" Click="viewComment_btn_Click">
-                                    <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
-                                </Button>
-                                <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove comment" Click="remove_btn_Click">
-                                    <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid x:Name="dataGrid">
+
+            <DataGrid AutoGeneratingColumn="dataGridComments_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridComments">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource viewRouteButton}" x:Name="viewComment_btn" ToolTip="View comment" Click="viewComment_btn_Click">
+                                        <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
+                                    </Button>
+                                    <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove comment" Click="remove_btn_Click">
+                                        <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </StackPanel>
 </Page>

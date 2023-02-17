@@ -4,64 +4,86 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Height="600" Width="1080"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent">
-    <Border Background="#c6efd0" CornerRadius="30" MouseDown="Border_MouseDown">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="225"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <!-- LEFT HAND MENU -->
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Image HorizontalAlignment="Left" Source="/Resources/logo_appWritten.png" Height="90" Width="200"/>
-                <Border Grid.Row="2" Background="#115511" CornerRadius="0,60,0,0">
-                    <StackPanel Orientation="Vertical">
-                        <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                            <Image Source="/Resources/Icons/admin-icon.png"/>
-                            <TextBlock Text="Admin menu" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="26"  HorizontalAlignment="Center" FontFamily="Calibri"></TextBlock>
-                        </StackPanel>
-                        <Button Margin="0,50,0,0" Style="{StaticResource leftMenuButton}" x:Name="usersBtn" Click="usersBtn_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/usersCRUD-icon.png"/>
-                                <TextBlock Text="Users"/>
-                            </StackPanel>
-                        </Button>
-                        <Separator Margin="20" Background="White" Height="0.5"/>
-                        <Button Style="{StaticResource leftMenuButton}" x:Name="routesBtn" Click="routesBtn_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/posts-icon.png"/>
-                                <TextBlock Text="Routes"/>
-                            </StackPanel>
-                        </Button>
-                        <Separator Margin="20" Background="White" Height="0.5"/>
-                        <Button Style="{StaticResource leftMenuButton}" x:Name="commentsBtn" Click="commentsBtn_Click" >
-                            <StackPanel Orientation="Horizontal">
-                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/comments-icon.png"/>
-                                <TextBlock Text="Comments"/>
-                            </StackPanel>
-                        </Button>
-                        <Separator Margin="20" Background="White" Height="0.5"/>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:0.2" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
 
-                        <Button Margin="0,60,0,0" Style="{StaticResource leftMenuButton}" Click="logOutButton_Click" x:Name="logOutButton">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/logOut-icon.png"/>
-                                <TextBlock Text="Log Out" Foreground="White" FontWeight="Bold"/>
+    <materialDesign:TransitioningContent>
+        <Border Background="#c6efd0" CornerRadius="30" MouseDown="Border_MouseDown">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="225"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- LEFT HAND MENU -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image HorizontalAlignment="Left" Source="/Resources/logo_appWritten.png" Height="90" Width="200"/>
+                    <Border Grid.Row="2" Background="#115511" CornerRadius="0,60,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                                <Image Source="/Resources/Icons/admin-icon.png"/>
+                                <TextBlock Text="Admin menu" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="26"  HorizontalAlignment="Center" FontFamily="Calibri"></TextBlock>
                             </StackPanel>
-                        </Button>
-                    </StackPanel>
-                </Border>
-            </Grid>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Margin="20">
-                <Button x:Name="minimize_button"
+                            <Button Margin="0,50,0,0" Style="{StaticResource leftMenuButton}" x:Name="usersBtn" Click="usersBtn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/usersCRUD-icon.png"/>
+                                    <TextBlock Text="Users"/>
+                                </StackPanel>
+                            </Button>
+                            <Separator Margin="20" Background="White" Height="0.5"/>
+                            <Button Style="{StaticResource leftMenuButton}" x:Name="routesBtn" Click="routesBtn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/posts-icon.png"/>
+                                    <TextBlock Text="Routes"/>
+                                </StackPanel>
+                            </Button>
+                            <Separator Margin="20" Background="White" Height="0.5"/>
+                            <Button Style="{StaticResource leftMenuButton}" x:Name="commentsBtn" Click="commentsBtn_Click" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/comments-icon.png"/>
+                                    <TextBlock Text="Comments"/>
+                                </StackPanel>
+                            </Button>
+                            <Separator Margin="20" Background="White" Height="0.5"/>
+
+                            <Button Margin="0,60,0,0" Style="{StaticResource leftMenuButton}" Click="logOutButton_Click" x:Name="logOutButton">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Style="{StaticResource leftMenuIconButton}" Source="/Resources/Icons/logOut-icon.png"/>
+                                    <TextBlock Text="Log Out" Foreground="White" FontWeight="Bold"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Margin="20">
+                    <Button x:Name="minimize_button"
                             Foreground="White"
                             Content="-"
                             FontSize="10"
@@ -70,8 +92,8 @@
                             Style="{StaticResource btnTopBar}"
                             Template="{StaticResource btnMarron}"
                             >
-                </Button>
-                <Button x:Name="close_button"
+                    </Button>
+                    <Button x:Name="close_button"
                             Foreground="White"
                             Content="X"
                             FontSize="11"
@@ -79,9 +101,11 @@
                             Click="close_button_Click"
                             Style="{StaticResource btnTopBar}"
                             Template="{StaticResource btnMarron}">
-                </Button>
-            </StackPanel>
-            <Frame x:Name="mainContent"  Grid.Column="1" Source="/CRUD/Views/Users/UsersDataGrid.xaml" NavigationUIVisibility="Hidden"/>
-        </Grid>
-    </Border>
+                    </Button>
+                </StackPanel>
+                <Frame x:Name="mainContent"  Grid.Column="1" Source="/CRUD/Views/Users/UsersDataGrid.xaml" NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Border>
+    </materialDesign:TransitioningContent>
+
 </Window>

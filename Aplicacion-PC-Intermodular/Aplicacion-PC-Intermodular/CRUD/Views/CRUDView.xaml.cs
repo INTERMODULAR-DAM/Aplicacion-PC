@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace Aplicacion_PC_Intermodular.CRUD
 {
@@ -44,14 +45,14 @@ namespace Aplicacion_PC_Intermodular.CRUD
             if (result.Value)
             {
                 response = true;
-                Close();
+                fadeOut();
             }
         }
 
         private void logOutButton_Click(object sender, RoutedEventArgs e)
         {
             response = false;
-            Close();
+            fadeOut();
         }
 
         private void routesBtn_Click(object sender, RoutedEventArgs e)
@@ -67,6 +68,18 @@ namespace Aplicacion_PC_Intermodular.CRUD
         private void usersBtn_Click(object sender, RoutedEventArgs e)
         {
             mainContent.Source = new Uri("/CRUD/Views/Users/UsersDataGrid.xaml", UriKind.Relative);
+        }
+
+        private void fadeOut()
+        {
+            var ObjAnimation = new DoubleAnimation(0, (Duration)TimeSpan.FromSeconds(0.2));
+            ObjAnimation.Completed += new EventHandler(Animation_FadeOutCompleted);
+            this.BeginAnimation(UIElement.OpacityProperty, ObjAnimation);
+        }
+
+        private void Animation_FadeOutCompleted(object? sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

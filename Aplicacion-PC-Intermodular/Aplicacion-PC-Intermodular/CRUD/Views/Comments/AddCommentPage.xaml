@@ -19,7 +19,16 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:0.2" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+        
     <StackPanel>
         <Grid Height="100"/>
         <TextBlock HorizontalAlignment="Center" Text="Add comment" FontFamily="Calibri" FontSize="32" FontWeight="Bold" Foreground="#4a2908" Margin="0,58,0,50"/>

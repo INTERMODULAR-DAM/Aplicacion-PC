@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace Aplicacion_PC_Intermodular.API.Controllers
 {
@@ -50,6 +51,28 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 response = JsonSerializer.Deserialize<DefaultResponse>(responseApi);
             }
             catch(Exception)
+            {
+                response = new DefaultResponse();
+                response.data = "An internal error has ocurred";
+                response.status = 500;
+            }
+
+            return response;
+        }
+
+        public async static Task<DefaultResponse> removeComment(string id)
+        {
+            DefaultResponse response;
+            try
+            {
+                HttpRequestMessage request = new HttpRequestMessage(new HttpMethod("DELETE"), "http://localhost:8080/api/v1/comments/");
+                request.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
+                request.Content = new StringContent("{\"_id\":\"" + id + "\"}", Encoding.UTF8, "application/json");
+                HttpResponseMessage responseMessage = await client.SendAsync(request);
+                string responseApi = await responseMessage.Content.ReadAsStringAsync();
+                response = JsonSerializer.Deserialize<DefaultResponse>(responseApi);
+            }
+            catch (Exception)
             {
                 response = new DefaultResponse();
                 response.data = "An internal error has ocurred";

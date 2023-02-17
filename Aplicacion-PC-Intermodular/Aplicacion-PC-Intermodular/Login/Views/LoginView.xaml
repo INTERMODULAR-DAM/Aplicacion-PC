@@ -9,6 +9,7 @@
         Height="595" Width="550"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
+        x:Name="loginWindow"
         MouseDown="Window_MouseDown"
         WindowStyle="None"
         Background="Transparent"
@@ -23,40 +24,41 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Border CornerRadius="18">
-        <Border.Background>
-            <ImageBrush ImageSource="/Resources/background_login.jpg"></ImageBrush>
-        </Border.Background>
-        <Border CornerRadius="8"
-                BorderThickness="4"
-                Opacity="0.90">
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#424632" Offset="1.1"/>
-                    <GradientStop Color="#a98" Offset="0.2"/>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
+    <materialDesign:TransitioningContent
+        OpeningEffect="{materialDesign:TransitionEffect Kind=FadeIn, Duration=0:0:0.5}">
+        <Border CornerRadius="18">
             <Border.Background>
-                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
-                    <GradientStop Color="#191" Offset="0.2"/>
-                    <GradientStop Color="#115511" Offset="1.1"/>
-                </LinearGradientBrush>
+                <ImageBrush ImageSource="/Resources/background_login.jpg"></ImageBrush>
             </Border.Background>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+            <Border CornerRadius="8"
+                BorderThickness="4"
+                Opacity="0.85">
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#424632" Offset="1.1"/>
+                        <GradientStop Color="#a98" Offset="0.2"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                        <GradientStop Color="#191" Offset="0.2"/>
+                        <GradientStop Color="#115511" Offset="1.1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Margin="0,7,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
 
-                <Grid Margin="0,7,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="5"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Text="WIKITRAIL"
+                        <TextBlock Text="WIKITRAIL"
                            Foreground="White"
                            FontSize="11"
                            FontFamily="Calibri"
@@ -64,7 +66,7 @@
                            VerticalAlignment="Center"
                             Margin="30,0,0,0"/>
 
-                    <Button x:Name="minimize_button"
+                        <Button x:Name="minimize_button"
                             Foreground="White"
                             Content="-"
                             FontSize="10"
@@ -74,8 +76,8 @@
                             Style="{StaticResource btnTopBar}"
                             Template="{StaticResource btnMarron}"
                             >
-                    </Button>
-                    <Button x:Name="close_button"
+                        </Button>
+                        <Button x:Name="close_button"
                             Foreground="White"
                             Content="X"
                             FontSize="11"
@@ -85,21 +87,21 @@
                             Style="{StaticResource btnTopBar}"
                             Template="{StaticResource btnMarron}"
                             >
-                    </Button>
-                </Grid>
-                <StackPanel Width="300" Grid.Row="1" Orientation="Vertical" Margin="0,20,0,0">
-                    <Image Source="/Resources/white_logo.png" Width="175"></Image>
-                   <TextBlock Text=" Welcome to WikiTrail!"
+                        </Button>
+                    </Grid>
+                    <StackPanel Width="300" Grid.Row="1" Orientation="Vertical" Margin="0,20,0,0">
+                        <Image Source="/Resources/white_logo.png" Width="175"></Image>
+                        <TextBlock Text=" Welcome to WikiTrail!"
                                Foreground="White"
                                FontSize="22"
                                FontFamily="Calibri"
                                HorizontalAlignment="Center"/>
-                    <TextBlock Text=" Sign in to continue!"
+                        <TextBlock Text=" Sign in to continue!"
                                Foreground="White"
                                FontSize="18"
                                FontFamily="Calibri"
                                HorizontalAlignment="Center"/>
-                    <TextBox x:Name="tbUser"
+                        <TextBox x:Name="tbUser"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
@@ -115,13 +117,13 @@
                              materialDesign:HintAssist.Foreground="White"
                              materialDesign:TextFieldAssist.UnderlineBrush="White"
                              >
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Resources/Icons/mail-icon.png"
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Resources/Icons/mail-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
-                        </TextBox.Background>
-                    </TextBox>
-                    <PasswordBox x:Name="tbPass"
+                            </TextBox.Background>
+                        </TextBox>
+                        <PasswordBox x:Name="tbPass"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Calibri"                            
@@ -138,41 +140,41 @@
                              materialDesign:PasswordBoxAssist.PasswordMaskedIcon="Eye"
                              materialDesign:PasswordBoxAssist.PasswordRevealedIcon="EyeOff"
                              materialDesign:TextFieldAssist.UnderlineBrush="White">
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/Resources/Icons/password-icon.png"
+                            <PasswordBox.Background>
+                                <ImageBrush ImageSource="/Resources/Icons/password-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"
                                         AlignmentY="Center"
                                         />
-                        </PasswordBox.Background>
-                        
-                    </PasswordBox>
-                    <Grid Margin="0,40,0,0">
-                        <Grid.Resources>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="Transparent" />
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="Button">
-                                            <Grid Background="{TemplateBinding Background}">
-                                                <ContentPresenter />
-                                            </Grid>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <TextBlock TextDecorations="Underline" Text="{TemplateBinding Content}"/>
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="False"/>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Resources>
-                        <Button
+                            </PasswordBox.Background>
+
+                        </PasswordBox>
+                        <Grid Margin="0,40,0,0">
+                            <Grid.Resources>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Grid Background="{TemplateBinding Background}">
+                                                    <ContentPresenter />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock TextDecorations="Underline" Text="{TemplateBinding Content}"/>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="False"/>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Resources>
+                            <Button
                         x:Name="forgetPassword"
                         Height="20"
                         Content="Forgot your password? "
@@ -181,8 +183,8 @@
                         Width="140"
                         HorizontalAlignment="Right"
                         Click="forgetPassword_Click"/>
-                    </Grid>
-                    <Button x:Name="btn_login"
+                        </Grid>
+                        <Button x:Name="btn_login"
                             IsDefault="True"
                             Content="SIGN IN"
                             Foreground="White"
@@ -191,20 +193,20 @@
                             Cursor="Hand"                           
                             Margin="0,30,0,0" Click="btnLogin_Click"
                             Style="{StaticResource btnTopBar}">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="40"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-                
-            </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Border>
-    </Border>
+    </materialDesign:TransitioningContent>
 </Window>

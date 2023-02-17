@@ -6,6 +6,15 @@
       xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD.Views.Routes"
       mc:Ignorable="d" 
       Title="RoutesDataGrid">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:0.2" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
 
     <Grid Margin="30,20,20,20">
         <Grid.RowDefinitions>

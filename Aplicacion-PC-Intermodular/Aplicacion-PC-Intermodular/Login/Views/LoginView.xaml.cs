@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Input;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.API.Controllers;
+using System.Windows.Media.Animation;
+using System;
 
 namespace Aplicacion_PC_Intermodular
 {
@@ -93,19 +95,29 @@ namespace Aplicacion_PC_Intermodular
             }
             else
             {
+                DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(1));
+                Storyboard sb = new Storyboard();
+                animation.From = 1;
+
+                this.BeginAnimation(Window.OpacityProperty, animation);
                 CRUDView crud = new CRUDView();
-                this.Hide();
                 cleanTextFields();
+                
                 bool response = (bool)crud.ShowDialogRespuesta();
+                this.Hide();
                 if (response)
                 {
-                    Application.Current.Shutdown();
+                     Application.Current.Shutdown();
                 }
                 else
                 {
-                    crud.Close();
+                    
+                    animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
+                    animation.From = 0;
+                    this.BeginAnimation(Window.OpacityProperty, animation);
                     this.Show();
-                    }
+
+                }
     
             }
         }

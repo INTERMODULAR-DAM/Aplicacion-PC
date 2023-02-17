@@ -2,6 +2,7 @@
 using Aplicacion_PC_Intermodular.API.Models;
 using Aplicacion_PC_Intermodular.CRUD.Models;
 using Aplicacion_PC_Intermodular.ErrorManager;
+using Aplicacion_PC_Intermodular.Login.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +30,16 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
         public CommentsDataGrid()
         {
             InitializeComponent();
-            putDataOnDataGrid();
+            
         }
 
         private async void putDataOnDataGrid()
         {
             comments = (await CommentController.getAllComments()).data;
             List<CommentsDG> commentsdg = new List<CommentsDG>();
+            ProgressBar progressBar= new ProgressBar();
+            
+
             if (comments != null)
             {
                 for (int i = 0; i < comments.Length; i++)
@@ -43,6 +47,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
                     UserResponse user = await UserController.getUserById(comments[i].user);
                     Route route = await RoutesController.getRouteById(comments[i].post);
                     commentsdg.Add(new CommentsDG(i, user.nick, route.name, comments[i].message));
+                    //i / comments.Length * 100;
                 }
                 dataGridComments.ItemsSource = commentsdg;
             }
@@ -52,15 +57,26 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
             }
         }
 
-        private void remove_btn_Click(object sender, RoutedEventArgs e)
+        private async void remove_btn_Click(object sender, RoutedEventArgs e)
         {
             int index = dataGridComments.SelectedIndex;
+            CommentResponse comment = comments[index];
+            DefaultResponse response = await CommentController.removeComment(comment._id);
+            if(response.status< 300)
+            {
+                new CustomErrorManager(response.data, MessageType.Success, MessageButtons.Ok).ShowDialog();
+                putDataOnDataGrid();
+            }
+            else
+            {
+                new CustomErrorManager(response.data,MessageType.Error, MessageButtons.Ok).ShowDialog();
+            }
             
         }
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            putDataOnDataGrid();
         }
 
         private void dataGridComments_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)

@@ -19,6 +19,15 @@
         </ResourceDictionary>
     </Page.Resources>
 
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:0.2" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
     <Grid VerticalAlignment="Center" DataContext="user">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>

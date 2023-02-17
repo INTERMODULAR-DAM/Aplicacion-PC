@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MessageBoxWindow"
-        Height="220"
+        Height="200"
         Width="350"
+        AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Background="White"
+        Background="Transparent"
         ResizeMode="NoResize"
         Topmost="True"
         ShowInTaskbar="False"
@@ -31,89 +32,92 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="197*" />
-            <ColumnDefinition Width="295*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <materialDesign:Card x:Name="cardHeader"
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:0.5" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromLeft}" Background="Transparent" >
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="197*" />
+                <ColumnDefinition Width="295*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <materialDesign:Card x:Name="cardHeader"
                              Grid.Row="0"
                              Padding="10"
-                             Margin="0"
                              materialDesign:ShadowAssist.ShadowDepth="Depth5"
                              Background=" #115511"
                              Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                              Visibility="Visible"
                              Grid.ColumnSpan="2">
-            <StackPanel>
-                <TextBlock x:Name="txtTitle"
+                <StackPanel>
+                    <TextBlock x:Name="txtTitle"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Stretch"
                            Style="{DynamicResource MaterialDesignTitleTextBlock}"
                            FontSize="20">Message Title</TextBlock>
-            </StackPanel>
-        </materialDesign:Card>
-        <StackPanel  HorizontalAlignment="Right"
-                     Margin="0,5,5,0"
+                </StackPanel>
+            </materialDesign:Card>
+            <StackPanel  HorizontalAlignment="Right"
                      VerticalAlignment="Top"
                      Grid.Column="1">
-            <Button x:Name="btnClose"
+                <Button x:Name="btnClose"
                     Click="btnClose_Click"
                     Width="35"
                     Height="35"
-                    Background="White"
-                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
-                    Style="{StaticResource MaterialDesignFloatingActionButton}">
-                <materialDesign:PackIcon Kind="Close" />
-            </Button>
-        </StackPanel>
-        <Grid Grid.Row="1"
+                    Foreground="White"
+                    Template="{StaticResource btnMarron}"
+                    Style="{StaticResource btnTopBar}">
+                    <materialDesign:PackIcon Kind="Close" />
+                </Button>
+            </StackPanel>
+            <Grid Grid.Row="1"
               Grid.ColumnSpan="2">
-            <Grid Margin="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Grid Grid.Row="0">
+                <Grid Margin="20">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <materialDesign:TransitioningContent>
-                        <materialDesign:TransitioningContent.OpeningEffects>
-                            <materialDesign:TransitionEffect Kind="FadeIn" />
-                            <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
-                        </materialDesign:TransitioningContent.OpeningEffects>
-                        <TextBlock x:Name="txtMessage"
-                               HorizontalAlignment="Center"
-                               TextWrapping="WrapWithOverflow"
-                               Margin="5"
-                               TextAlignment="Center"
-                               materialDesign:HintAssist.Hint=""
-                               FontSize="15"
-                               FontWeight="Medium"
-                               Width="auto"
-                               Height="auto" />
-                    </materialDesign:TransitioningContent>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                </Grid>
-                <Grid Grid.Row="1"
+
+                    <TextBlock x:Name="txtMessage"
+                            HorizontalAlignment="Center"
+                            TextWrapping="WrapWithOverflow"
+                            Margin="5"
+                            TextAlignment="Center"
+                            materialDesign:HintAssist.Hint=""
+                            FontSize="15"
+                            FontWeight="Medium"
+                            Width="auto"
+                            Height="auto" />
+
+                    </Grid>
+                    <Grid Grid.Row="1"
                       Margin="0,20,0,5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                    <Button x:Name="btnOk"
+                        <Button x:Name="btnOk"
                             Click="btnOk_Click"
                             Grid.Column="1"
                             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -121,7 +125,7 @@
                             Width="100"
                             Content="OK"
                             ToolTip="Ok" />
-                    <Button x:Name="btnCancel"
+                        <Button x:Name="btnCancel"
                             Click="btnCancel_Click"
                             Grid.Column="2"
                             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -129,7 +133,7 @@
                             Width="100"
                             Content="Cancel"
                             ToolTip="Cancel" />
-                    <Button x:Name="btnYes"
+                        <Button x:Name="btnYes"
                             Click="btnYes_Click"
                             Grid.Column="1"
                             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -138,7 +142,7 @@
                             Width="100"
                             Content="Yes"
                             ToolTip="Yes" />
-                    <Button x:Name="btnNo"
+                        <Button x:Name="btnNo"
                             Click="btnNo_Click"
                             Grid.Column="2"
                             Background="#115511"
@@ -147,8 +151,9 @@
                             Width="100"
                             Content="No"
                             ToolTip="No" />
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
-    </Grid>
+    </materialDesign:TransitioningContent>
 </Window>
