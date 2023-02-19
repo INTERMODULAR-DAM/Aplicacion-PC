@@ -219,3 +219,4 @@ C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicaci
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\ViewUserWindow.baml
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\ViewCommentWindow.g.cs
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\ViewCommentWindow.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\Aplicacion-PC-Intermodular_Content.g.cs

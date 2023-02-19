@@ -6,6 +6,7 @@
     <RootNamespace>Aplicacion_PC_Intermodular</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>logo_app.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,6 +42,10 @@
     <None Remove="Resources\logo_appWritten.png" />
     <None Remove="Resources\user-icon.png" />
     <None Remove="Resources\white_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logo_app.ico" />
   </ItemGroup>
 
   <ItemGroup>
