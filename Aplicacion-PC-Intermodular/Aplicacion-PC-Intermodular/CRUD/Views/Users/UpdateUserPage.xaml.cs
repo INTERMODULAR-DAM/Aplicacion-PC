@@ -96,6 +96,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             if (defaultResponse.status < 300)
             {
                 new CustomErrorManager("User updated correctly!", MessageType.Success, MessageButtons.Ok).ShowDialog();
+                NavigationService.GoBack();
             }
             else if (defaultResponse.status < 500)
             {

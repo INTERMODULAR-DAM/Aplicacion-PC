@@ -26,15 +26,41 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
     {
         public Route fileRoute;
         public UserResponse userProfile;
+        public int indexPhoto;
         public ViewRouteWindow()
         {
             InitializeComponent();
             fileRoute= new Route();
+            indexPhoto = 0;
             userProfile = new UserResponse();
         }
         
         private void nextPhotobtn_Click(object sender, RoutedEventArgs e)
         {
+            Image img = imgPost;
+            
+            
+
+            if (indexPhoto == fileRoute.photos.Length -1)
+            {
+                indexPhoto = 0;
+            }
+            else
+            {
+                indexPhoto++;
+            }
+            var ObjAnimation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.33));
+            ObjAnimation.Completed += new EventHandler(imgFadeOut_Completed);
+            img.BeginAnimation(Image.OpacityProperty, ObjAnimation);
+
+        }
+
+        private void imgFadeOut_Completed(object? sender, EventArgs e)
+        {
+            imgPost.Source = getPhoto("posts/" +  fileRoute._id + "/" + fileRoute.photos[indexPhoto]);
+            Image img = imgPost;
+            var ObjAnimation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.33));
+            img.BeginAnimation(Image.OpacityProperty, ObjAnimation);
 
         }
 
@@ -65,7 +91,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             assingData();
         }
 
-        private void assingData()
+        private async void assingData()
         {
             tb_title.Text = fileRoute.name;
             tb_distance.Text = fileRoute.distance;
@@ -75,21 +101,30 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             tb_difficulty.Text = fileRoute.difficulty;
             tb_userName.Text = userProfile.nick.ToUpper();
             tb_createdAt.Text = "Member since: " + userProfile.date.ToShortDateString().ToString();
-            if(fileRoute.photos.Length == 0)
+            tb_followers.Text = "Followers: " + (await UserController.getFollowers(userProfile._id)).data.Length.ToString();
+
+            imgUser.ImageSource = getPhoto("users/" + userProfile.pfp_path);
+            if(fileRoute.photos.Length == 0 || fileRoute.photos.Length == 1)
             {
-                imgPost.Source = getPhoto("noPhotos.png"); 
+                nextPhotobtn.IsEnabled = false;
+                nextPhotobtn.Visibility = Visibility.Collapsed;
+                if(fileRoute.photos.Length == 0)
+                {
+                    imgPost.Source = getPhoto("posts/noPhotos.png");
+                }
+                
             }
             else
             {
-                imgPost.Source = getPhoto(fileRoute._id + "/" + fileRoute.photos[0]);
+                imgPost.Source = getPhoto("posts/" + fileRoute._id + "/" + fileRoute.photos[0]);
+                
             }
-
         }
 
         private BitmapImage getPhoto(string namePhoto)
         {
-            MessageBox.Show(namePhoto);
-            string path = @"http://127.0.0.1:8080/api/v1/imgs/posts/";
+            
+            string path = @"http://127.0.0.1:8080/api/v1/imgs/" + namePhoto;
             BitmapImage image = new BitmapImage();
             image.BeginInit();
             image.UriSource = new Uri(path, UriKind.Absolute);

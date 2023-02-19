@@ -89,9 +89,13 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
             }
         }
 
-        private void viewComment_btn_Click(object sender, RoutedEventArgs e)
+        private async void viewComment_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            int index = dataGridComments.SelectedIndex;
+            Application.Current.Properties["COMMENT"] = comments[index];
+            Application.Current.Properties["USERCOMMENT"] = await UserController.getUserById(comments[index].user);
+            ViewCommentWindow commentView = new ViewCommentWindow();
+            commentView.ShowDialog();
         }
     }
 }

@@ -28,9 +28,8 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 json = JsonSerializer.Deserialize<AllRoutes>(apiResponse);
                 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
                 json = new AllRoutes();
             }
 
@@ -68,18 +67,16 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("PATCH"), "http://localhost:8080/api/v1/posts");
                 requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
                 requestMessage.Content = new StringContent(JsonSerializer.Serialize(route), Encoding.UTF8, "application/json");
-                MessageBox.Show(route.name);
                 HttpResponseMessage response = await client.SendAsync(requestMessage);
                 string responseAPI = await response.Content.ReadAsStringAsync();
                 json = JsonSerializer.Deserialize<DefaultResponse>(responseAPI);
                 
 
             }
-            catch(Exception ex) 
+            catch(Exception) 
             { 
                 json = new DefaultResponse();
                 json.status = 500;
-                MessageBox.Show(ex.Message);
                 json.data = "An internal error has ocurred, please contact with your administrator.";
             }
             return json;
@@ -99,7 +96,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 route = JsonSerializer.Deserialize<RouteById>(apiResponse).data;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 route = new Route();
             }

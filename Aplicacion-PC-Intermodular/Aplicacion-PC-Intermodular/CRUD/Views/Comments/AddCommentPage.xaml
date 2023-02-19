@@ -23,7 +23,7 @@
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Duration="00:00:0.2" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                    <DoubleAnimation Duration="00:00:0.5" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -37,6 +37,8 @@
                  x:Name="tb_comment" 
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                  materialDesign:HintAssist.Hint="Write a comment..."
+                 materialDesign:HintAssist.Foreground="Black"
+                 CaretBrush="Black"
                  TextWrapping="Wrap" 
                  FontSize="16" 
                  FontFamily="Calibri" 

@@ -18,6 +18,7 @@ using Aplicacion_PC_Intermodular.CRUD.Models;
 using System.Reflection.PortableExecutable;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using System.Net.Http.Headers;
+using System.Security.Policy;
 
 namespace Aplicacion_PC_Intermodular.API.Controllers
 {
@@ -36,9 +37,8 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 string apiResponse = await response.Content.ReadAsStringAsync();
                 users = JsonSerializer.Deserialize<AllUsers>(apiResponse);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 users = new AllUsers();
             }
             return users;
@@ -92,14 +92,16 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
 
         public async static Task<DefaultResponse> updateUserPFP(Image userPFP, string id, string fileName)
         {
+            client.DefaultRequestHeaders.Clear();
+
             DefaultResponse json;
             try
             {
-                client.DefaultRequestHeaders.Clear();
+                
                 var fileStreamContent = new StreamContent(File.OpenRead(new Uri(userPFP.Source.ToString()).AbsolutePath));
                 string extension = MimeTypes.GetMimeType(fileName);
                 
-                MultipartFormDataContent file = new MultipartFormDataContent("NKdKd9Yk");
+                MultipartFormDataContent file = new MultipartFormDataContent();
                 file.Headers.ContentType.MediaType = "multipart/form-data";
                 fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue(extension);
                 file.Add(fileStreamContent, "file", fileName);
@@ -107,9 +109,10 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Application.Current.Properties["TOKEN"].ToString());
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("multipart/form-data"));
                 client.DefaultRequestHeaders.Add("id", id);
-                HttpResponseMessage response = await client.PostAsync("http://localhost:8080/api/v1/imgs/userProfile", file);
+                HttpResponseMessage response = await client.PatchAsync("http://localhost:8080/api/v1/imgs/userProfile", file);
                 string apiResponse = await response.Content.ReadAsStringAsync();
                 json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
+                
             }
             catch (FileNotFoundException)
             {
@@ -118,14 +121,13 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 json.data = "The name of the photo is invalid, change it or take another photo.";
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 json = new DefaultResponse();
                 json.status = 400;
                 json.data = "An error has ocurred, please contact with your administrator";
             }
-
+            client.DefaultRequestHeaders.Clear();
             return json;
         }
 
@@ -142,9 +144,8 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 string apiResponse = await response.Content.ReadAsStringAsync();
                 json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 json = new DefaultResponse();
                 json.status = 500;
                 json.data = "An internal error has ocurred updating the user, please try again";
@@ -165,10 +166,9 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
 
                 user = JsonSerializer.Deserialize<UserById>(apiResponse).data;
 
-            }
-            catch(Exception ex)
+            }   
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);    
                 user = new UserResponse();
             }
             return user;
@@ -189,9 +189,31 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 user = JsonSerializer.Deserialize<UserById>(apiResponse).data;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 user = new UserResponse();
+            }
+            return user;
+        }
+
+
+        public static async Task<AllUsers> getFollowers(string id)
+        {
+            AllUsers user;
+            try
+            {
+                HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("GET"), "http://localhost:8080/api/v1/users/followers");
+                requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
+                requestMessage.Content = new StringContent("{\"_id\":\"" + id + "\"}", Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.SendAsync(requestMessage);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+
+                user = JsonSerializer.Deserialize<AllUsers>(apiResponse);
+
+            }
+            catch (Exception)
+            {
+                user = new();
             }
             return user;
         }

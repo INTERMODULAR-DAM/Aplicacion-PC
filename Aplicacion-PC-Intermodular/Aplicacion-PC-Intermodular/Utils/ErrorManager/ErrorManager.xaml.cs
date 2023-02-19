@@ -83,7 +83,6 @@ namespace Aplicacion_PC_Intermodular.ErrorManager
         public void changeBackgroundThemeColor(Color newColor)
         {
             cardHeader.Background = new SolidColorBrush(newColor);
-            btnClose.Foreground = new SolidColorBrush(newColor);
             btnYes.Background = new SolidColorBrush(newColor);
             btnNo.Background = new SolidColorBrush(newColor);
 
@@ -109,12 +108,6 @@ namespace Aplicacion_PC_Intermodular.ErrorManager
         }
 
         private void btnNo_Click(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = false;
-            Close();
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             Close();

@@ -215,3 +215,7 @@ D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicac
 D:\Escritorio\2DAM\Intermodular\Aplicacion-PC\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Routes\ViewRouteWindow.baml
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
 C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\bin\Debug\net6.0-windows\Syncfusion.Shared.WPF.dll
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\ViewUserWindow.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Users\ViewUserWindow.baml
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\ViewCommentWindow.g.cs
+C:\Users\Alejandro\Desktop\2DAM\Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\Aplicacion-PC-Intermodular\obj\Debug\net6.0-windows\CRUD\Views\Comments\ViewCommentWindow.baml

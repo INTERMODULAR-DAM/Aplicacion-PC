@@ -13,6 +13,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -26,6 +27,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
     {
         Route updatedRoute;
         Route dbRoute;
+        int index;
 
         public UpdateRoutePage()
         {
@@ -39,12 +41,16 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             updatedRoute = (Route)Application.Current.Properties["ROUTE"];
             dbRoute = new Route(updatedRoute);
             assingPlaceholder();
-            string path = @"http://localhost:8080/api/v1/imgs/posts/noPhotos.png";
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri(path, UriKind.Absolute);
-            image.EndInit();
-            pfp.Source = image;
+            if (dbRoute.photos.Length == 0)
+            {
+                nextPhotobtn.Visibility = Visibility.Collapsed;
+                nextPhotobtn.IsEnabled = false;
+                imgPost.Source = getPhoto("noPhotos.png");
+            }
+            else
+            {
+                imgPost.Source = getPhoto(dbRoute._id + "/" + dbRoute.photos[0]);
+            }
         }
 
         private void assingPlaceholder()
@@ -70,7 +76,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
                 cbDistance.Items.Add(i.ToString());
             }
 
-            for(int x = 1; x <= 1000; x++)
+            for (int x = 1; x <= 1000; x++)
             {
                 cbDistanceMeters.Items.Add(x.ToString());
             }
@@ -94,6 +100,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             if (response.status < 300)
             {
                 new CustomErrorManager("Post updated correctly!", MessageType.Success, MessageButtons.Ok).ShowDialog();
+                NavigationService.GoBack();
             }
             else
             {
@@ -115,7 +122,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
 
             if (!String.IsNullOrEmpty(cbTime.Text))
             {
-                if(cbTimeMinutes.Visibility != Visibility.Hidden && !cbMinutes.Text.Equals(""))
+                if (cbTimeMinutes.Visibility != Visibility.Hidden && !cbMinutes.Text.Equals(""))
                 {
                     updatedRoute.duration = cbTime.Text + " hours and " + cbTimeMinutes.Text + " minutes";
                 }
@@ -151,8 +158,8 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
 
         private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
         {
-            cbTimeMinutes.Visibility= Visibility.Visible;
-            cbMinutes.Visibility= Visibility.Visible;
+            cbTimeMinutes.Visibility = Visibility.Visible;
+            cbMinutes.Visibility = Visibility.Visible;
         }
 
         private void cbiMinutes_Selected(object sender, RoutedEventArgs e)
@@ -164,13 +171,51 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
         private void cbiMeters_Selected(object sender, RoutedEventArgs e)
         {
             cbMeters.Visibility = Visibility.Hidden;
-            cbDistanceMeters.Visibility= Visibility.Hidden;
+            cbDistanceMeters.Visibility = Visibility.Hidden;
         }
 
         private void cbieKm_Selected(object sender, RoutedEventArgs e)
         {
             cbMeters.Visibility = Visibility.Visible;
             cbDistanceMeters.Visibility = Visibility.Visible;
+        }
+
+        private void nextPhotobtn_Click(object sender, RoutedEventArgs e)
+        {
+            Image img = imgPost;
+
+            if (index == dbRoute.photos.Length - 1)
+            {
+                index = 0;
+            }
+            else
+            {
+                index++;
+            }
+            var ObjAnimation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.33));
+            ObjAnimation.Completed += new EventHandler(imgFadeOut_Completed);
+            img.BeginAnimation(Image.OpacityProperty, ObjAnimation);
+
+        }
+
+        private void imgFadeOut_Completed(object? sender, EventArgs e)
+        {
+            imgPost.Source = getPhoto(dbRoute._id + "/" + dbRoute.photos[index]);
+            Image img = imgPost;
+            var ObjAnimation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.33));
+            img.BeginAnimation(Image.OpacityProperty, ObjAnimation);
+        }
+
+        private BitmapImage getPhoto(string namePhoto)
+        {
+
+            string path = @"http://127.0.0.1:8080/api/v1/imgs/posts/" + namePhoto;
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(path, UriKind.Absolute);
+            image.EndInit();
+            return image;
+
         }
     }
 }

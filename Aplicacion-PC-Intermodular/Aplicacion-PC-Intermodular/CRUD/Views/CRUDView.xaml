@@ -10,7 +10,8 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         AllowsTransparency="True"
-        Background="Transparent">
+        Background="Transparent"
+        StateChanged="CRUDWindow_StateChanged">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

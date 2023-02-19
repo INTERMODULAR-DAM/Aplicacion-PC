@@ -13,6 +13,9 @@
     <Compile Update="CRUD\Views\Comments\CommentsDataGrid.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CRUD\Views\Comments\ViewCommentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CRUD\Views\Routes\RoutesDataGrid.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +37,9 @@
     <Compile Update="CRUD\Views\Users\UsersDataGrid.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CRUD\Views\Users\ViewUserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Utils\ErrorManager\ErrorManager.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRUD\Views\Comments\CommentsDataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\Comments\ViewCommentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRUD\Views\Routes\RoutesDataGrid.xaml">
@@ -67,6 +76,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRUD\Views\Users\UsersDataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRUD\Views\Users\ViewUserWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Utils\ErrorManager\ErrorManager.xaml">

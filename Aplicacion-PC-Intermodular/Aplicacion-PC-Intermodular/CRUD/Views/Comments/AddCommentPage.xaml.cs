@@ -41,6 +41,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
                 if(response.status < 300)
                 {
                     new CustomErrorManager(response.data, MessageType.Success, MessageButtons.Ok).ShowDialog();
+                    NavigationService.GoBack();
                 }
                 else
                 {

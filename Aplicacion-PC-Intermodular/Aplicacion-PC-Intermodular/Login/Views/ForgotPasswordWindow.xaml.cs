@@ -1,9 +1,11 @@
 ﻿using Aplicacion_PC_Intermodular.API.Controllers;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.Login.Models;
+using System;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace Aplicacion_PC_Intermodular.ForgotPassword
 {
@@ -35,20 +37,28 @@ namespace Aplicacion_PC_Intermodular.ForgotPassword
             else
             {
                 DefaultResponse response = await LoginController.sendEmail(emailTo);
-                if(response.status > 300)
+                if(response.status < 300)
                 {
                     new CustomErrorManager(response.data, MessageType.Info, MessageButtons.Ok).ShowDialog();
-                    this.Close();
+                    close_button_Click(sender, e);
                 }
                 else
                 {
-                    new CustomErrorManager(response.data, MessageType.Info, MessageButtons.Ok).ShowDialog();
+                    new CustomErrorManager(response.data, MessageType.Warning, MessageButtons.Ok).ShowDialog();
                 }
 
             }
         }
 
         private void close_button_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.5));
+            animation.Completed += new EventHandler(Animation_Completed);
+            this.BeginAnimation(Window.OpacityProperty, animation);
+
+        }
+
+        private void Animation_Completed(object? sender, EventArgs e)
         {
             this.Close();
         }

@@ -23,7 +23,7 @@
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Duration="00:00:02" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
+                    <DoubleAnimation Duration="00:00:0.5" Storyboard.TargetProperty="Opacity" From="0" To="1"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -35,8 +35,8 @@
         </Grid.ColumnDefinitions>
         <Grid VerticalAlignment="Center">
             <StackPanel>
-                <TextBlock HorizontalAlignment="Center" Text="Add User" FontSize="30" FontFamily="Calibri"/>
-                <Image Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/Resources/default.jpeg" x:Name="pfp"/>
+                <TextBlock Margin="0,0,0,15" HorizontalAlignment="Center" Text="Add User" FontSize="30" FontFamily="Calibri"/>
+                <Image Margin="10,0,0,0" VerticalAlignment="Center" Width="250" Height="250" HorizontalAlignment="Center" Source="/Resources/default.jpeg" x:Name="pfp"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Margin="0,20,70,0" Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click" Height="50" Width="50">
                         <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
@@ -51,32 +51,32 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="0,0,20,0">
                     <TextBlock Text="Name" FontSize="22" Margin="10" FontFamily="Calibri"/>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
                     <TextBlock Text="Lastname" FontSize="22" Margin="10" FontFamily="Calibri"/>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_lastname" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_lastname" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
                     <TextBlock FontSize="22" FontFamily="Calibri" Margin="10">
                         <Run Text="Password"/>
                         <Run Text="*" FontSize="10" BaselineAlignment="TextTop"/>
                     </TextBlock>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
-                    <TextBlock FontSize="22" FontFamily="Calibri" Margin="10">
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBlock  FontSize="22" FontFamily="Calibri" Margin="10">
                         <Run Text="Repeat password"/>
                         <Run Text="*" FontSize="10" BaselineAlignment="TextTop"/>
                     </TextBlock>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_repeatPassword" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_repeatPassword" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
                 </StackPanel>
                 <StackPanel Margin="20,0,0,0">
                     <TextBlock Text="Email" FontSize="22" FontFamily="Calibri" Margin="10"/>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
                     <TextBlock FontSize="22" FontFamily="Calibri" Margin="10">
                                 <Run Text="Web"/>
                                 <Run Text="*Optional" FontSize="10" BaselineAlignment="Center"/>
                     </TextBlock>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_web" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_web" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
                     <TextBlock Text="Nick" FontSize="22" FontFamily="Calibri" Margin="10"/>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_nick" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_nick" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
                     <TextBlock Text="Phone Number" FontSize="22" FontFamily="Calibri" Margin="10"/>
-                    <TextBox FontSize="16" FontFamily="Calibri" x:Name="tb_phone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
+                    <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:HintAssist.Foreground="Black" CaretBrush="Black" FontSize="16" FontFamily="Calibri" x:Name="tb_phone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,0" Width="200"/>
                 </StackPanel>
             </StackPanel>
             <CheckBox x:Name="isAdmin" Content="Admin" HorizontalAlignment="Center" FontSize="18" Margin="0,20,0,0" VerticalContentAlignment="Center"/>

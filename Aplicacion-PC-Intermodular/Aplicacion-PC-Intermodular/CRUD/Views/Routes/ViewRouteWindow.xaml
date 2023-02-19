@@ -22,7 +22,6 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-
     <Window.Triggers>
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
@@ -45,33 +44,33 @@
             </Grid.RowDefinitions>
             <materialDesign:TransitioningContent Margin="20,0,20,20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
                 <materialDesign:TransitioningContent.OpeningEffects>
-                    <materialDesign:TransitionEffect Kind="FadeIn"/>
-                    <materialDesign:TransitionEffect OffsetTime="2"/>
+                    <materialDesign:TransitionEffect Kind="SlideInFromTop" Duration="0:0:0.8" />
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:0.8"/>
                 </materialDesign:TransitioningContent.OpeningEffects>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource textBlockFileTitle}" TextAlignment="Center" x:Name="tb_title"/>
-                    <Image Width="350" Height="200" x:Name="imgPost" Source="/Resources/white_logo.png"/>
-                    <Button Style="{StaticResource addUser}" Content="View next photo" HorizontalAlignment="Center" x:Name="nextPhotobtn" Click="nextPhotobtn_Click"/>
+                    <TextBlock Foreground="White" FontWeight="Bold" Style="{StaticResource textBlockFileTitle}" TextAlignment="Center" x:Name="tb_title"/>
+                    <Image Width="350" Height="200" x:Name="imgPost"/>
+                    <Button Margin="0,10,0,0" Style="{StaticResource modifyButton}" Background="#4a2908" Foreground="White" Width="100" FontWeight="Bold" Content="Next photo" HorizontalAlignment="Center" x:Name="nextPhotobtn" Click="nextPhotobtn_Click" Height="31"/>
                 </StackPanel>
             </materialDesign:TransitioningContent>
-            
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Margin="20">
-                <Button x:Name="close_button"
-                            Foreground="White"
-                            Content="X"
-                            FontSize="11"
-                            Cursor="Hand"
-                            Click="close_button_Click"
-                            Style="{StaticResource btnTopBar}"
-                            Template="{StaticResource btnMarron}">
-                </Button>
-            </StackPanel>
+
+            <Button x:Name="close_button"
+                    HorizontalAlignment="Right"
+                    Grid.ColumnSpan="2"
+                    Margin="0,0,15,0"
+                    Foreground="White"
+                    Content="X"
+                    FontSize="11"
+                    Cursor="Hand"
+                    Click="close_button_Click"
+                    Style="{StaticResource btnTopBar}"
+                    Template="{StaticResource btnMarron}">
+            </Button>
             <materialDesign:TransitioningContent Grid.Column="1" Grid.Row="1" Margin="0,20,10,0">
                 <materialDesign:TransitioningContent.OpeningEffects>
-                    <materialDesign:TransitionEffect Kind="FadeIn" />
-                    <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:0.4" />
+                    <materialDesign:TransitionEffect Kind="SlideInFromRight" Duration="0:0:0.4" />
                 </materialDesign:TransitioningContent.OpeningEffects>
-
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                         <StackPanel Margin="10,0,0,0">
@@ -103,17 +102,38 @@
                 </StackPanel>
             </materialDesign:TransitioningContent>
 
+            <materialDesign:TransitioningContent Grid.RowSpan="23">
+                <materialDesign:TransitioningContent.OpeningEffects>
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:1.6"/>
+                    <materialDesign:TransitionEffect Kind="SlideInFromTop" Duration="0:0:1.6"/>
+                </materialDesign:TransitioningContent.OpeningEffects>
+                <GridSplitter Height="400" Margin="0,20,0,110" Background="LightGray" Width="1" />
+            </materialDesign:TransitioningContent>
+
+            <materialDesign:TransitioningContent Grid.Row="1" VerticalAlignment="Bottom" Margin="0,20,0,0" Grid.ColumnSpan="2">
+                <materialDesign:TransitioningContent.OpeningEffects>
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:1.6"/>
+                    <materialDesign:TransitionEffect Kind="SlideInFromLeft" Duration="0:0:1.6"/>
+                </materialDesign:TransitioningContent.OpeningEffects>
+                <Separator Width="670" />
+            </materialDesign:TransitioningContent>
+
             <materialDesign:TransitioningContent Grid.Row="2" Margin="0,20,10,0">
                 <materialDesign:TransitioningContent.OpeningEffects>
-                    <materialDesign:TransitionEffect Kind="FadeIn" />
+                    <materialDesign:TransitionEffect Kind="FadeIn" Duration="0:0:1.2"/>
+                    <materialDesign:TransitionEffect Kind="SlideInFromLeft" Duration="0:0:1.2" />
                 </materialDesign:TransitioningContent.OpeningEffects>
 
                 <StackPanel Orientation="Horizontal" Margin="10,0,0,15">
-                    <Image Width="90" Height="90" HorizontalAlignment="Left" Source="/Resources/white_logo.png"/>
+                    <Ellipse RenderOptions.BitmapScalingMode="HighQuality" Width="65" Margin="5,-5,10,5">
+                        <Ellipse.Fill>
+                            <ImageBrush Stretch="UniformToFill" x:Name="imgUser"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
                     <StackPanel>
-                        <TextBlock x:Name="tb_userName" Foreground="White" Text="User name" Style="{StaticResource textBlockFileTitle}" Margin="5,0,0,0"/>
-                        <TextBlock x:Name="tb_createdAt" Foreground="LightGray" Margin="5,0,0,0" Text="Member since: 2020"/>
-                        <TextBlock x:Name="tb_followers" Foreground="LightGray" Margin="5,0,0,0" Text="Followers: 20" />
+                        <TextBlock x:Name="tb_userName" Foreground="White" Style="{StaticResource textBlockFileTitle}" Margin="5,0,0,0"/>
+                        <TextBlock x:Name="tb_createdAt" Foreground="LightGray" Margin="5,0,0,0"/>
+                        <TextBlock x:Name="tb_followers" Foreground="LightGray" Margin="5,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
             </materialDesign:TransitioningContent>

@@ -13,7 +13,8 @@
         MouseDown="Window_MouseDown"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        StateChanged="loginWindow_StateChanged">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

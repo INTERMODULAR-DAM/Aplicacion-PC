@@ -40,7 +40,6 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                 if(response.status < 300)
                 {
                     UserResponse user = await UserController.getUserByIdWithToken(oneUseToken);
-                    MessageBox.Show(user.email);
                     new CustomErrorManager("User created correctly!", MessageType.Success, MessageButtons.Ok).ShowDialog();
                     response = await UserController.updateUserPFP(userPFP, user._id, newUser.pfp_path);
 
@@ -57,13 +56,10 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                 }
                 else if(response.status < 500)
                 {
-                    MessageBox.Show(response.data);
                     new CustomErrorManager(response.data, MessageType.Warning, MessageButtons.Ok).ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show(response.data);
-
                     new CustomErrorManager("An internal error has ocurred, please contact with your admin.", MessageType.Error, MessageButtons.Ok).ShowDialog();
                 }
             }
@@ -223,7 +219,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                     newUser.web = tb_web.Text;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 new CustomErrorManager("An internal error has ocurred, please contact with you administrator.", MessageType.Error, MessageButtons.Ok).ShowDialog();
             }

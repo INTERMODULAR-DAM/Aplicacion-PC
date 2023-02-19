@@ -29,9 +29,8 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 json = JsonSerializer.Deserialize<AllComments>(apiResponse);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 json = new AllComments();
             }
 

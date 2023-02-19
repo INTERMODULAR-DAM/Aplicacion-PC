@@ -47,7 +47,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
                 string apiResponse = await response.Content.ReadAsStringAsync();
                 json = JsonSerializer.Deserialize<DefaultResponse>(apiResponse);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 json = new DefaultResponse();
                 json.status = 400;

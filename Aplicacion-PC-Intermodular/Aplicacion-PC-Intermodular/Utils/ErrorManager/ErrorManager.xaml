@@ -70,15 +70,6 @@
             <StackPanel  HorizontalAlignment="Right"
                      VerticalAlignment="Top"
                      Grid.Column="1">
-                <Button x:Name="btnClose"
-                    Click="btnClose_Click"
-                    Width="35"
-                    Height="35"
-                    Foreground="White"
-                    Template="{StaticResource btnMarron}"
-                    Style="{StaticResource btnTopBar}">
-                    <materialDesign:PackIcon Kind="Close" />
-                </Button>
             </StackPanel>
             <Grid Grid.Row="1"
               Grid.ColumnSpan="2">

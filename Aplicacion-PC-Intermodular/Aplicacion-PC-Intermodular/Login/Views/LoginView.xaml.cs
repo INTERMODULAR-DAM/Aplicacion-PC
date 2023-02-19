@@ -7,6 +7,7 @@ using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.API.Controllers;
 using System.Windows.Media.Animation;
 using System;
+using Aplicacion_PC_Intermodular.API.Models;
 
 namespace Aplicacion_PC_Intermodular
 {
@@ -33,18 +34,21 @@ namespace Aplicacion_PC_Intermodular
             }
         }
 
-        private void minimize_button_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
         private void close_button_Click(object sender, RoutedEventArgs e)
         {
            bool? result =  new CustomErrorManager("Are you sure to exit?", MessageType.Confirmation, MessageButtons.YesNo).ShowDialog();
 
             if (result.Value) {
-                Application.Current.Shutdown();
+                DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.2));
+                animation.Completed += new EventHandler(Close_Completed);
+                this.BeginAnimation(Window.OpacityProperty, animation);
+                
             }
+        }
+
+        private void Close_Completed(object? sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -91,35 +95,68 @@ namespace Aplicacion_PC_Intermodular
             loginResponse = await LoginController.signIn(user);
             if(loginResponse.status >=400 && loginResponse.status < 500)
             {
-               new CustomErrorManager("Wrong user or password, try it again", MessageType.Error, MessageButtons.Ok).ShowDialog();
+                new CustomErrorManager("Wrong user or password, try it again", MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
             else
             {
-                DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(1));
-                Storyboard sb = new Storyboard();
-                animation.From = 1;
-
-                this.BeginAnimation(Window.OpacityProperty, animation);
-                CRUDView crud = new CRUDView();
-                cleanTextFields();
-                
-                bool response = (bool)crud.ShowDialogRespuesta();
-                this.Hide();
-                if (response)
+                UserResponse user = await UserController.getUserByIdWithToken(Application.Current.Properties["TOKEN"].ToString());
+                if (user.admin)
                 {
-                     Application.Current.Shutdown();
+                    cleanTextFields();
+                    DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.3));
+                    animation.Completed += new EventHandler(Animation_Completed);
+                    this.BeginAnimation(Window.OpacityProperty, animation);
                 }
                 else
                 {
-                    
-                    animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
-                    animation.From = 0;
-                    this.BeginAnimation(Window.OpacityProperty, animation);
-                    this.Show();
-
+                    new CustomErrorManager("You're not an administrator, access denied.", MessageType.Warning, MessageButtons.Ok).ShowDialog();
                 }
+                
+                
     
             }
+        }
+
+        private void Animation_Completed(object? sender, EventArgs e)
+        {
+            CRUDView crud = new CRUDView();
+
+            bool response = (bool)crud.ShowDialogRespuesta(this);
+
+            if (response)
+            {
+                Application.Current.Shutdown();
+            }
+            else
+            {
+                this.Show();
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
+                this.BeginAnimation(Window.OpacityProperty, animation);
+
+
+            }
+        }
+
+        private void loginWindow_StateChanged(object sender, EventArgs e)
+        {
+            if(WindowState.Equals(WindowState.Normal)) 
+            {
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.1));
+                this.BeginAnimation(Window.OpacityProperty, animation);
+            }
+
+        }
+
+        private void minimize_button_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.1));
+            animation.Completed += new EventHandler(Minimaze_Completed);
+            this.BeginAnimation(Window.OpacityProperty, animation);
+        }
+
+        private void Minimaze_Completed(object? sender, EventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

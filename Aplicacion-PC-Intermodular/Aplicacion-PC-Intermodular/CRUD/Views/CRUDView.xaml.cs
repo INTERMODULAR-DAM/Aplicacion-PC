@@ -26,13 +26,9 @@ namespace Aplicacion_PC_Intermodular.CRUD
             }
         }
 
-        private void minimize_button_Click(object sender, RoutedEventArgs e)
+        public bool ShowDialogRespuesta(LoginView loginView)
         {
-            WindowState = WindowState.Minimized;
-        }
-
-        public bool ShowDialogRespuesta()
-        {
+            loginView.Hide();
             this.ShowDialog();
             return response;
         }
@@ -81,5 +77,28 @@ namespace Aplicacion_PC_Intermodular.CRUD
         {
             Close();
         }
+
+        private void CRUDWindow_StateChanged(object sender, EventArgs e)
+        {
+            if (WindowState.Equals(WindowState.Normal))
+            {
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.1));
+                this.BeginAnimation(Window.OpacityProperty, animation);
+            }
+
+        }
+
+        private void minimize_button_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation animation = new DoubleAnimation(0, TimeSpan.FromSeconds(0.1));
+            animation.Completed += new EventHandler(Minimaze_Completed);
+            this.BeginAnimation(Window.OpacityProperty, animation);
+        }
+
+        private void Minimaze_Completed(object? sender, EventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }
+

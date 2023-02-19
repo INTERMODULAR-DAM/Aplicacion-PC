@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.API.Controllers;
+using Aplicacion_PC_Intermodular.CRUD.Views.Users;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
@@ -100,9 +101,10 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         private void viewUser_btn_Click(object sender, RoutedEventArgs e)
         {
             int index = ((UserDataGrid)dataGridUsers.SelectedItem).Index;
-            UpdateUserPage updateUser = new UpdateUserPage();
+            ViewUserWindow viewUser = new ViewUserWindow();
             UserResponse userUpdate = allUsers.data[index];
             Application.Current.Properties["USER"] = userUpdate;
+            viewUser.ShowDialog();
              
         }
     }
