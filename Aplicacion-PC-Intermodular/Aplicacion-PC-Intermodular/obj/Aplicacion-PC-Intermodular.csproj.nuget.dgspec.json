@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[20.4.0.50, )"
             },
+            "Syncfusion.UI.WPF.NET": {
+              "target": "Package",
+              "version": "[20.4.0.51, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[7.0.0, )"

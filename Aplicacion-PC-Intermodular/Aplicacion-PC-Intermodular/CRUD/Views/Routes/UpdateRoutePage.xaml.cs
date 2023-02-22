@@ -146,7 +146,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             {
                 if (cbDistanceMeters.Visibility != Visibility.Hidden && !cbDistanceMeters.Text.Equals(""))
                 {
-                    updatedRoute.distance = cbDistance.Text + "km and " + cbDistanceMeters.Text + "m";
+                    updatedRoute.distance = cbDistance.Text + "'" + cbDistanceMeters.Text + "km";
                 }
                 else
                 {

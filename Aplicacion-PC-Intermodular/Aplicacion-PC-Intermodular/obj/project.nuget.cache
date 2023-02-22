@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kWHzllAkTkHs0SLw0lG0lDLtqQLl6CQL8YXt/e1fdeERO71s1sCGC6jwxVLPedBkY7oW6YhlI8xxFSQ6gjFZXA==",
+  "dgSpecHash": "64xoe81Oe58Bl2D0CfDGC4iHxSRlTlxQtyE3H+R80jUTBH405LxooeWARNbGOVaUagsk/EnPCV3xFi0nJzdboQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alejandro\\Desktop\\2DAM\\Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular\\Aplicacion-PC-Intermodular.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Alejandro\\.nuget\\packages\\mimetypes\\2.4.0\\mimetypes.2.4.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\syncfusion.licensing\\20.4.0.50\\syncfusion.licensing.20.4.0.50.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\syncfusion.shared.wpf\\20.4.0.50\\syncfusion.shared.wpf.20.4.0.50.nupkg.sha512",
+    "C:\\Users\\Alejandro\\.nuget\\packages\\syncfusion.ui.wpf.net\\20.4.0.51\\syncfusion.ui.wpf.net.20.4.0.51.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\system.net.http.json\\7.0.0\\system.net.http.json.7.0.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Alejandro\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",

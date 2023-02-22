@@ -111,7 +111,8 @@ namespace Aplicacion_PC_Intermodular.ErrorManager {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Aplicacion-PC-Intermodular;component/utils/errormanager/errormanager.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Aplicacion-PC-Intermodular;V1.0.0.0;component/utils/errormanager/errormanager.xa" +
+                    "ml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Utils\ErrorManager\ErrorManager.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

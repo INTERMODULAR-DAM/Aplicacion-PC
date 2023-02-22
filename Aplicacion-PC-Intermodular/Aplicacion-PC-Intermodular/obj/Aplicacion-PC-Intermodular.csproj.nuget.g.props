@@ -13,6 +13,7 @@
     <SourceRoot Include="C:\Users\Alejandro\.nuget\packages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSyncfusion_UI_WPF_NET Condition=" '$(PkgSyncfusion_UI_WPF_NET)' == '' ">C:\Users\Alejandro\.nuget\packages\syncfusion.ui.wpf.net\20.4.0.51</PkgSyncfusion_UI_WPF_NET>
     <PkgSyncfusion_Shared_WPF Condition=" '$(PkgSyncfusion_Shared_WPF)' == '' ">C:\Users\Alejandro\.nuget\packages\syncfusion.shared.wpf\20.4.0.50</PkgSyncfusion_Shared_WPF>
     <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\Alejandro\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.39</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\Alejandro\.nuget\packages\materialdesignthemes\4.7.1</PkgMaterialDesignThemes>

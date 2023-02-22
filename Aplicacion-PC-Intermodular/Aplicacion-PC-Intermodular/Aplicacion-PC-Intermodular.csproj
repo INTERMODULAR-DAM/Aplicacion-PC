@@ -78,6 +78,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Syncfusion.Shared.WPF" Version="20.4.0.50" />
+    <PackageReference Include="Syncfusion.UI.WPF.NET" Version="20.4.0.51" />
     <PackageReference Include="System.Net.Http.Json" Version="7.0.0" />
   </ItemGroup>
 

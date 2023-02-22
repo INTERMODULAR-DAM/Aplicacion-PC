@@ -18,6 +18,8 @@ using System.Windows.Shapes;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.API.Controllers;
 using Aplicacion_PC_Intermodular.CRUD.Views.Users;
+using Syncfusion.UI.Xaml.ProgressBar;
+using System.Windows.Media.Animation;
 
 namespace Aplicacion_PC_Intermodular.CRUD.Views
 {
@@ -51,13 +53,20 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
         public void putDataOnDataGrid(AllUsers allUsers)
         {
             List<UserDataGrid> users = new List<UserDataGrid>();
+            dataGridUsers.Opacity = 0;
+            progressBar.Visibility = Visibility.Visible;
+
             for (int i = 0; i < allUsers.data.Length; i++)
             {
                 users.Add(new UserDataGrid(i, allUsers.data[i].email, allUsers.data[i].name, allUsers.data[i].lastname, allUsers.data[i].nick, allUsers.data[i].phone_number.ToString()));
+                progressBar.Progress = (i / allUsers.data.Length) * 100;
             }
-            dataGridUsers.ItemsSource = users;
-            
+            progressBar.Visibility = Visibility.Collapsed;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
+            dataGridUsers.BeginAnimation(DataGrid.OpacityProperty, animation);
+            dataGridUsers.ItemsSource = users;   
         }
+
         private void modify_btn_Click(object sender, RoutedEventArgs e)
         {
             int index = ((UserDataGrid)dataGridUsers.SelectedItem).Index;

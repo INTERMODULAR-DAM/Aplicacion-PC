@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
       xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD.Views.Routes"
       mc:Ignorable="d" 
       Title="RoutesDataGrid">
@@ -16,7 +17,7 @@
         </EventTrigger>
     </Page.Triggers>
 
-    <Grid Margin="30,20,20,20">
+    <Grid Width="800" Height="550" Margin="30,20,20,20">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -28,6 +29,16 @@
         </Grid.RowDefinitions>
         <Grid Height="100"/>
         <TextBlock Text="Routes" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
+        <syncfusion:SfCircularProgressBar   IsIndeterminate="True"
+                                                AnimationDuration="00:00:01"
+                                                Width="250"
+                                                Height="250"
+                                                Progress="50"
+                                                ShowProgressValue="False"
+                                                TrackColor="LightGreen"
+                                                ProgressColor="#115511" 
+                                                x:Name="progressBar" 
+                                                Visibility="Collapsed"/>
         <DataGrid AutoGeneratingColumn="dataGridRoutes_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridRoutes" Grid.Row="5">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">

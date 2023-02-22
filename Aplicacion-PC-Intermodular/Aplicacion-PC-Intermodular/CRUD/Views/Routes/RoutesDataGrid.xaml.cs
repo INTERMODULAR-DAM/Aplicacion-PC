@@ -15,6 +15,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -83,11 +84,16 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
         public void putDataOnDataGrid(Route[] allPosts)
         {
             List<Models.RouteDataGrid> routes = new List<Models.RouteDataGrid>();
+            progressBar.Visibility = Visibility.Visible;
+            dataGridRoutes.Opacity = 0;
             for (int i = 0; i < allPosts.Length; i++)
             {
                 routes.Add(new RouteDataGrid(i, allPosts[i].name, allPosts[i].category, allPosts[i].distance, allPosts[i].difficulty, allPosts[i].duration));
             }
+            progressBar.Visibility = Visibility.Collapsed;
             dataGridRoutes.ItemsSource = routes;
+            DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
+            dataGridRoutes.BeginAnimation(DataGrid.OpacityProperty, animation);
         }
 
         private void addComment_button_Click(object sender, RoutedEventArgs e)

@@ -33,7 +33,7 @@
     </Window.Triggers>
 
     <materialDesign:TransitioningContent>
-        <Border Background="#c6efd0" CornerRadius="30" MouseDown="Border_MouseDown">
+        <Border Background="#f4f4f4" CornerRadius="30" MouseDown="Border_MouseDown">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="225"/>

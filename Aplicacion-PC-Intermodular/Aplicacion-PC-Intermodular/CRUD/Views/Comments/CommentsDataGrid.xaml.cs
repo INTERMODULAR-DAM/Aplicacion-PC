@@ -3,6 +3,8 @@ using Aplicacion_PC_Intermodular.API.Models;
 using Aplicacion_PC_Intermodular.CRUD.Models;
 using Aplicacion_PC_Intermodular.ErrorManager;
 using Aplicacion_PC_Intermodular.Login.Models;
+using Syncfusion.UI.Xaml.ProgressBar;
+using Syncfusion.Windows.Controls.RichTextBoxAdv;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -26,6 +29,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
     public partial class CommentsDataGrid : Page
     {
         private CommentResponse[] comments;
+        
 
         public CommentsDataGrid()
         {
@@ -36,20 +40,26 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
         private async void putDataOnDataGrid()
         {
             comments = (await CommentController.getAllComments()).data;
-            List<CommentsDG> commentsdg = new List<CommentsDG>();
-            ProgressBar progressBar= new ProgressBar();
+            List<CommentsDG>  commentsdg = new List<CommentsDG>();
             
+
 
             if (comments != null)
             {
+                dataGridComments.Opacity = 0;
+                progressBar.Visibility = Visibility.Visible;
+
                 for (int i = 0; i < comments.Length; i++)
                 {
                     UserResponse user = await UserController.getUserById(comments[i].user);
                     Route route = await RoutesController.getRouteById(comments[i].post);
                     commentsdg.Add(new CommentsDG(i, user.nick, route.name, comments[i].message));
-                    //i / comments.Length * 100;
                 }
+                progressBar.Visibility= Visibility.Collapsed;
                 dataGridComments.ItemsSource = commentsdg;
+                DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
+                dataGridComments.BeginAnimation(DataGrid.OpacityProperty, animation);
+
             }
             else
             {

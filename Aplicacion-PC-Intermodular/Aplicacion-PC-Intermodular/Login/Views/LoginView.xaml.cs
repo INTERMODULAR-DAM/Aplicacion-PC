@@ -95,7 +95,12 @@ namespace Aplicacion_PC_Intermodular
             loginResponse = await LoginController.signIn(user);
             if(loginResponse.status >=400 && loginResponse.status < 500)
             {
-                new CustomErrorManager("Wrong user or password, try it again", MessageType.Error, MessageButtons.Ok).ShowDialog();
+                string data = loginResponse.data;
+                if (String.IsNullOrEmpty(loginResponse.data))
+                {
+                    data = "The user or password are incorrect, try again";
+                }
+                new CustomErrorManager(data, MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
             else
             {
