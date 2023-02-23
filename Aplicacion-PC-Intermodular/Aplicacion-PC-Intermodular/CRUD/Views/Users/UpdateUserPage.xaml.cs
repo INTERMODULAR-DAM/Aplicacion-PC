@@ -149,7 +149,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             }
             if (!String.IsNullOrEmpty(tb_phone.Text))
             {
-                if(new Regex("^\\+?[1-9][0-9]{7,14}$").IsMatch(tb_phone.Text))
+                if(new Regex("^\\+?[1-9][0-9]{6,8}$").IsMatch(tb_phone.Text))
                 {
                     updatedUser.phone_number = int.Parse(tb_phone.Text);
                    tb_phone.BorderBrush = new SolidColorBrush(Colors.Black);

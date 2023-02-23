@@ -68,7 +68,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
 
         private async void assignToDataGridView()
         {
-            allPosts = (await RoutesController.getAllRoutes()).allPosts;
+            allPosts = (await RoutesController.getAllRoutes()).data;
 
             if(allPosts != null)
             {

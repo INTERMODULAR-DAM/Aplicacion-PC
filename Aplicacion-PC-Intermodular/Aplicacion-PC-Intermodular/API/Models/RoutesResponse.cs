@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 
 namespace Aplicacion_PC_Intermodular.API.Models
 {
     public class AllRoutes
     {
         public int status { get; set; }
-        public Route[] allPosts { get; set; }
+        public Route[] data { get; set; }
     }
 
     public class RouteById
@@ -28,14 +29,13 @@ namespace Aplicacion_PC_Intermodular.API.Models
             date = updatedRoute.date;
             name = updatedRoute.name;
             category = updatedRoute.category;
-            distance= updatedRoute.distance;
-            difficulty= updatedRoute.difficulty;
-            track= updatedRoute.track;
-            duration= updatedRoute.duration;
-            description= updatedRoute.description;
-            photos= updatedRoute.photos;
-            privacity= updatedRoute.privacity;
-            user= updatedRoute.user;
+            distance = updatedRoute.distance;
+            difficulty = updatedRoute.difficulty;
+            duration = updatedRoute.duration;
+            description = updatedRoute.description;
+            photos = updatedRoute.photos;
+            privacity = updatedRoute.privacity;
+            user = updatedRoute.user;
         }
 
         public string _id { get; set; }
@@ -44,15 +44,15 @@ namespace Aplicacion_PC_Intermodular.API.Models
         public string category { get; set; }
         public string distance { get; set; }
         public string difficulty { get; set; }
-        public Track[] track { get; set; }
         public string duration { get; set; }
         public string description { get; set; }
+        public Track[] track { get; set; }
         public string[] photos { get; set; }
         public bool privacity { get; set; }
         public string company { get; set; }
         public string user { get; set; }
 
-        
+
 
         public bool equalRoute(Route route)
         {
@@ -64,8 +64,8 @@ namespace Aplicacion_PC_Intermodular.API.Models
 
     public class Track
     {
-        public string lat { get; set; }
-        public string lng { get; set; }
+        public double lng;
+        public double lat;
     }
 
 }

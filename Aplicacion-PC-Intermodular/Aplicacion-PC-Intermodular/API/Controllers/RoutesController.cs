@@ -74,7 +74,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
 
             }
             catch(Exception) 
-            { 
+            {
                 json = new DefaultResponse();
                 json.status = 500;
                 json.data = "An internal error has ocurred, please contact with your administrator.";

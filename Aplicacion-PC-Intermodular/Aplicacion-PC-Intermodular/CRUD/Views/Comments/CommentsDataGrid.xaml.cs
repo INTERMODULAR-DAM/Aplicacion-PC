@@ -41,8 +41,6 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
         {
             comments = (await CommentController.getAllComments()).data;
             List<CommentsDG>  commentsdg = new List<CommentsDG>();
-            
-
 
             if (comments != null)
             {
@@ -76,6 +74,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
             {
                 new CustomErrorManager(response.data, MessageType.Success, MessageButtons.Ok).ShowDialog();
                 putDataOnDataGrid();
+
             }
             else
             {

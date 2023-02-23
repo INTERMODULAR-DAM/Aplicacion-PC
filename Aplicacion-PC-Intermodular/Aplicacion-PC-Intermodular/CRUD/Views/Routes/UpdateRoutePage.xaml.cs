@@ -124,11 +124,11 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             {
                 if (cbTimeMinutes.Visibility != Visibility.Hidden && !cbMinutes.Text.Equals(""))
                 {
-                    updatedRoute.duration = cbTime.Text + " hours and " + cbTimeMinutes.Text + " minutes";
+                    updatedRoute.duration = cbTime.Text + "h " + cbTimeMinutes.Text + " m";
                 }
                 else
                 {
-                    updatedRoute.duration = cbTime.Text + " " + cbTimeMeasure.Text;
+                    updatedRoute.duration = cbTime.Text + "h";
                 }
             }
 
@@ -150,7 +150,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
                 }
                 else
                 {
-                    updatedRoute.duration = cbDistance.Text + " " + cbDistanceMeasure.Text;
+                    updatedRoute.distance = cbDistance.Text + " " + cbDistanceMeasure.Text;
                 }
             }
             updatedRoute.privacity = (bool)cbPrivacity.IsChecked;

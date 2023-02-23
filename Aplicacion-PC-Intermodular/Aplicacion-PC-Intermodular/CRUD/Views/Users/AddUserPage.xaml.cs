@@ -52,7 +52,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
                         new CustomErrorManager(response.data, MessageType.Error, MessageButtons.Ok).ShowDialog();
                     }
 
-                    //cleanAllFields();
+                    cleanAllFields();
                 }
                 else if(response.status < 500)
                 {
