@@ -23,18 +23,21 @@
         <Grid Height="100"/>
         <TextBlock Text="Comments" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
 
-        <Grid Width="800" Height="400">
-            <syncfusion:SfCircularProgressBar   IsIndeterminate="True"
-                                                AnimationDuration="00:00:01"
-                                                Width="250"
-                                                Height="250"
-                                                Progress="50"
-                                                ShowProgressValue="False"
-                                                TrackColor="LightGray"
-                                                ProgressColor="#115511" 
-                                                x:Name="progressBar" 
-                                                Visibility="Collapsed"/>
-            <DataGrid AutoGeneratingColumn="dataGridComments_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridComments">
+        <Grid Width="800" Height="325">
+            <syncfusion:SfCircularProgressBar 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"  
+                IsIndeterminate="True"
+                AnimationDuration="00:00:01"
+                Width="250"
+                Height="250"
+                Progress="50"
+                ShowProgressValue="False"
+                TrackColor="LightGray"
+                ProgressColor="#115511" 
+                x:Name="progressBar" 
+                Visibility="Hidden"/>
+            <DataGrid Opacity="0" AutoGeneratingColumn="dataGridComments_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridComments">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>

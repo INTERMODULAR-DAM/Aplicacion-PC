@@ -38,6 +38,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
 
         private async void assignToDataGridView()
         {
+            progressBar.Visibility = Visibility.Visible;
             allUsers = await UserController.getAllUsers();
             if(allUsers.data != null)
             {
@@ -47,21 +48,19 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             {
                 new CustomErrorManager("An internal error has ocurred, please contact with your system administrator", MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
-
+            progressBar.Visibility = Visibility.Hidden;
         }
 
         public void putDataOnDataGrid(AllUsers allUsers)
         {
             List<UserDataGrid> users = new List<UserDataGrid>();
             dataGridUsers.Opacity = 0;
-            progressBar.Visibility = Visibility.Visible;
 
             for (int i = 0; i < allUsers.data.Length; i++)
             {
                 users.Add(new UserDataGrid(i, allUsers.data[i].email, allUsers.data[i].name, allUsers.data[i].lastname, allUsers.data[i].nick, allUsers.data[i].phone_number.ToString()));
-                progressBar.Progress = (i / allUsers.data.Length) * 100;
             }
-            progressBar.Visibility = Visibility.Collapsed;
+            progressBar.Visibility = Visibility.Hidden;
             DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
             dataGridUsers.BeginAnimation(DataGrid.OpacityProperty, animation);
             dataGridUsers.ItemsSource = users;   

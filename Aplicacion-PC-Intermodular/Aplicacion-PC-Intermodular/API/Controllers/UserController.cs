@@ -182,7 +182,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
             {
                 HttpRequestMessage requestMessage = new HttpRequestMessage(new HttpMethod("GET"), "http://localhost:8080/api/v1/users/");
                 requestMessage.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
-                requestMessage.Content = new StringContent("{\"_id\":\"" + id + "\"}", Encoding.UTF8, "application/json");
+                requestMessage.Headers.Add("_id", id);
                 HttpResponseMessage response = await client.SendAsync(requestMessage);
                 string apiResponse = await response.Content.ReadAsStringAsync();
 

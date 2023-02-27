@@ -58,6 +58,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             MaterialDesignThemes.Wpf.HintAssist.SetHint(tb_name, "Actual name: " + dbRoute.name);
             MaterialDesignThemes.Wpf.HintAssist.SetHint(cbCategory, "Actual category: " + dbRoute.category);
             MaterialDesignThemes.Wpf.HintAssist.SetHint(cbDifficulty, "Actual difficulty: " + dbRoute.difficulty);
+            cbPrivacity.IsChecked = dbRoute.privacity;
         }
 
         private void loadTime()

@@ -6,7 +6,6 @@
       xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
       xmlns:local="clr-namespace:Aplicacion_PC_Intermodular.CRUD.Views"
       mc:Ignorable="d"
-      
       Title="UsersDataGrid">
     <Page.Triggers>
         <EventTrigger RoutedEvent="Loaded">
@@ -17,53 +16,51 @@
             </BeginStoryboard>
         </EventTrigger>
     </Page.Triggers>
-    <Grid Margin="30,20,20,20" Width="800" Height="550">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
+    <StackPanel Margin="30,20,20,20">
         <Grid Height="100"/>
-        <TextBlock Text="Users" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
-        <syncfusion:SfCircularProgressBar   IsIndeterminate="True"
-                                                AnimationDuration="00:00:01"
-                                                Width="250"
-                                                Height="250"
-                                                Progress="50"
-                                                ShowProgressValue="False"
-                                                TrackColor="LightGreen"
-                                                ProgressColor="#115511" 
-                                                x:Name="progressBar" 
-                                                Visibility="Collapsed"/>
-        <DataGrid AutoGeneratingColumn="dataGridUsers_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridUsers" Grid.Row="5">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource viewRouteButton}" x:Name="viewUser_btn" ToolTip="View user" Click="viewUser_btn_Click">
-                                    <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
-                                </Button>
-                                <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click">
-                                    <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
-                                </Button>
-                                <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" Click="remove_btn_Click">
-                                    <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <TextBlock Text="Users" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
+
+        <Grid Width="800" Height="325">
+            <syncfusion:SfCircularProgressBar 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"  
+                IsIndeterminate="True"
+                AnimationDuration="00:00:01"
+                Width="250"
+                Height="250"
+                Progress="50"
+                ShowProgressValue="False"
+                TrackColor="LightGray"
+                ProgressColor="#115511" 
+                x:Name="progressBar" 
+                Visibility="Hidden"/>
+            
+            <DataGrid Opacity="0" AutoGeneratingColumn="dataGridUsers_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridUsers">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource viewRouteButton}" x:Name="viewUser_btn" ToolTip="View user" Click="viewUser_btn_Click">
+                                        <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
+                                    </Button>
+                                    <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" Click="modify_btn_Click">
+                                        <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
+                                    </Button>
+                                    <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" Click="remove_btn_Click">
+                                        <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
         <Button Style="{StaticResource addUser}" Click="addUserbtn_Click" x:Name="addUserbtn">
             <StackPanel Orientation="Horizontal">
                 <Image Margin="18" Source="/Resources/Icons/addUser-icon.png" Stretch="None"/>
             </StackPanel>
         </Button>
-    </Grid>
+    </StackPanel>
 </Page>

@@ -33,6 +33,7 @@ namespace Aplicacion_PC_Intermodular.API.Models
             difficulty = updatedRoute.difficulty;
             duration = updatedRoute.duration;
             description = updatedRoute.description;
+            track = updatedRoute.track;
             photos = updatedRoute.photos;
             privacity = updatedRoute.privacity;
             user = updatedRoute.user;
@@ -64,8 +65,8 @@ namespace Aplicacion_PC_Intermodular.API.Models
 
     public class Track
     {
-        public double lng;
-        public double lat;
+        public double lat { get; set; }
+        public double lng { get; set; }
     }
 
 }

@@ -66,7 +66,7 @@ namespace Aplicacion_PC_Intermodular.API.Controllers
             {
                 HttpRequestMessage request = new HttpRequestMessage(new HttpMethod("DELETE"), "http://localhost:8080/api/v1/comments/");
                 request.Headers.Add("Authorization", "Bearer " + Application.Current.Properties["TOKEN"].ToString());
-                request.Content = new StringContent("{\"_id\":\"" + id + "\"}", Encoding.UTF8, "application/json");
+                request.Headers.Add("_id", id);
                 HttpResponseMessage responseMessage = await client.SendAsync(request);
                 string responseApi = await responseMessage.Content.ReadAsStringAsync();
                 response = JsonSerializer.Deserialize<DefaultResponse>(responseApi);

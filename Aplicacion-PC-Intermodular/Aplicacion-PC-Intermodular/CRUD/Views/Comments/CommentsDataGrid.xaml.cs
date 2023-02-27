@@ -39,13 +39,14 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
 
         private async void putDataOnDataGrid()
         {
+            progressBar.Visibility = Visibility.Visible;
             comments = (await CommentController.getAllComments()).data;
             List<CommentsDG>  commentsdg = new List<CommentsDG>();
 
             if (comments != null)
             {
                 dataGridComments.Opacity = 0;
-                progressBar.Visibility = Visibility.Visible;
+                
 
                 for (int i = 0; i < comments.Length; i++)
                 {
@@ -53,7 +54,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Comments
                     Route route = await RoutesController.getRouteById(comments[i].post);
                     commentsdg.Add(new CommentsDG(i, user.nick, route.name, comments[i].message));
                 }
-                progressBar.Visibility= Visibility.Collapsed;
+                progressBar.Visibility= Visibility.Hidden;
                 dataGridComments.ItemsSource = commentsdg;
                 DoubleAnimation animation = new DoubleAnimation(1, TimeSpan.FromSeconds(0.5));
                 dataGridComments.BeginAnimation(DataGrid.OpacityProperty, animation);

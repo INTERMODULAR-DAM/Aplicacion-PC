@@ -104,7 +104,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views
             }
             else
             {
-                new CustomErrorManager("An internal error has occurred, please contact with your administrator", MessageType.Error, MessageButtons.Ok).ShowDialog();
+                new CustomErrorManager(defaultResponse.data, MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
         }
 

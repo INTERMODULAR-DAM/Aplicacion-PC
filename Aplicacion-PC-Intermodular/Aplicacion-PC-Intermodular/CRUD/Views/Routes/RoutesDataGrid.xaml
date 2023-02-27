@@ -17,56 +17,53 @@
         </EventTrigger>
     </Page.Triggers>
 
-    <Grid Width="800" Height="550" Margin="30,20,20,20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
+    <StackPanel Margin="30,20,20,20">
         <Grid Height="100"/>
         <TextBlock Text="Routes" Grid.Row="1" FontFamily="Calibri" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Foreground="#4a2908"/>
-        <syncfusion:SfCircularProgressBar   IsIndeterminate="True"
-                                                AnimationDuration="00:00:01"
-                                                Width="250"
-                                                Height="250"
-                                                Progress="50"
-                                                ShowProgressValue="False"
-                                                TrackColor="LightGreen"
-                                                ProgressColor="#115511" 
-                                                x:Name="progressBar" 
-                                                Visibility="Collapsed"/>
-        <DataGrid AutoGeneratingColumn="dataGridRoutes_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridRoutes" Grid.Row="5">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource viewRouteButton}" x:Name="viewRoute_btn" ToolTip="View route" Click="viewRoute_btn_Click">
-                                    <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
-                                </Button>
-                                <Button Style="{StaticResource addCommentButton}" x:Name="addComment_button" ToolTip="Add comment" Click="addComment_button_Click">
-                                    <Image Source="/Resources/Icons/addRoute-icon.png" Stretch="Uniform" />
-                                </Button>
-                                <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" ToolTip="Modify route" Click="modify_btn_Click">
-                                    <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
-                                </Button>
-                                <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove route" Click="remove_btn_Click">
-                                    <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+
+        <Grid Width="800" Height="325">
+            <syncfusion:SfCircularProgressBar 
+               VerticalAlignment="Center"
+                HorizontalAlignment="Center"  
+                IsIndeterminate="True"
+                AnimationDuration="00:00:01"
+                Width="250"
+                Height="250"
+                Progress="50"
+                ShowProgressValue="False"
+                TrackColor="LightGray"
+                ProgressColor="#115511" 
+                x:Name="progressBar" 
+                Visibility="Hidden"/>
+            <DataGrid Opacity="0" AutoGeneratingColumn="dataGridRoutes_AutoGeneratingColumn" RowStyle="{DynamicResource CRUDRowStyle}" ColumnHeaderStyle="{DynamicResource CRUDColumnHeaderStyle}" CellStyle="{DynamicResource CRUDCellStyle}" Style="{DynamicResource CRUDTemplate}" x:Name="dataGridRoutes" Grid.Row="5">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource viewRouteButton}" x:Name="viewRoute_btn" ToolTip="View route" Click="viewRoute_btn_Click">
+                                        <Image Source="/Resources/Icons/view-icon.png" Stretch="Uniform" />
+                                    </Button>
+                                    <Button Style="{StaticResource addCommentButton}" x:Name="addComment_button" ToolTip="Add comment" Click="addComment_button_Click">
+                                        <Image Source="/Resources/Icons/addRoute-icon.png" Stretch="Uniform" />
+                                    </Button>
+                                    <Button Style="{StaticResource modifyButton}" x:Name="modify_btn" ToolTip="Modify route" Click="modify_btn_Click">
+                                        <Image Source="/Resources/Icons/edit-icon.png" Stretch="Uniform"/>
+                                    </Button>
+                                    <Button Style="{StaticResource deleteButton}" x:Name="remove_btn" ToolTip="Remove route" Click="remove_btn_Click">
+                                        <Image Source="/Resources/Icons/remove-icon.png" Stretch="Uniform"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
         <Button Style="{StaticResource addUser}" Click="addRouteBtn_Click" x:Name="addRouteBtn">
             <StackPanel Orientation="Horizontal">
                 <Image Margin="18" Source="/Resources/Icons/addRoute-icon.png" Stretch="None"/>
             </StackPanel>
         </Button>
-    </Grid>
+    </StackPanel>
 </Page>

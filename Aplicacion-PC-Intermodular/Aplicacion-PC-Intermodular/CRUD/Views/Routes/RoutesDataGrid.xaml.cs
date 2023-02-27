@@ -68,6 +68,8 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
 
         private async void assignToDataGridView()
         {
+            progressBar.Visibility = Visibility.Visible;
+
             allPosts = (await RoutesController.getAllRoutes()).data;
 
             if(allPosts != null)
@@ -78,6 +80,7 @@ namespace Aplicacion_PC_Intermodular.CRUD.Views.Routes
             {
                new CustomErrorManager("An internal error has ocurred, please contact with your system administrator", MessageType.Error, MessageButtons.Ok).ShowDialog();
             }
+            progressBar.Visibility = Visibility.Collapsed;
         }
 
 
